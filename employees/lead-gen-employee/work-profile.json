@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "objective": "Qualified lead lists with evidenced provenance and usable exports",
+  "standup": "leadgen-desk-standup",
+  "reviewer": "leadgen-icp-refresh",
+  "routines": {
+    "leadgen-desk-setup": {
+      "kind": "research",
+      "expected_when": "The routine is due and setup or monthly reconciliation has not been verified for the period.",
+      "acceptance": "ICP exists, doctor ran, routines registered or schedule-commands written, first sample path named.",
+      "fallback": "Init blank ICP from examples, run doctor offline, write blockers for missing home URL.",
+      "recovery": "Refresh doctor and continue unfinished setup steps in the current eligible period."
+    },
+    "leadgen-icp-refresh": {
+      "kind": "research",
+      "expected_when": "The routine is due and ICP has not been re-tested against evidence this month.",
+      "acceptance": "A dated note of what changed in config/icp.json or an explicit no-change with evidence paths.",
+      "fallback": "Score explain on current DB and list disqualifiers dominating the funnel.",
+      "recovery": "Re-read exports and status; apply only evidenced ICP edits."
+    },
+    "leadgen-source-run": {
+      "kind": "produce",
+      "expected_when": "ICP is configured and READY NOW is below target or sources have new places to cover.",
+      "acceptance": "Status shows new or merged companies with provenance; caps respected.",
+      "fallback": "Import data/samples/companies_sample.csv or run one OSM place already in ICP.",
+      "recovery": "Resume uncrawled or unsourced work within caps."
+    },
+    "leadgen-enrich-run": {
+      "kind": "produce",
+      "expected_when": "Companies exist with crawl_status null or missing contacts.",
+      "acceptance": "Crawl and contact stages advanced; robots.txt honored.",
+      "fallback": "Crawl a small worker count on uncrawled rows only.",
+      "recovery": "Continue uncrawled set; do not raise paid caps."
+    },
+    "leadgen-qualify-run": {
+      "kind": "produce",
+      "expected_when": "Contacts await verify or companies await score.",
+      "acceptance": "Verify and score completed for due rows; invalid/DNC excluded from qualified set.",
+      "fallback": "Local verify provider only; score --explain into state notes.",
+      "recovery": "Re-run verify/score idempotently."
+    },
+    "leadgen-desk-standup": {
+      "kind": "standup",
+      "expected_when": "The routine is due.",
+      "acceptance": "brief-latest.md written and brief.deliver attempted; status numbers sourced.",
+      "fallback": "Write brief from last status and runlog only.",
+      "recovery": "Rebuild brief from current DB status."
+    },
+    "leadgen-export-run": {
+      "kind": "produce",
+      "expected_when": "Qualified companies with usable email exist and export is due.",
+      "acceptance": "CSV and HTML report paths exist under data/exports/ and are named in progress receipt.",
+      "fallback": "Export with --limit on a small verified slice.",
+      "recovery": "Re-export; do not push."
+    },
+    "leadgen-push-run": {
+      "kind": "produce",
+      "expected_when": "Friday period due and an export exists.",
+      "acceptance": "Dry-run report written; live push only if RELEASES.md names the channel.",
+      "fallback": "Dry-run only and attach report path to brief inbox.",
+      "recovery": "Repeat dry-run; never infer release from a prior week."
+    }
+  }
+}
