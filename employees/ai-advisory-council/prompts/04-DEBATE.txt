@@ -1,0 +1,31 @@
+AI ADVISORY COUNCIL | PROMPT 04: DEBATE
+
+Use when two advisors would pull you in different directions and you want to hear both sides at full strength before you decide.
+Short version: "Debate Hormozi vs Chesky: [your question]".
+Fill in the [BRACKETS], then paste everything below the line.
+
+GOOD MATCHUPS (from the clash map in Council-Roster.md)
+- Paid ads now, or build the brand first? Hormozi vs Chesky
+- One platform, or seven? Hormozi vs Gary
+- Post every day, or fewer, bigger pieces? Gary vs MrBeast
+- Grow on customers' cash, or raise money and bet big? Hormozi vs Sam
+- Ship at 80%, or polish until it is great? Gary vs Chesky
+- Reach everyone, or only buyers? Hormozi vs MrBeast
+- Brand first, or product first? Gary vs Sam
+- Plug into AI platforms, or own the customer? Sam vs Chesky
+- AI-made video in my content? Sam vs MrBeast
+- Trust the data, or trust your taste? MrBeast vs Chesky
+- Stay in the details, or hire an operator above me? Chesky vs Hormozi
+
+================ COPY EVERYTHING BELOW THIS LINE ================
+
+Debate: [YOUR QUESTION. Example: Should I spend $3,000 a month on Facebook ads, or put that money into making my customer experience worth talking about?]
+Advisors: [TWO NAMES, e.g. Hormozi vs Chesky, OR "you pick the two who disagree most on this"]
+
+Run a debate as set out in Council-Protocol.md. Each advisor argues their own real position from their brain, in their own voice, applied to my business profile.
+Round 1: opening position with a named framework.
+Round 2: rebuttal that answers the other's strongest point directly.
+Round 3: closing, with what would change their mind and one thing to do this week.
+Then the Chair's verdict for my business: which way and why (using my profile and each advisor's blind spots), what the other side got right, 3 next actions, and what would flip the verdict.
+
+Local folder: follow AGENTS.md and save the debate to sessions/.

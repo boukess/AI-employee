@@ -1,0 +1,52 @@
+{
+  "schema": "ai-employee/1",
+  "slug": "ai-advisory-council",
+  "name": "AI Advisory Council",
+  "role": "Advisory",
+  "version": "1.0.0",
+  "standard": "kit",
+  "repository": "https://github.com/boukess/AI-employee",
+  "license": "MIT",
+  "requires": {
+    "harness": [
+      "grok-bot",
+      "claude-code",
+      "codex",
+      "chatgpt-project",
+      "claude-project"
+    ]
+  },
+  "connections": [],
+  "routines": [],
+  "files": {
+    "kit": [
+      "AGENTS.md",
+      "GROK.md",
+      "CLAUDE.md",
+      "CAPABILITIES.md",
+      "CONTRACT.md",
+      "ROLE.md",
+      "README.md",
+      "VERSION",
+      "employee.json",
+      ".gitignore",
+      "START HERE.md",
+      "START HERE.html",
+      "advisors/**",
+      "council/**",
+      "clone-a-brain/**",
+      "docs/**",
+      "prompts/**",
+      "my-business/Business-Profile.md",
+      "sessions/README.md"
+    ],
+    "member": [
+      "sessions/*.md",
+      "my-business/Business-Profile.md"
+    ]
+  },
+  "notes": {
+    "kind": "Conversational advisory kit. No Standard 1.5 scheduled routines. One agent plays Chair + advisors.",
+    "member": "Filled Business-Profile.md and sessions/*.md are the member's business context. Upgrades must not wipe a filled profile or past meetings."
+  }
+}
