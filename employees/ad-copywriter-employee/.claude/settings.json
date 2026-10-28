@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 scripts/adlibrary.py:*)",
+      "Bash(python3 scripts/creative.py:*)",
+      "Bash(python3 scripts/checkcopy.py:*)",
+      "Bash(python scripts/adlibrary.py:*)",
+      "Bash(python scripts/creative.py:*)",
+      "Bash(python scripts/checkcopy.py:*)",
+      "Edit(workspace/**)",
+      "WebFetch"
+    ]
+  }
+}

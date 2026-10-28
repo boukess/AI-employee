@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "member": "BOUKE LLC",
+  "stage": "starter_profile_with_calibration_draft",
+  "updated_at": "2026-10-28",
+  "capabilities_note": "file read/write available; web fetch of host returned 404; no founder human_original corpus yet",
+  "next_action": "Collect 2-3 founder-written samples; apply calibration edit; then propose three topic ideas"
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "creator_name": "BOUKE",
+  "channel_urls": [],
+  "niche": "AI employees, freelance work, and content creation for business owners and creators",
+  "audience": "Business owners, freelancers, and creators who want practical AI helpers and content/freelance support without hype",
+  "content_pillars": [
+    "AI employees fleet",
+    "Freelance help",
+    "Content creation",
+    "Behind the build / honest process"
+  ],
+  "representative_topics": [
+    "I hired AI employees for my business",
+    "What an AI employee kit actually is",
+    "Freelance + AI employees in one brand",
+    "Building a content hub without fake testimonials"
+  ],
+  "content_formats": [
+    "YouTube long-form (planned)",
+    "Short-form / Reels / Shorts (planned)"
+  ],
+  "language": "en",
+  "output_platform_default": "youtube",
+  "brand": {
+    "colors": [
+      "warm neutrals (from SCENE BOUKE site \u2014 confirm hex later)",
+      "practical accent TBD"
+    ],
+    "fonts": [
+      "Instrument Serif / DM Sans on member site \u2014 thumbnail fonts TBD"
+    ],
+    "tone": "clear, welcoming, practical, anti-hype",
+    "avoid": [
+      "fake metrics on thumbnails",
+      "clickbait income claims",
+      "copied competitor faces/layouts"
+    ]
+  },
+  "likeness_preference": "unspecified",
+  "portrait_asset_ids": [],
+  "asset_preference": "ask",
+  "competitor_scope": {
+    "provided_urls": [],
+    "exclusive": false,
+    "excluded_urls": []
+  },
+  "evidence": [
+    {
+      "type": "member_fleet_context",
+      "note": "BOUKE LLC offers + fleet hosts + GitHub",
+      "date": "2026-10-28"
+    },
+    {
+      "type": "member_site_draft",
+      "note": "SCENE bouke dist copy for tone",
+      "date": "2026-10-27"
+    }
+  ],
+  "open_questions": [
+    "YouTube/TikTok/Instagram channel URLs if any",
+    "Likeness preference (self / no_person / case_by_case)",
+    "Preferred thumbnail text style (few big words vs minimal)"
+  ],
+  "updated_at": "2026-10-28"
+}

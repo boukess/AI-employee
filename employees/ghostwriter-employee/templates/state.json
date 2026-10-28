@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "updated_at": null,
+  "identity": null,
+  "phase": "new",
+  "capabilities": {},
+  "voice_profile_version": null,
+  "calibration": "not_started",
+  "current_brief": null,
+  "next_action": "Inspect accessible context and identify the member",
+  "pending_question": null,
+  "unavailable_sources": [],
+  "excluded_sources": []
+}

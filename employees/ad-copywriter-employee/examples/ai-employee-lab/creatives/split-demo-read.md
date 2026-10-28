@@ -1,0 +1,9 @@
+## Creative read
+- **File:** creatives/split-demo.mp4 (video, 9:16, 47 s, 360x640 export from the Ad Library; upload the 1080x1920 master when running it)
+- **Placement fit:** Reels and Stories first. The top half is a screen recording, the bottom half is the founder at a mic. Captions sit on the split line, inside the 4:5 feed crop.
+- **Hook (0 to 3 s):** The app screen reads "Raw clip in. *Finished short* out." The founder says "I built an AI short-form editor using Claude Code", and the captions say the same, word by word.
+- **What it shows:** Drop zone ("Drop your raw video here", MP4 or MOV, 9:16). Feature chips: cuts pauses and retakes, head-over-card matte, motion graphics, mastered for phones. Progress screen at 29% and 97%. Result screen: "Your short is ready", 65.1 s cut to 38.8 s, 6 cuts, 13 scenes, Download MP4, Compare with raw. Then the Skool About page and the reviews.
+- **What it says:** Drop a raw clip in, and "in a matter of minutes" it makes a finished version with animations, motion graphics and the right takes, ready for Instagram, YouTube Shorts and TikTok. "If you want to download this", join the Skool community called AI Employee Lab, "only $9 a month". Ends on "read some of the reviews". (The transcript mishears "Claude Code" as "Cloud Code" and "Skool" as "school".)
+- **Offer in the creative:** $9/month, join AI Employee Lab and download the editor. The spoken line also says "use it for life", "no fees" and "have it forever".
+- **Angle it already carries:** founder build demo, before and after, low price, "download it".
+- **What the copy must add:** who it's for (creators and business owners who post short-form and hate editing), that it's one of many employees with a new one every week, what $9 gets you, a reason to trust it (reviews), and a clear next step. Don't repeat "Raw clip in, finished short out" word for word in the first line, because the screen already says it.

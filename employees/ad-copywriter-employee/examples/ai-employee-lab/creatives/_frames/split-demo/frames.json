@@ -1,0 +1,61 @@
+{
+  "file": "examples/ai-employee-lab/creatives/split-demo.mp4",
+  "engine": "ffmpeg",
+  "info": {
+    "duration": 47.15,
+    "width": 360,
+    "height": 640,
+    "has_audio": true,
+    "rotation": 0
+  },
+  "frames": [
+    {
+      "file": "f01.jpg",
+      "t": 0.0
+    },
+    {
+      "file": "f02.jpg",
+      "t": 1.0
+    },
+    {
+      "file": "f03.jpg",
+      "t": 2.0
+    },
+    {
+      "file": "f04.jpg",
+      "t": 3.0
+    },
+    {
+      "file": "f05.jpg",
+      "t": 4.0
+    },
+    {
+      "file": "f06.jpg",
+      "t": 10.12
+    },
+    {
+      "file": "f07.jpg",
+      "t": 16.24
+    },
+    {
+      "file": "f08.jpg",
+      "t": 22.36
+    },
+    {
+      "file": "f09.jpg",
+      "t": 28.49
+    },
+    {
+      "file": "f10.jpg",
+      "t": 34.61
+    },
+    {
+      "file": "f11.jpg",
+      "t": 40.73
+    },
+    {
+      "file": "f12.jpg",
+      "t": 46.85
+    }
+  ]
+}
