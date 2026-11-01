@@ -4,7 +4,7 @@
 **Platform:** YouTube (16:9) default  
 **Date:** 2026-10-28  
 **Likeness:** unspecified → default **no person** until member chooses  
-**Status:** brief + prompt ready; **image generation PENDING** (no image tool used this install run)
+**Status:** generated 2026-10-28; saved under workspace/outputs/; library still partial at generation
 
 ## Concept
 
@@ -22,7 +22,7 @@ Square-to-wide YouTube thumbnail, 1280x720 feel. Clean modern desk with a laptop
 
 ## Limitations
 
-- Generation not executed in this first-run session
+- Generated and QA’d; see jobs/2026-10-28-hired-ai-employees/qa.md
 - Reference library still at 0 viewed items — regenerate after first research batch for stronger originality checks
 - No CTR/view claims
 

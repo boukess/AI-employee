@@ -1,0 +1,90 @@
+=== ref-000001 NXLFroday4s (ai_employees) ===
+oembed ok
+downloaded maxresdefault size=61860
+=== ref-000002 jNmGMoI2gTk (ai_employees) ===
+oembed ok
+downloaded maxresdefault size=159299
+=== ref-000003 F1wB-Sw8kTA (ai_employees) ===
+oembed ok
+downloaded maxresdefault size=179642
+=== ref-000004 r7AORjSuOUA (ai_employees) ===
+oembed ok
+downloaded maxresdefault size=192446
+=== ref-000005 vSkB1VfAKtw (ai_employees) ===
+oembed ok
+downloaded maxresdefault size=153719
+=== ref-000006 pTTvyQDK_tk (ai_employees) ===
+oembed ok
+downloaded maxresdefault size=256114
+=== ref-000007 f1HOulUXTsk (ai_employees) ===
+oembed ok
+downloaded maxresdefault size=165190
+=== ref-000008 0i24EOiP26c (ai_employees) ===
+oembed ok
+downloaded maxresdefault size=249319
+=== ref-000009 DDOji-7kzMA (ai_employees) ===
+oembed ok
+downloaded maxresdefault size=248172
+=== ref-000010 tGthWirZI5w (ai_employees) ===
+oembed ok
+downloaded maxresdefault size=197876
+=== ref-000011 IFnwvkqZvy8 (ai_agents_business) ===
+oembed ok
+downloaded maxresdefault size=163882
+=== ref-000012 cMMb76gww_I (ai_agents_business) ===
+oembed ok
+downloaded maxresdefault size=108068
+=== ref-000013 U7FMQ_mJ9LA (ai_agents_business) ===
+oembed ok
+downloaded maxresdefault size=102673
+=== ref-000014 Fy1UCBcgF2o (ai_agents_business) ===
+oembed ok
+downloaded maxresdefault size=183473
+=== ref-000015 dsIe8RYS77c (ai_agents_business) ===
+oembed ok
+downloaded maxresdefault size=167944
+=== ref-000016 geR9PeCuHK4 (ai_agents_business) ===
+oembed ok
+downloaded maxresdefault size=160924
+=== ref-000017 p_X9elodTqw (ai_agents_business) ===
+oembed ok
+downloaded maxresdefault size=75141
+=== ref-000018 yLXLHnD4fco (ai_marketing_team) ===
+oembed ok
+downloaded maxresdefault size=174625
+=== ref-000019 -9uojnGzcJo (ai_for_business_owners) ===
+oembed ok
+downloaded maxresdefault size=150710
+=== ref-000020 cWT0TW2gBbI (ai_for_business_owners) ===
+oembed ok
+downloaded maxresdefault size=83852
+=== ref-000021 HoXyGnPcEzA (content_creation_ai) ===
+oembed ok
+downloaded maxresdefault size=163436
+=== ref-000022 xsGiaRoMQeM (content_creation_ai) ===
+oembed FAILED
+DOWNLOAD FAILED for xsGiaRoMQeM
+=== ref-000023 hxiY-hZfWB4 (content_creation_business) ===
+oembed ok
+downloaded maxresdefault size=137156
+=== ref-000024 SNh4LKSgjNs (freelance_tips) ===
+oembed ok
+downloaded maxresdefault size=52716
+=== ref-000025 hgNWEqwkApM (freelance_tips) ===
+oembed ok
+downloaded maxresdefault size=119844
+=== ref-000026 2S8AwrlDvWc (freelance_tips) ===
+oembed ok
+downloaded maxresdefault size=59976
+=== ref-000027 FSFCIilFebc (content_creation_business) ===
+oembed ok
+downloaded maxresdefault size=116643
+=== ref-000028 KslsJVwBgXo (freelance_tips) ===
+oembed ok
+downloaded maxresdefault size=162355
+=== ref-000029 3VTsTia4OKA (content_creation_business) ===
+oembed ok
+downloaded maxresdefault size=168497
+=== ref-000030 yHdjGnrO3-4 (freelance_tips) ===
+oembed FAILED
+DOWNLOAD FAILED for yHdjGnrO3-4

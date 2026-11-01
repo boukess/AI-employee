@@ -1,23 +1,38 @@
-# Starter reference library — BOUKE / AI employees niche
+# Reference library — BOUKE / AI employees niche
 
-**Honest coverage:** 0 visually reviewed competitor thumbnails saved this run.  
-Default kit target is often ~300; this is a **checkpoint**, not a completed library.
+**Honest coverage:** **300 visually reviewed** competitor thumbnails saved (local copies under `workspace/corpus/images/`).  
+Default kit target **300** — **complete**.  
+**Distinct creators:** 249 · **Primary clusters:** 7 · **Unviewed counted:** 0 · **No CTR/views invented.**
 
-## Planned research lanes (not yet viewed)
+## Corpus location
+Authoritative rows: `workspace/corpus/references.jsonl`  
+Coverage synthesis: `workspace/corpus/patterns.md`  
+Research log: `workspace/corpus/research-log.md`
 
-1. YouTube search: `AI employees` / `AI employee for business`
-2. YouTube search: `Claude Code tutorial` / `AI agents for business` (adjacent visual language)
-3. YouTube search: `freelance tips` / `content creation business`
-4. Short-form covers: TikTok/Reels about hiring AI helpers (metadata first if login-gated)
+## Topic clusters covered (primary)
+- Claude / AI tooling for business owners: 50
+- AI agents / automation for business: 45
+- AI for content creation workflows: 43
+- AI employees for business: 42
+- Content creation as a business: 41
+- AI marketing / content team: 40
+- Freelance tips / client acquisition: 39
+
+## Visual principles observed (from viewed images only)
+1. **AI-employee fleet / role cards** — capability panels and multi-role robots.
+2. **Product AI-employee UIs** — GHL / Sintra / Solvea / Lindy / Hermes literacy.
+3. **Surfer / Jasper marketing literacy** — official UI + Brand Voice demos.
+4. **Automate-marketing / Codex team diagrams** — Zapier hubs and agent roles.
+5. **SEO comparison cards** — Surfer vs Frase no-face reviews.
+6. **Freelance retainer literacy** — desk portraits, pricing questions, monthly calendar, BTS pros/cons.
+7. **Format caveat** — Batch 11 rejected Shorts-style vertical covers and money-hype retainer packs; prefer designed landscape.
 
 ## How to add a reference
-
 For each real thumbnail you open and see:
-- Save screenshot or downloaded image under `library/references/`
-- Note: URL, title, date retrieved, what visual principle it teaches (contrast, face crop, 3-word text, prop, color block)
-- Mark `viewed: true` only if actually inspected
+- Save under `corpus/images/` and append a qualifying row to `corpus/references.jsonl`
+- Note URL, title, date retrieved, visual principles
+- Mark `inspection_status: viewed` only if actually inspected
 - Never invent views/CTR; never duplicate a distinctive layout
 
 ## Status
-
-Starter list only. Teammate with browse + image view should pull a first batch of 15–30 viewed refs before claiming a working library.
+Batch 11 added **29** qualifying viewed refs (cumulative **300/300**). `research_status: complete`. Member channel URLs still useful later for same-channel / direct-competitor lanes (optional).

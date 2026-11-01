@@ -1,0 +1,15 @@
+{
+  "id": "SRC-004",
+  "title": "BOUKE QA — form backend honesty and publishable truths",
+  "canonical_url": "file://employees/website-designer-employee/member-projects/bouke/QA.md",
+  "source_date": "2026-10-27",
+  "retrieval_date": "2026-10-28",
+  "authorship": "ai_assisted",
+  "author_verification": "Website Designer Employee QA record from member-confirmed contact email and honest-form rules; not founder unaided prose.",
+  "purpose": "facts",
+  "privacy": "internal_fleet",
+  "permission_basis": "fleet member project",
+  "confidence": "high_for_form_and_contact_facts",
+  "limitations": "Not personal voice evidence. Use for truthful claims about forms and contact only.",
+  "retained_excerpt": "Forms are not connected to email, CRM, or any server. Submitting downloads a local .txt note or copies text to the clipboard. The UI must never claim a message was sent. Contact email is boukeorg@gmail.com."
+}

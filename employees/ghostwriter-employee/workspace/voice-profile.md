@@ -1,22 +1,23 @@
 # Voice profile
 
 Member: BOUKE / BOUKE LLC (founder voice still uncalibrated)
-Version/date: v0.1 / 2026-10-28
+Version/date: v0.2 / 2026-10-28
 Status: starter; awaiting founder writing samples and calibration edits
 
 ## Evidence and coverage
 
-- Distinct origins: 2 usable (SRC-001 brand site copy; SRC-002 brand brief facts). SRC-003 excluded from voice.
+- Distinct origins: 2 usable for brand tone/facts (SRC-001 site; SRC-002 brand brief). SRC-004 QA and SRC-005 design brief add facts only. SRC-003 excluded from voice.
 - Usable words for brand tone: roughly a few hundred from site hero/lanes (ai_assisted).
 - Confirmed human_original founder prose: **none**.
 - Formats: web marketing copy only. Email/LinkedIn/spoken: unknown.
-- Host live page fetch failed (404); local SCENE draft used.
+- Hosts rechecked 2026-10-28: bouke1 and fawn both 404 to automated fetch; local SCENE draft HTML used.
 
 ## Explicit preferences
 
 - Clear, welcoming, practical (SRC-002, member brief 2026-10-27)
 - Avoid hype, fake social proof, invented metrics (SRC-002)
 - Prefer “Unknown” / honest gaps over filler (SRC-002)
+- Never claim forms were “sent” (SRC-004)
 - House default: no em dashes as rhetorical punctuation
 
 ## Observed voice
@@ -39,12 +40,13 @@ Spoken: unknown.
 
 ## Facts and boundaries
 
-- Publishable facts: BOUKE / BOUKE LLC; freelance, content creation, business/AI employees; GitHub boukess/AI-employee; hosts ai-employee-bouke1.vercel.app and ai-employee-fawn.vercel.app; contact boukeorg@gmail.com
+- Publishable facts: BOUKE / BOUKE LLC; freelance, content creation, business/AI employees; GitHub boukess/AI-employee; hosts ai-employee-bouke1.vercel.app and ai-employee-fawn.vercel.app (live fetch 404 as of 2026-10-28); contact boukeorg@gmail.com; on-page forms download/copy only
 - Do not invent testimonials, metrics, personal anecdotes, or results
 
 ## Calibration
 
-- Starter draft: `drafts/2026-10-28-calibration-linkedin-note.md`
+- Starter draft: `drafts/2026-10-28-calibration-linkedin-note.md` (unchanged)
+- Ideas: `briefs/2026-10-28-three-ideas.md`
 - Awaiting: which sentence sounds least like the founder; any rewrite of one line
 
 ## Next useful sources
