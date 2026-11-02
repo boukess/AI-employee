@@ -6,7 +6,7 @@
 - Typography, palette, material, and lighting: Instrument Serif + DM Sans; ivory/paper `#f6f1e8`, ink `#1c1916`, teal `#0f6b5c`, warm `#c45c26`; flat cards with soft shadow; no fake photography.
 - Scene subject and asset source: Geometric/typography only. No stock faces. No logo file supplied.
 - Composition, text-safe area, and CTA placement: Left hero copy + right gradient panel; sticky header with Ask for help; forms in narrow column.
-- Website sections and real content needed: Hero; Content; Ways we help (Freelance · Content · Business/AI employees); Need help form; Business questionnaire; Footer with BOUKE LLC + fleet link.
+- Website sections and real content needed: Hero; Content; Shop (example placeholders only, Stripe hosted checkout); Ways we help (Freelance · Content · Business/AI employees); Need help form; Business questionnaire; Footer with BOUKE LLC + fleet link.
 - Reference observations and deliberate original differences: Kit Lab demo is dark cinematic 3D — deliberately not reused. Structure inspired only at “hub with clear CTAs” level.
 - Approved choices to preserve: Honest form limitation copy; empty content placeholders; live fleet + GitHub links only.
 

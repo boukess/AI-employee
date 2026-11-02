@@ -19,7 +19,10 @@ Forms are **not connected** to email, CRM, or any server. Submitting downloads a
 | Phone / narrow layout | Untested | CSS includes ≤860px single-column rules; not visually verified in a device emulator this pass |
 | Motion / reduced-motion | Untested visually | `prefers-reduced-motion` disables chip animation in CSS; not observed in a live browser this pass |
 | External font load | Untested offline | Depends on Google Fonts network |
-| Publish / production URL | Not requested | Local member project only |
+| Publish / production URL | Not deployed by the shop change | Vercel project is the repo root. Root `vercel.json` maps `/` to this `dist/`. Production deploys were blocked on the account as of 2026-11-02. See STORE-SETUP.md |
+| Shop pages | Pass, file review plus local render | `shop.html`, `success.html`, `cancel.html`. Example products only |
+| Checkout without Stripe keys | Pass, unit test | Friendly coming soon state. No stack trace |
+| Server price, not client price | Pass, unit test | `store/store.test.mjs` mocks Stripe |
 
 ## Defects found and fixed this pass
 

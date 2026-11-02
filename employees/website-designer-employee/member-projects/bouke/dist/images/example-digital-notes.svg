@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Example graphic, not a product photo">
+  <rect width="800" height="600" fill="#f6f1e8"/>
+  <rect x="210" y="150" width="340" height="300" rx="18" fill="#d7efe9"/>
+  <rect x="240" y="120" width="340" height="300" rx="18" fill="#fffaf3" stroke="#1c1916" stroke-opacity="0.15"/>
+  <path d="M290 210 H530 M290 260 H500 M290 310 H470" stroke="#0f6b5c" stroke-width="14" stroke-linecap="round"/>
+  <text x="400" y="520" text-anchor="middle" font-family="Georgia, serif" font-size="42" fill="#c45c26">EXAMPLE</text>
+</svg>

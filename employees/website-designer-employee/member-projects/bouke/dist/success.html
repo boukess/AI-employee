@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BOUKE shop, checkout returned</title>
+  <meta name="description" content="Returned from Stripe checkout. This page does not itself confirm that a payment succeeded." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="./index.html" aria-label="BOUKE home">BOUKE</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="./shop.html">Shop</a>
+        <a href="./index.html#need-help">Need help</a>
+      </nav>
+      <a class="btn btn-small" href="./shop.html">Back to shop</a>
+    </div>
+  </header>
+  <main id="main">
+    <section class="section">
+      <div class="wrap narrow">
+        <p class="eyebrow">BOUKE LLC</p>
+        <h1>You left Stripe checkout.</h1>
+        <p class="lede">
+          If a test payment went through, Stripe has the record. This page does not confirm payment by itself, and it does not mean an example placeholder will be delivered.
+        </p>
+        <p>Stripe reference: <code id="session-ref">Not included on this link.</code></p>
+        <p class="muted">BOUKE reviews payments in the Stripe Dashboard. The cart stored in this browser was cleared.</p>
+        <div class="hero-actions">
+          <a class="btn" href="./shop.html">Back to the shop</a>
+          <a class="btn btn-ghost" href="./index.html">Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="fineprint">Example shop. No card or bank details are collected on this site.</p>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var id = params.get("session_id") || "";
+      var node = document.getElementById("session-ref");
+      if (id && node) node.textContent = id;
+      try { localStorage.removeItem("bouke-cart-v1"); } catch (err) {}
+    })();
+  </script>
+</body>
+</html>

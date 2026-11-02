@@ -1,0 +1,45 @@
+{
+  "currency": "usd",
+  "shippingCountries": ["US", "CA"],
+  "maxQuantity": 10,
+  "products": [
+    {
+      "id": "example-field-print",
+      "example": true,
+      "lane": "photography",
+      "name": "EXAMPLE: Field print",
+      "description": "Placeholder for a physical print. This is not a real BOUKE product, and the picture is not a photograph of goods for sale. The price is a placeholder. Nothing ships until the owner replaces this entry.",
+      "priceCents": 6400,
+      "shippable": true,
+      "images": ["images/example-field-print.svg"],
+      "variants": []
+    },
+    {
+      "id": "example-sports-tee",
+      "example": true,
+      "lane": "sports",
+      "name": "EXAMPLE: Sports tee",
+      "description": "Placeholder for a physical shirt with sizes. This is not a real BOUKE product, and the picture is not a photograph of goods for sale. The price is a placeholder. Nothing ships until the owner replaces this entry.",
+      "priceCents": 3600,
+      "shippable": true,
+      "images": ["images/example-sports-tee.svg"],
+      "variants": [
+        { "id": "s", "label": "Small" },
+        { "id": "m", "label": "Medium" },
+        { "id": "l", "label": "Large" },
+        { "id": "xl", "label": "Extra large" }
+      ]
+    },
+    {
+      "id": "example-digital-notes",
+      "example": true,
+      "lane": "lifestyle",
+      "name": "EXAMPLE: Digital notes",
+      "description": "Placeholder for a digital file. This is not a real BOUKE product. No file is attached, and nothing is delivered automatically. The price is a placeholder.",
+      "priceCents": 800,
+      "shippable": false,
+      "images": ["images/example-digital-notes.svg"],
+      "variants": []
+    }
+  ]
+}
