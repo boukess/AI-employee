@@ -189,7 +189,9 @@ Full checkout locally needs the Vercel CLI (`vercel dev`) with the same env vars
 
 ## Go live
 
-Do these in order. Nothing here is done yet. Until step 5, the site stays in test mode and real cards are never charged.
+Status on 2026-11-04 (6:45 PM EST): **live**. Steps 3, 4, 5 and 7 are done. Live webhook `we_1UYDJEFgrxQlOmvOB9ZsrUsY` has the six events. Production has the live restricted key, the live webhook secret, and `STRIPE_MODE=live`. Preview keeps the test key and test webhook secret. The live API returned `testMode: false`, and a Game-day coverage session opened as `cs_live_` and was expired unpaid. Still open: step 2 (Affirm was not offered on live one time checkouts, so turn it on in the Dashboard; Klarna is on and also shows on subscriptions), step 6 (one real purchase and refund, owner's call), and confirming in the Dashboard that the account has no outstanding requirements.
+
+Do these in order. Until step 5, the site stays in test mode and real cards are never charged.
 
 1. **Stripe account (owner, in the Dashboard with live mode on).** Finish account activation: business details for BOUKE LLC, EIN, owner identity check, the business website (`https://frbouke.com`), a statement descriptor (for example `BOUKE` or `FRBOUKE`), a customer support email, and the payout bank account (section 2). Stripe may also ask for a refund and cancellation policy on the site before approving.
 2. **Payment methods (live).** Settings, Payment methods, with live mode on. Card is on by default. Turn on Affirm and Klarna and accept their terms. Decide whether Klarna may be offered on monthly subscriptions (see the Klarna note). Live Affirm and Klarna can take extra review.
