@@ -12,10 +12,9 @@ Cleans takes and pauses, adds captions, creates custom animations, brings in rea
 
 ## Prerequisites (separate from the pack)
 
-- DaVinci Resolve Studio 21.1+
+- DaVinci Resolve: **free edition 21.1.2 is installed on IBP_Desktop** (at `E:\New folder (2)`). The pack runs in **free mode** (`"resolve_edition": "free"` in `config/editor.json`): it exports an FCPXML timeline and renders the MP4 with FFmpeg. See [FREE-DAVINCI-RESOLVE.md](FREE-DAVINCI-RESOLVE.md). Studio 21.1+ (External scripting → Local) is only needed for `"resolve_edition": "studio"`.
 - Node.js 22+ (installed at `C:\Users\blood\Tools\node-v24.22.1-win-x64`)
 - Python 3.12
-- Resolve: Preferences → System → General → External scripting → Local
 
 ## First run
 
