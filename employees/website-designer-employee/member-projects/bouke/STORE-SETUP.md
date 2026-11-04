@@ -1,8 +1,8 @@
 # BOUKE shop setup
 
-How the owner connects Stripe so the example shop can take **test** payments. The shop never asks for a card number or a bank account number. Those stay inside the Stripe Dashboard and on Stripe's hosted checkout page.
+How the owner connects Stripe so the BOUKE shop sells its four service packages (Shorts Starter, Creator Growth, Local Business Visuals, Game-day coverage). The shop never asks for a card number or a bank account number. Those stay inside the Stripe Dashboard and on Stripe's hosted checkout page.
 
-This build accepts only test secret keys (`sk_test_...`). A live key is refused and the shop shows "Checkout is not available yet." Real charges need a later code change in `store/checkout.mjs` (`isTestSecret`), plus live keys, a live webhook, and the bank account below. Do that only when BOUKE LLC is ready to sell.
+Test mode is the default. With no `STRIPE_MODE` set, only test keys (`sk_test_...` or `rk_test_...`) work, and a live key is refused (the shop shows "Checkout is not available yet."). A live key (`sk_live_...` or `rk_live_...`) works only when `STRIPE_MODE=live` is also set, and then a test key is refused so the two never mix. See "Go live" at the end of this file. The switch lives in `store/checkout.mjs` (`resolveStripeMode`, `isAllowedSecret`).
 
 Checked against Stripe's docs on 2026-11-02. Stripe changes eligibility, so open the payment method page in the Dashboard before relying on a limit.
 
@@ -16,7 +16,7 @@ Checked against Stripe's docs on 2026-11-02. Stripe changes eligibility, so open
 | Shop pages | `dist/shop.html`, `dist/success.html`, `dist/cancel.html`, `dist/shop.js` |
 | Vercel functions | `/api/create-checkout-session` and `/api/stripe-webhook` at the repository root |
 
-The Vercel project `ai-employee` (team bouke1, domain `https://ai-employee-bouke1.vercel.app`) deploys this whole repository with no framework preset. Root `vercel.json` serves the BOUKE site at `/` and leaves `/api` as serverless functions. Do not put secrets in `vercel.json`.
+The Vercel project `ai-employee` (team bouke1, domains `https://frbouke.com` and `https://ai-employee-bouke1.vercel.app`) deploys this whole repository with no framework preset. Root `vercel.json` serves the BOUKE site at `/` and leaves `/api` as serverless functions. Do not put secrets in `vercel.json`.
 
 If the site later moves from `dist/` to a `src/` layout, move the `store/` folder with it, point `store/sync-public.mjs` at the new public folder, and update the two imports in `api/create-checkout-session.js` and `api/stripe-webhook.js`.
 
@@ -68,9 +68,7 @@ As of Stripe's Affirm page on 2026-11-02:
 - Currency: `usd` or `cad`, and it should be the business's domestic currency.
 - Transaction limits published there: minimum **35.00 USD**, maximum **30,000.00 USD**.
 - US options on that page: Pay in 30 for about 35 to 50 USD, Pay in 4 for about 50 to 500 USD, monthly installments from about 100 USD up to 30,000 USD. Canada starts Pay in 4 around 50 CAD.
-- One time payments only. This shop already uses one time Checkout (`mode=payment`).
-
-The example field print is 64.00 USD so one item can fall in the Pay in 4 range. The example tee is 36.00 USD, just over the 35 USD minimum. The example digital notes are 8.00 USD, under the Affirm minimum, so Affirm stays hidden until the cart is large enough.
+- One time payments only. Local Business Visuals (650 USD) and Game-day coverage (150 USD per game) check out with `mode=payment`, so Affirm can show there. The two monthly packages check out with `mode=subscription`, where Stripe does not offer Affirm.
 
 ### Klarna
 
@@ -87,7 +85,7 @@ As of Stripe's Klarna page on 2026-11-02, a US business can offer Klarna to US c
 
 US state limits on that page: Pay later is not offered in Montana, New Mexico, or Hawaii. Pay in 4 is not offered in New Mexico or Hawaii. Financing is not offered in Iowa, West Virginia, or Massachusetts. Among US territories, Puerto Rico is the one Klarna lists for all options.
 
-The 8.00 USD example can qualify for Klarna pay later (the 5 USD floor) even when it is too small for Affirm.
+In test mode on 2026-11-04 Stripe also offered Klarna on the monthly subscription checkouts (card, Klarna, Link, Cash App, Amazon Pay). This Stripe API version rejects `payment_method_types`, so the code cannot force card only per session. To keep subscriptions card only, turn Klarna off in the Dashboard, or create a separate payment method configuration for subscriptions (a later code change would pass it as `payment_method_configuration`).
 
 ## 4. Environment variables on Vercel
 
@@ -95,16 +93,17 @@ Project: **ai-employee**. Team: **bouke1**. Settings, then **Environment Variabl
 
 | Name | Value | Required |
 | --- | --- | --- |
-| `STRIPE_SECRET_KEY` | Secret key from Developers, API keys, with Test mode on. It starts with `sk_test_`. | Yes |
+| `STRIPE_SECRET_KEY` | Secret key from Developers, API keys. Test: starts with `sk_test_`. Live: `sk_live_` (only with `STRIPE_MODE=live`). | Yes |
+| `STRIPE_MODE` | Leave unset for test mode. Set to exactly `live` only when going live. | Only for live |
 | `STRIPE_WEBHOOK_SECRET` | Signing secret from the webhook endpoint. It starts with `whsec_`. | Yes, for the order log |
-| `SITE_URL` | `https://ai-employee-bouke1.vercel.app` with no trailing slash | Yes |
+| `SITE_URL` | `https://frbouke.com` with no trailing slash | Yes |
 | `STRIPE_PUBLISHABLE_KEY` | Publishable key (`pk_test_...`) | No. This shop does not use Stripe.js |
 
 Apply them to Production and Preview. Do not paste the secret key into the repository. `.env.example` lists the names with empty values. A local `.env` is gitignored.
 
 `SITE_URL` is how success and cancel URLs are built (`/success.html` and `/cancel.html`). If it is missing, Vercel fills in `VERCEL_URL` for that deployment. Set `SITE_URL` so buyers return to the public domain.
 
-Saving variables does not change running code until the next deployment. This repository's latest production deployments were **BLOCKED** on 2026-11-02 with Vercel's account configuration error, and `https://ai-employee-bouke1.vercel.app` returned NOT_FOUND. Resolve that in the Vercel account before expecting the shop to appear. Do not change other project settings for this shop. Root directory stays the repository root.
+Saving variables does not change running code until the next deployment. Commits must be authored as the GitHub account that owns the Vercel Hobby project (`boukess`), or Vercel blocks the deploy. Do not change other project settings for this shop. Root directory stays the repository root.
 
 Until the secret key and `SITE_URL` are present, the product grid still renders and the checkout button says the store is coming soon. The page does not show a stack trace.
 
@@ -112,14 +111,14 @@ Until the secret key and `SITE_URL` are present, the product grid still renders 
 
 1. Dashboard, Test mode on.
 2. Developers, **Webhooks**, **Add endpoint**.
-3. Endpoint URL: `https://ai-employee-bouke1.vercel.app/api/stripe-webhook`
-4. Events: `checkout.session.completed`, `checkout.session.async_payment_succeeded`, `checkout.session.async_payment_failed`.
+3. Endpoint URL: `https://frbouke.com/api/stripe-webhook`
+4. Events: `checkout.session.completed`, `checkout.session.async_payment_succeeded`, `checkout.session.async_payment_failed`, `customer.subscription.created`, `customer.subscription.deleted`, `invoice.paid`.
 5. Copy the signing secret into `STRIPE_WEBHOOK_SECRET`.
 6. Redeploy after the variable is saved, then send a test checkout (not only the Dashboard's generic test event) so the payload includes the cart metadata.
 
 The function checks the `Stripe-Signature` header (HMAC SHA256 of `timestamp.rawBody`, five minute tolerance) before it trusts the body. A bad signature gets HTTP 400. A missing secret gets HTTP 503 and nothing is logged as an order.
 
-Each accepted order event writes one JSON line to the Vercel function log, tagged `BOUKE_ORDER`. It includes the Stripe session id, amount, currency, email, shipping address when Stripe sent one, the cart metadata, and line items when the session retrieve succeeds. The log is a copy. It is not a database.
+Each accepted order event writes one JSON line to the Vercel function log, tagged `BOUKE_ORDER`. It includes the Stripe session id, amount, currency, email, shipping address when Stripe sent one, the cart metadata, and line items when the session retrieve succeeds. Subscription events (`customer.subscription.created`, `customer.subscription.deleted`, `invoice.paid`) write one line tagged `BOUKE_SUBSCRIPTION` with the subscription id, customer id, status, amount paid and billing reason for invoices, and the cart metadata. The log is a copy. It is not a database.
 
 ## 6. See orders
 
@@ -145,17 +144,19 @@ Prices are integer cents. `6400` is 64.00 USD. The server recalculates every che
 | --- | --- |
 | `currency` | `usd` today. Changing it changes Affirm and Klarna eligibility. |
 | `shippingCountries` | Countries Stripe may collect a shipping address for. Default `US` and `CA`. |
-| `maxQuantity` | Maximum quantity of one line. Default 10. |
+| `maxQuantity` | Maximum quantity of one line. Default 10. A product can set its own `maxQuantity` (the monthly packages and Local Business Visuals use 1, Game-day coverage uses 10). |
+| `billing` | `one_time` or `monthly`. Any monthly item makes the checkout a Stripe subscription (renews monthly). Monthly items cannot be shippable or have variants. |
+| `unitLabel` | Optional word shown as "per game". Game-day coverage uses `game`, and quantity is the number of games. |
 | `id` | Lowercase slug, unique. |
 | `example` | `true` shows the "Example placeholder" badge. Set `false` only when the text is a real product. |
 | `lane` | Short label such as photography, sports, lifestyle. |
 | `name`, `description` | Shown on the shop and on Stripe Checkout. Keep the example wording until the goods are real. |
 | `priceCents` | Whole cents, at least 50. |
 | `shippable` | `true` collects a shipping address when that product is in the cart. `false` does not, if the cart is only digital. |
-| `images` | Paths under `dist/`, such as `images/example-field-print.svg`. The current files are labelled graphics, not photographs. |
+| `images` | Paths under `dist/`. The packages use `[]` (no picture) until real portfolio images exist. |
 | `variants` | Optional. Each needs `id` and `label`. Optional `priceCents` replaces the product price for that option. Use `[]` when there are no options. |
 
-The three shipped products are placeholders. They are not real BOUKE goods, and no digital file is attached to "EXAMPLE: Digital notes".
+The four packages and prices come from the BOUKE operating plan (approved 2026-11-04). Descriptions list only the deliverables in that plan. There are no testimonials on the shop. Add real ones only with the client's written permission.
 
 Run the tests after an edit:
 
@@ -169,7 +170,7 @@ The test fails if `dist/products.json` does not match `store/products.json`.
 
 1. Deploy with the test key and `SITE_URL` set.
 2. Open `/shop.html`.
-3. Add the example field print. Continue to Stripe.
+3. Add a package (for example Game-day coverage, set to 2 games, or Shorts Starter for a subscription). Continue to Stripe.
 4. Pay with Stripe's test card `4242 4242 4242 4242`, any future expiry, any CVC, any postal code. Use Stripe's test mode prompts for Affirm, Klarna, or PayPal. Do not use a real card.
 5. You should land on `/success.html`. Canceling lands on `/cancel.html` and keeps the cart in this browser.
 6. Confirm the payment in the Dashboard, test mode.
@@ -185,3 +186,21 @@ python3 -m http.server 8765
 Open `http://127.0.0.1:8765/shop.html`. The grid, detail, and cart work. Checkout stays on "coming soon" because the API and keys are not there. That is expected.
 
 Full checkout locally needs the Vercel CLI (`vercel dev`) with the same env vars in a gitignored `.env`. This repository does not require that for the tests. The tests mock Stripe.
+
+## Go live
+
+Do these in order. Nothing here is done yet. Until step 5, the site stays in test mode and real cards are never charged.
+
+1. **Stripe account (owner, in the Dashboard with live mode on).** Finish account activation: business details for BOUKE LLC, EIN, owner identity check, the business website (`https://frbouke.com`), a statement descriptor (for example `BOUKE` or `FRBOUKE`), a customer support email, and the payout bank account (section 2). Stripe may also ask for a refund and cancellation policy on the site before approving.
+2. **Payment methods (live).** Settings, Payment methods, with live mode on. Card is on by default. Turn on Affirm and Klarna and accept their terms. Decide whether Klarna may be offered on monthly subscriptions (see the Klarna note). Live Affirm and Klarna can take extra review.
+3. **Live webhook.** Developers, Webhooks, live mode, Add endpoint `https://frbouke.com/api/stripe-webhook` with the six events in section 5. Copy its new signing secret. The test webhook's secret does not work for live events.
+4. **Vercel env vars (Production only).** Project ai-employee, Settings, Environment Variables:
+   - `STRIPE_SECRET_KEY` = the live secret key (`sk_live_...`, or a restricted `rk_live_...` key with write access to Checkout Sessions and read access to Checkout Sessions, Subscriptions, and Invoices). Mark it Sensitive.
+   - `STRIPE_MODE` = `live`
+   - `STRIPE_WEBHOOK_SECRET` = the live endpoint's `whsec_...`. Mark it Sensitive.
+   - `SITE_URL` stays `https://frbouke.com`.
+   Keep Preview on the test key with no `STRIPE_MODE`, so preview deploys never charge real cards.
+5. **Redeploy production** so the new variables load. `GET https://frbouke.com/api/create-checkout-session` should return `checkoutAvailable: true` and `testMode: false`.
+6. **One real check.** Buy one Game-day coverage with a real card, confirm it in the live Dashboard and the `BOUKE_ORDER` log line, then refund it from the Dashboard.
+7. **Roll back** at any time by deleting `STRIPE_MODE` (or setting the test key back) and redeploying. With a live key and no `STRIPE_MODE`, checkout simply shows "coming soon".
+

@@ -1,13 +1,33 @@
 // Builds a Stripe Checkout Session from the server catalog.
 // Client prices are ignored. Payment entry happens on Stripe's hosted page.
-// This build accepts only test secret keys (sk_test_). See STORE-SETUP.md.
+// Test keys (sk_test_ or rk_test_) are the default. A live key (sk_live_ or
+// rk_live_) is accepted only when STRIPE_MODE=live is set on purpose, and
+// then a test key is refused so the two modes never mix. See STORE-SETUP.md.
+// Monthly packages use Checkout subscription mode. One time packages use
+// payment mode. Both rely on the Dashboard's dynamic payment methods: this
+// Stripe API version rejects payment_method_types. On a subscription Stripe
+// offers only methods that support recurring charges (in test: card, Link,
+// Klarna, Cash App, Amazon Pay). Affirm appears only on one time checkouts.
 
 export const STRIPE_API_VERSION = "2026-10-28.endive";
 export const CHECKOUT_UNAVAILABLE = "Checkout is not available yet. The store is coming soon.";
 const MAX_LINES = 20;
 
 export function isTestSecret(key) {
-  return typeof key === "string" && /^sk_test_[A-Za-z0-9_]+$/.test(key.trim());
+  return typeof key === "string" && /^(sk|rk)_test_[A-Za-z0-9_]+$/.test(key.trim());
+}
+
+export function isLiveSecret(key) {
+  return typeof key === "string" && /^(sk|rk)_live_[A-Za-z0-9_]+$/.test(key.trim());
+}
+
+// "live" only when STRIPE_MODE is exactly live (case and spaces ignored).
+export function resolveStripeMode(env = process.env) {
+  return String((env && env.STRIPE_MODE) || "").trim().toLowerCase() === "live" ? "live" : "test";
+}
+
+export function isAllowedSecret(key, stripeMode = "test") {
+  return stripeMode === "live" ? isLiveSecret(key) : isTestSecret(key);
 }
 
 export function resolveSiteUrl(env = process.env) {
@@ -63,6 +83,7 @@ export function priceCart(catalog, items) {
   const lines = [];
   let shippable = false;
   let amountCents = 0;
+  let recurring = false;
   for (const item of items) {
     const product = byId.get(item.id);
     if (!product) return { ok: false, error: "That product is not in the catalog." };
@@ -75,9 +96,15 @@ export function priceCart(catalog, items) {
     } else if (item.variantId) {
       return { ok: false, error: "That option is not available." };
     }
+    const cap = Number.isInteger(product.maxQuantity) ? product.maxQuantity : catalog.maxQuantity;
+    if (Number.isInteger(cap) && item.quantity > cap) {
+      return { ok: false, error: "You can buy at most " + cap + " of " + product.name + " per checkout." };
+    }
     const unit = variant && Number.isInteger(variant.priceCents) ? variant.priceCents : product.priceCents;
     if (!Number.isInteger(unit) || unit < 1) return { ok: false, error: "That product is not available." };
     if (product.shippable === true) shippable = true;
+    const monthly = product.billing === "monthly";
+    if (monthly) recurring = true;
     amountCents += unit * item.quantity;
     const name = variant ? product.name + " (" + variant.label + ")" : product.name;
     lines.push({
@@ -87,12 +114,14 @@ export function priceCart(catalog, items) {
       description: String(product.description || "").slice(0, 450),
       unitAmount: unit,
       quantity: item.quantity,
+      monthly,
     });
   }
   return {
     ok: true,
     lines,
     shippable,
+    recurring,
     amountCents,
     currency: catalog.currency,
   };
@@ -118,14 +147,19 @@ export function buildSessionFields(catalog, items, siteUrl) {
   }
   const cart = cartMetadata(priced.lines);
   const fields = {
-    mode: "payment",
+    mode: priced.recurring ? "subscription" : "payment",
     success_url: origin + "/success.html?session_id={CHECKOUT_SESSION_ID}",
     cancel_url: origin + "/cancel.html",
     "metadata[source]": "bouke-store",
     "metadata[bouke_cart]": cart,
-    "payment_intent_data[metadata][source]": "bouke-store",
-    "payment_intent_data[metadata][bouke_cart]": cart,
   };
+  if (priced.recurring) {
+    fields["subscription_data[metadata][source]"] = "bouke-store";
+    fields["subscription_data[metadata][bouke_cart]"] = cart;
+  } else {
+    fields["payment_intent_data[metadata][source]"] = "bouke-store";
+    fields["payment_intent_data[metadata][bouke_cart]"] = cart;
+  }
   priced.lines.forEach((line, index) => {
     const base = "line_items[" + index + "]";
     fields[base + "[quantity]"] = String(line.quantity);
@@ -134,6 +168,7 @@ export function buildSessionFields(catalog, items, siteUrl) {
     fields[base + "[price_data][product_data][name]"] = line.name;
     fields[base + "[price_data][product_data][description]"] = line.description;
     fields[base + "[price_data][product_data][metadata][product_id]"] = line.productId;
+    if (line.monthly) fields[base + "[price_data][recurring][interval]"] = "month";
     if (line.variantId) {
       fields[base + "[price_data][product_data][metadata][variant_id]"] = line.variantId;
     }
@@ -152,8 +187,8 @@ export function encodeSessionBody(fields) {
   return params.toString().replace(/%7BCHECKOUT_SESSION_ID%7D/g, "{CHECKOUT_SESSION_ID}");
 }
 
-export async function createCheckoutSession({ catalog, items, siteUrl, secretKey, fetchImpl }) {
-  if (!isTestSecret(secretKey) || !siteUrl) {
+export async function createCheckoutSession({ catalog, items, siteUrl, secretKey, stripeMode = "test", fetchImpl }) {
+  if (!isAllowedSecret(secretKey, stripeMode) || !siteUrl) {
     return { ok: false, status: 503, error: CHECKOUT_UNAVAILABLE, unavailable: true };
   }
   const built = buildSessionFields(catalog, items, siteUrl);

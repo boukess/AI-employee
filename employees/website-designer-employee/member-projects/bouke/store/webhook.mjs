@@ -1,5 +1,6 @@
 // Verifies a Stripe webhook signature and turns a completed Checkout
-// session into a plain order record. The Stripe Dashboard remains the
+// session into a plain order record. Subscription events (started,
+// renewed, cancelled) become a plain BOUKE_SUBSCRIPTION record. The Stripe Dashboard remains the
 // source of truth. This module only logs. It does not write a database.
 
 import { createHmac, timingSafeEqual } from "node:crypto";
@@ -10,6 +11,36 @@ const HANDLED = new Set([
   "checkout.session.async_payment_succeeded",
   "checkout.session.async_payment_failed",
 ]);
+const SUBSCRIPTION_EVENTS = new Set([
+  "customer.subscription.created",
+  "customer.subscription.deleted",
+  "invoice.paid",
+]);
+
+export function summarizeSubscription(event) {
+  const object = (event && event.data && event.data.object) || {};
+  const isInvoice = event.type === "invoice.paid";
+  const parent = object.parent && object.parent.subscription_details;
+  const subscriptionId = isInvoice
+    ? (parent && parent.subscription) || (typeof object.subscription === "string" ? object.subscription : "")
+    : object.id || "";
+  const metadata = (isInvoice ? parent && parent.metadata : object.metadata) || {};
+  return {
+    tag: "BOUKE_SUBSCRIPTION",
+    eventId: event.id || "",
+    eventType: event.type || "",
+    livemode: event.livemode === true,
+    subscriptionId: typeof subscriptionId === "string" ? subscriptionId : "",
+    invoiceId: isInvoice ? object.id || "" : "",
+    customerId: typeof object.customer === "string" ? object.customer : "",
+    customerEmail: isInvoice ? object.customer_email || "" : "",
+    status: object.status || "",
+    amountPaid: isInvoice && Number.isInteger(object.amount_paid) ? object.amount_paid : null,
+    currency: object.currency || "",
+    billingReason: isInvoice ? object.billing_reason || "" : "",
+    cart: metadata.bouke_cart || "",
+  };
+}
 
 function hexEqual(a, b) {
   if (typeof a !== "string" || typeof b !== "string") return false;
@@ -62,6 +93,8 @@ export function summarizeOrder(event, session) {
     eventType: event.type || "",
     livemode: event.livemode === true,
     sessionId: object.id || "",
+    mode: object.mode || source.mode || "",
+    subscriptionId: typeof object.subscription === "string" ? object.subscription : "",
     paymentStatus: object.payment_status || source.payment_status || "",
     amountTotal: Number.isInteger(object.amount_total) ? object.amount_total : null,
     currency: object.currency || "",
@@ -102,13 +135,21 @@ export async function handleStripeEvent({ rawBody, signature, webhookSecret, sec
   } catch {
     return { ok: false, status: 400, error: "Webhook body is not JSON." };
   }
-  if (!event || typeof event !== "object" || !HANDLED.has(event.type)) {
+  if (!event || typeof event !== "object") {
+    return { ok: true, status: 200, ignored: true };
+  }
+  const writer = log || ((line) => console.log(line));
+  if (SUBSCRIPTION_EVENTS.has(event.type)) {
+    const subscription = summarizeSubscription(event);
+    writer(JSON.stringify(subscription));
+    return { ok: true, status: 200, subscription };
+  }
+  if (!HANDLED.has(event.type)) {
     return { ok: true, status: 200, ignored: true };
   }
   const sessionId = event.data && event.data.object && event.data.object.id;
   const session = await retrieveSession(sessionId, secretKey, fetchImpl);
   const order = summarizeOrder(event, session);
-  const writer = log || ((line) => console.log(line));
   writer(JSON.stringify(order));
   return { ok: true, status: 200, order };
 }

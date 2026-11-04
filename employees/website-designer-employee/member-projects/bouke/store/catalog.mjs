@@ -55,6 +55,21 @@ export function validateCatalog(catalog) {
     if (!Number.isInteger(product.priceCents) || product.priceCents < 50 || product.priceCents > 99999999) {
       errors.push(where + ".priceCents must be a whole number of cents from 50 to 99999999.");
     }
+    if (product.billing !== undefined && product.billing !== "one_time" && product.billing !== "monthly") {
+      errors.push(where + ".billing must be one_time or monthly when set.");
+    }
+    if (product.billing === "monthly" && product.shippable === true) {
+      errors.push(where + " cannot be both monthly and shippable.");
+    }
+    if (product.billing === "monthly" && Array.isArray(product.variants) && product.variants.length > 0) {
+      errors.push(where + " cannot be monthly and have variants.");
+    }
+    if (product.maxQuantity !== undefined && (!Number.isInteger(product.maxQuantity) || product.maxQuantity < 1 || product.maxQuantity > 99)) {
+      errors.push(where + ".maxQuantity must be a whole number from 1 to 99 when set.");
+    }
+    if (product.unitLabel !== undefined && (typeof product.unitLabel !== "string" || !product.unitLabel.trim())) {
+      errors.push(where + ".unitLabel must be a word like game when set.");
+    }
     if (!Array.isArray(product.images) || product.images.some((src) => typeof src !== "string" || !src.trim())) {
       errors.push(where + ".images must be a list of file paths.");
     }

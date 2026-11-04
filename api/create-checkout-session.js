@@ -4,19 +4,21 @@
 // from here. No framework is set on the project.
 
 import { loadCatalog } from "../employees/website-designer-employee/member-projects/bouke/store/catalog.mjs";
-import { createCheckoutSession, resolveSiteUrl, isTestSecret, CHECKOUT_UNAVAILABLE } from "../employees/website-designer-employee/member-projects/bouke/store/checkout.mjs";
+import { createCheckoutSession, resolveSiteUrl, resolveStripeMode, isAllowedSecret, CHECKOUT_UNAVAILABLE } from "../employees/website-designer-employee/member-projects/bouke/store/checkout.mjs";
 import { isSameOrigin, json } from "../employees/website-designer-employee/member-projects/bouke/store/http.mjs";
 
 export async function GET() {
   const { errors } = loadCatalog();
   const siteUrl = resolveSiteUrl(process.env);
-  const checkoutAvailable = errors.length === 0 && Boolean(siteUrl) && isTestSecret(process.env.STRIPE_SECRET_KEY || "");
-  return json(200, {
-    checkoutAvailable,
-    message: checkoutAvailable
-      ? "Checkout uses Stripe test mode. Payment details are entered on Stripe, not on this site."
-      : CHECKOUT_UNAVAILABLE,
-  });
+  const stripeMode = resolveStripeMode(process.env);
+  const checkoutAvailable = errors.length === 0 && Boolean(siteUrl) && isAllowedSecret(process.env.STRIPE_SECRET_KEY || "", stripeMode);
+  let message = CHECKOUT_UNAVAILABLE;
+  if (checkoutAvailable) {
+    message = stripeMode === "live"
+      ? "Payment details are entered on Stripe, not on this site."
+      : "Checkout uses Stripe test mode. No real charge is made. Payment details are entered on Stripe, not on this site.";
+  }
+  return json(200, { checkoutAvailable, testMode: checkoutAvailable ? stripeMode !== "live" : undefined, message });
 }
 
 export async function POST(request) {
@@ -46,6 +48,7 @@ export async function POST(request) {
     items: body && body.items,
     siteUrl: resolveSiteUrl(process.env),
     secretKey: process.env.STRIPE_SECRET_KEY || "",
+    stripeMode: resolveStripeMode(process.env),
   });
   if (!result.ok) {
     return json(result.status, { error: result.error, checkoutAvailable: result.unavailable ? false : undefined });

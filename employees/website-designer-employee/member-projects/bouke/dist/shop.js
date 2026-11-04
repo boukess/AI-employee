@@ -53,13 +53,33 @@
     return product.priceCents;
   }
 
+  function priceLabel(product, cents) {
+    var text = money(cents, catalog.currency);
+    if (product.billing === "monthly") return text + " a month";
+    if (product.unitLabel) return text + " per " + product.unitLabel;
+    return text + " one time";
+  }
+
+  function noteFor(product) {
+    if (product.billing === "monthly") return "Monthly subscription. It renews every month until you cancel. Stripe shows the payment methods that support subscriptions.";
+    if (product.example) return "Example placeholder. Nothing is delivered.";
+    if (product.unitLabel) return "Set the quantity in the cart to the number of " + product.unitLabel + "s. Card, Affirm, or Klarna may be offered at checkout.";
+    return "One payment. Card, Affirm, or Klarna may be offered at checkout.";
+  }
+
+  function capFor(id) {
+    var product = productById(id);
+    if (product && Number.isInteger(product.maxQuantity)) return product.maxQuantity;
+    return catalog.maxQuantity || 10;
+  }
+
   function selectedId() {
     return decodeURIComponent((location.hash || "").replace(/^#/, ""));
   }
 
   function addItem(id, variantId, quantity) {
     var cart = readCart();
-    var cap = catalog.maxQuantity || 10;
+    var cap = capFor(id);
     var found = null;
     cart.forEach(function (line) {
       if (line.id === id && (line.variantId || "") === (variantId || "")) found = line;
@@ -72,7 +92,7 @@
 
   function setQty(id, variantId, quantity) {
     var cart = readCart();
-    var cap = catalog.maxQuantity || 10;
+    var cap = capFor(id);
     var next = [];
     cart.forEach(function (line) {
       if (line.id === id && (line.variantId || "") === (variantId || "")) {
@@ -91,14 +111,15 @@
       if (product.images && product.images[0]) {
         var img = el("img");
         img.src = product.images[0];
-        img.alt = "Example graphic for " + product.name + ". Not a product photo.";
+        img.alt = product.example ? "Example graphic for " + product.name + ". Not a product photo." : "";
         card.appendChild(img);
       }
       if (product.example) card.appendChild(el("p", "example-badge", "Example placeholder"));
       if (product.lane) card.appendChild(el("p", "lane-index", product.lane));
       card.appendChild(el("h3", "", product.name));
-      card.appendChild(el("p", "shop-price", money(product.priceCents, catalog.currency)));
+      card.appendChild(el("p", "shop-price", priceLabel(product, product.priceCents)));
       card.appendChild(el("p", "", product.description));
+      card.appendChild(el("p", "muted", noteFor(product)));
       var button = el("button", "btn btn-small", (product.variants || []).length ? "Choose options" : "Add to cart");
       button.type = "button";
       button.addEventListener("click", function () {
@@ -116,7 +137,7 @@
 
   function renderDetail(root, product) {
     var panel = el("article", "card shop-detail");
-    var back = el("button", "btn btn-ghost btn-small", "Back to all goods");
+    var back = el("button", "btn btn-ghost btn-small", "Back to all packages");
     back.type = "button";
     back.addEventListener("click", function () {
       location.hash = "";
@@ -125,17 +146,17 @@
     if (product.images && product.images[0]) {
       var img = el("img");
       img.src = product.images[0];
-      img.alt = "Example graphic for " + product.name + ". Not a product photo.";
+      img.alt = product.example ? "Example graphic for " + product.name + ". Not a product photo." : "";
       panel.appendChild(img);
     }
     if (product.example) panel.appendChild(el("p", "example-badge", "Example placeholder"));
     if (product.lane) panel.appendChild(el("p", "lane-index", product.lane));
     panel.appendChild(el("h2", "", product.name));
-    panel.appendChild(el("p", "shop-price", money(product.priceCents, catalog.currency)));
+    panel.appendChild(el("p", "shop-price", priceLabel(product, product.priceCents)));
     panel.appendChild(el("p", "", product.description));
     var variantId = chosenVariants[product.id] || "";
     if (variantId) {
-      panel.querySelector(".shop-price").textContent = money(unitPrice(product, variantId), catalog.currency);
+      panel.querySelector(".shop-price").textContent = priceLabel(product, unitPrice(product, variantId));
     }
     if ((product.variants || []).length) {
       var label = el("label", "shop-option");
@@ -155,7 +176,7 @@
         variantId = select.value;
         chosenVariants[product.id] = variantId;
         var price = unitPrice(product, variantId);
-        panel.querySelector(".shop-price").textContent = money(price, catalog.currency);
+        panel.querySelector(".shop-price").textContent = priceLabel(product, price);
       });
       label.appendChild(select);
       panel.appendChild(label);
@@ -169,15 +190,11 @@
         return;
       }
       addItem(product.id, variantId, 1);
-      setStatus("Added to cart. The cart total is a preview. Stripe charges the price from the product file.");
+      setStatus("Added to cart. The cart total is a preview. Stripe charges the price set on the server.");
     });
     actions.appendChild(add);
     panel.appendChild(actions);
-    if (product.shippable) {
-      panel.appendChild(el("p", "muted", "Physical placeholder. Stripe collects a shipping address at checkout when this is in the cart."));
-    } else {
-      panel.appendChild(el("p", "muted", "Digital placeholder. No file is delivered. A shipping address is not requested for a cart that only has digital placeholders."));
-    }
+    panel.appendChild(el("p", "muted", noteFor(product)));
     root.appendChild(panel);
   }
 
@@ -190,15 +207,17 @@
       panel.appendChild(el("p", "muted", "Your cart is empty."));
     }
     var subtotal = 0;
+    var monthlyTotal = 0;
     cart.forEach(function (line, index) {
       var product = productById(line.id);
       var variant = variantById(product, line.variantId);
       var price = unitPrice(product, line.variantId);
-      subtotal += price * line.quantity;
+      if (product.billing === "monthly") monthlyTotal += price * line.quantity;
+      else subtotal += price * line.quantity;
       var row = el("div", "cart-line");
       var title = product.name + (variant ? " (" + variant.label + ")" : "");
       row.appendChild(el("p", "cart-line-name", title));
-      row.appendChild(el("p", "muted", money(price, catalog.currency)));
+      row.appendChild(el("p", "muted", priceLabel(product, price)));
       var qty = el("div", "qty");
       var minus = el("button", "", "-");
       minus.type = "button";
@@ -221,8 +240,10 @@
       panel.appendChild(row);
     });
     if (cart.length) {
-      panel.appendChild(el("p", "shop-subtotal", "Preview total " + money(subtotal, catalog.currency)));
-      panel.appendChild(el("p", "muted", "Stripe recalculates this from the product file before you pay."));
+      if (subtotal) panel.appendChild(el("p", "shop-subtotal", "One time preview " + money(subtotal, catalog.currency)));
+      if (monthlyTotal) panel.appendChild(el("p", "shop-subtotal", "Monthly preview " + money(monthlyTotal, catalog.currency) + " a month"));
+      if (monthlyTotal) panel.appendChild(el("p", "muted", "A cart with a monthly package checks out as a card subscription. One time items in the same cart are added to the first invoice."));
+      panel.appendChild(el("p", "muted", "Stripe recalculates this from the server price list before you pay."));
     }
     var button = el("button", "btn", checkoutAvailable ? "Continue to Stripe" : "Checkout coming soon");
     button.type = "button";
