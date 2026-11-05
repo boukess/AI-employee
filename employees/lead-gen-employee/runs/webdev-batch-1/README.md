@@ -45,22 +45,23 @@ Sources: help.gohighlevel.com/support/solutions/articles/155000009082, 155000001
 
 ## Part B — leads
 
-`leads.csv` has **249 leads**; **21** are imported into HighLevel so far (column `hl_contact_id` / `hl_opportunity_id` filled). Each imported contact has tags `webdev-outreach`, `batch-webdev-1`, `lang-xx`, `country-xx`; Service Interest = Freelance/Business Services; Lead Source = the page where the email was found (business's own site where we found it there, otherwise its public OpenStreetMap listing); custom fields Outreach Opener and Outreach Language; and an open opportunity "<Business> – Webdev outreach" in **BOUKE Clients → New Lead**.
+`leads.csv` has **247 leads**; **39** are imported into HighLevel so far (column `hl_contact_id` / `hl_opportunity_id` filled). Each imported contact has tags `webdev-outreach`, `batch-webdev-1`, `lang-xx`, `country-xx`; Service Interest = Freelance/Business Services; Lead Source = the page where the email was found (business's own site where we found it there, otherwise its public OpenStreetMap listing); custom fields Outreach Opener and Outreach Language; and an open opportunity "<Business> – Webdev outreach" in **BOUKE Clients → New Lead**.
 
 | Country | Leads in CSV | Imported to HighLevel |
 |---|---|---|
-| United States (US) | 120 | 10 |
-| Mexico (MX) | 30 | 3 |
-| Colombia (CO) | 19 | 1 |
-| Argentina (AR) | 15 | 1 |
-| Chile (CL) | 15 | 1 |
-| Brazil (BR) | 15 | 1 |
-| Australia (AU) | 10 | 1 |
-| Peru (PE) | 10 | 1 |
+| United States (US) | 119 | 19 |
+| Mexico (MX) | 30 | 5 |
+| Colombia (CO) | 19 | 2 |
+| Argentina (AR) | 15 | 3 |
+| Chile (CL) | 15 | 2 |
+| Brazil (BR) | 14 | 2 |
+| Australia (AU) | 10 | 2 |
+| Peru (PE) | 10 | 2 |
 | New Zealand (NZ) | 8 | 1 |
 | Philippines (PH) | 7 | 1 |
+| **Total** | **247** | **39** |
 
-Languages: en 146, es 89, pt 14 (en = English, es = Spanish, pt = Portuguese).
+Languages (all leads): en 145, es 89, pt 13; imported: en 23, es 14, pt 2 (en = English, es = Spanish, pt = Portuguese).
 
 ### How the leads were found and checked
 - Source: OpenStreetMap business listings (Geofabrik extracts, data © OpenStreetMap contributors, ODbL) that publish both an email and a website. Every lead row links the listing (`osm_listing`) and the page the email came from (`email_source_url`). No emails or names were guessed or invented.
@@ -93,4 +94,4 @@ See `EMAIL-COPY.md`: English master + Spanish (with Peru/Argentina/Chile variant
 
 ## Blocked / not done
 - HighLevel's API cannot add a dedicated sending domain → the UI steps above (DKIM record pending).
-- Remaining 228 CSV leads not yet imported to HighLevel (can be added next run).
+- Remaining 208 CSV leads (blank `hl_contact_id`) not yet imported to HighLevel; they can be added next run.
