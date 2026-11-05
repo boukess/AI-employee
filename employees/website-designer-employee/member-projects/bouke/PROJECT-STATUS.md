@@ -1,7 +1,7 @@
 # Project status — BOUKE
 
 - Brand slug: `bouke`
-- Status: **Site draft, package shop (Stripe), and clothing shop (Shopify)**
+- Status: **Dark restyle plus package shop (Stripe) and clothing shop (Shopify)**
 - Publishable path: `member-projects/bouke/dist/`
 - Records: BRAND-BRIEF, DESIGN-BRIEF, ASSET-MANIFEST, QA, STORE-SETUP, SHOPIFY-SETUP (this folder)
 - Preview: serve `dist/` with a static server (see below). Clothing shop: `/clothing.html`. Packages: `/shop.html`

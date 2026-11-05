@@ -21,7 +21,7 @@ Project record. Keep outside the published website. Blank fields are unknown, no
 | Fleet host | https://ai-employee-bouke1.vercel.app | Fleet context | Confirmed | Yes |
 | Secondary host | https://ai-employee-fawn.vercel.app | Fleet context | Sourced | Footer optional; primary link uses bouke1 |
 | GitHub | https://github.com/boukess/AI-employee | Fleet context | Confirmed | Yes |
-| Contact email | — | — | Unresolved | No — do not invent |
+| Contact email | boukeorg@gmail.com | Designer restyle on the approved pages, 2026-11-05 | Sourced from that restyle | Yes, mailto only. Forms still do not send. |
 | Logo file | — | — | Unresolved | Typography wordmark only |
 | Testimonials / metrics | — | — | Unresolved | Omitted |
 
