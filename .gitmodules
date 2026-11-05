@@ -29,3 +29,31 @@
 [submodule "integrations/earshot"]
 	path = integrations/earshot
 	url = https://github.com/boukess/earshot.git
+
+[submodule "integrations/solidcraft"]
+	path = integrations/solidcraft
+	url = https://github.com/boukess/solidcraft.git
+
+[submodule "integrations/Compositor"]
+	path = integrations/Compositor
+	url = https://github.com/boukess/Compositor.git
+
+[submodule "integrations/genoffice"]
+	path = integrations/genoffice
+	url = https://github.com/genspark-ai/genoffice.git
+
+[submodule "integrations/Concat"]
+	path = integrations/Concat
+	url = https://github.com/jub0t/Concat.git
+
+[submodule "integrations/photocraft"]
+	path = integrations/photocraft
+	url = https://github.com/storytold/photocraft.git
+
+[submodule "integrations/GIMP-ML"]
+	path = integrations/GIMP-ML
+	url = https://github.com/kritiksoman/GIMP-ML.git
+
+[submodule "integrations/PixPic"]
+	path = integrations/PixPic
+	url = https://github.com/Yalantis/PixPic.git

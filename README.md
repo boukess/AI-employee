@@ -198,7 +198,7 @@ The eight are free for good. The Agent Ops Masterclass, the premium software lib
 
 ## Creative tools
 
-Eight video, motion and audio repositories are available as pinned Git submodules in [integrations/](integrations/README.md). See the integration guide for download, setup and update instructions.
+Fifteen video, motion, audio, image editing, CAD and office repositories are available as pinned Git submodules in [integrations/](integrations/README.md). See the integration guide for download, setup and update instructions.
 
 ## Contributing
 
