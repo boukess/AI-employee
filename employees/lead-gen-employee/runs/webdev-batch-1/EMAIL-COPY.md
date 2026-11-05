@@ -26,14 +26,13 @@ Hi {{contact.company_name}} team,
 
 {{contact.outreach_opener}}
 
-I'm Michael with BOUKE LLC (frbouke.com). We build custom websites and web or mobile apps for small businesses. We also take on frontend and backend work on sites you already have: fixes, speed, new features, online booking or ordering, and integrations.
+I'm Michael with BOUKE LLC. We build custom websites and web or mobile apps for small businesses. We also take on frontend and backend work on sites you already have: fixes, speed, new features, online booking or ordering, and integrations.
 
 If it would help, I'll do a free quick review of your current site: a short list of what I'd fix first and roughly what it would take. There's no cost and no obligation.
 
 Would you like me to send it over?
 
 Michael, BOUKE LLC
-https://frbouke.com
 
 —
 You're receiving this one-time business email because your address is listed publicly for {{contact.company_name}}. If you'd rather not hear from us, reply "STOP" or "no thanks" and you won't be contacted again, or unsubscribe here: {{email.unsubscribe_link}}
@@ -53,14 +52,13 @@ Hola, equipo de {{contact.company_name}}:
 
 {{contact.outreach_opener}}
 
-Soy Michael, de BOUKE LLC (frbouke.com). Creamos sitios web y aplicaciones web o móviles a la medida para pequeñas empresas. También hacemos trabajo de frontend y backend en sitios que ya tienen: correcciones, velocidad, nuevas funciones, reservas o pedidos en línea e integraciones.
+Soy Michael, de BOUKE LLC. Creamos sitios web y aplicaciones web o móviles a la medida para pequeñas empresas. También hacemos trabajo de frontend y backend en sitios que ya tienen: correcciones, velocidad, nuevas funciones, reservas o pedidos en línea e integraciones.
 
 Si les sirve, con gusto hago una revisión rápida y gratuita de su sitio actual: una lista corta de lo que yo arreglaría primero y lo que tomaría, aproximadamente. Sin costo y sin compromiso.
 
 ¿Les gustaría que se la envíe?
 
 Michael, BOUKE LLC
-https://frbouke.com
 
 —
 Recibe este correo comercial único porque su dirección aparece publicada para {{contact.company_name}}. Si prefiere no recibir más mensajes, responda "STOP" o "no, gracias" y no volveremos a contactarle, o dése de baja aquí: {{email.unsubscribe_link}}
@@ -104,14 +102,13 @@ Olá, equipe da {{contact.company_name}},
 
 {{contact.outreach_opener}}
 
-Sou o Michael, da BOUKE LLC (frbouke.com). Criamos sites e aplicativos web ou mobile sob medida para pequenas empresas. Também fazemos trabalhos de frontend e backend em sites que vocês já têm: correções, velocidade, novas funcionalidades, agendamento ou pedidos online e integrações.
+Sou o Michael, da BOUKE LLC. Criamos sites e aplicativos web ou mobile sob medida para pequenas empresas. Também fazemos trabalhos de frontend e backend em sites que vocês já têm: correções, velocidade, novas funcionalidades, agendamento ou pedidos online e integrações.
 
 Se for útil, faço uma revisão rápida e gratuita do site atual de vocês: uma lista curta do que eu corrigiria primeiro e do que seria necessário, mais ou menos. Sem custo e sem compromisso.
 
 Posso enviar?
 
 Michael, BOUKE LLC
-https://frbouke.com
 
 —
 Você está recebendo este e-mail comercial único porque o endereço está publicado para {{contact.company_name}}. Se preferir não receber mais mensagens, responda "STOP" ou "não, obrigado" e não entraremos mais em contato, ou cancele aqui: {{email.unsubscribe_link}}
