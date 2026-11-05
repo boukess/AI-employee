@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
+  <script>document.documentElement.classList.add("js-nav")</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -16,9 +17,11 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="logo" href="#top" aria-label="BOUKE home">BOUKE</a>
-      <nav class="nav" aria-label="Primary">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav" aria-label="Primary">
         <a href="#content">Content</a>
-        <a href="./shop.html">Shop</a>
+        <a href="./clothing.html">Shop</a>
+        <a href="./shop.html">Packages</a>
         <a href="#help-ways">Ways we help</a>
         <a href="#need-help">Need help</a>
         <a href="#business">Business</a>
@@ -84,6 +87,19 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Shop</h2>
+          <p>
+            Clothing from BOUKE. Photos, prices, and buy links show up when a piece is live.
+            Payment for clothing happens on Shopify. This site does not collect card or bank numbers.
+          </p>
+        </div>
+        <a class="btn" href="./clothing.html">Visit the shop</a>
+      </div>
+    </section>
+
+    <section class="section" id="packages">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Packages</h2>
           <p>
             Editing and photography packages: Shorts Starter ($400 a month), Creator Growth ($900 a month),
             Local Business Visuals ($650 one time), and Game-day coverage ($150 per game).
@@ -221,7 +237,8 @@
       <div class="footer-links">
         <a href="https://ai-employee-bouke1.vercel.app" rel="noopener noreferrer">Fleet host</a>
         <a href="https://github.com/boukess/AI-employee" rel="noopener noreferrer">GitHub</a>
-        <a href="./shop.html">Shop</a>
+        <a href="./clothing.html">Shop</a>
+        <a href="./shop.html">Packages</a>
         <a href="#need-help">Need help</a>
       </div>
     </div>
@@ -230,6 +247,7 @@
     </div>
   </footer>
 
+  <script src="./nav.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>

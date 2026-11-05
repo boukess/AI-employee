@@ -86,7 +86,26 @@ code {
   color: var(--muted);
   font-size: 0.95rem;
 }
-.nav a:hover { color: var(--ink); }
+.nav a:hover,
+.nav a[aria-current="page"] { color: var(--ink); }
+.nav a[aria-current="page"] { font-weight: 700; }
+.nav-toggle {
+  display: none;
+  align-items: center;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.nav-toggle:focus-visible,
+.nav a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
 
 .btn {
   display: inline-flex;
@@ -323,6 +342,44 @@ main h1 {
   display: block;
   margin: 0 0 0.9rem;
 }
+.clothing-grid .shop-card {
+  display: flex;
+  flex-direction: column;
+}
+.clothing-grid .shop-card img,
+.clothing-grid .shop-photo-fallback {
+  aspect-ratio: 1 / 1;
+}
+.shop-photo-fallback {
+  border-radius: 12px;
+  background:
+    radial-gradient(120px 80px at 30% 30%, var(--accent-soft), transparent 70%),
+    var(--bg-alt);
+  margin: 0 0 0.9rem;
+}
+.clothing-grid .shop-card h3 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 1.45rem;
+}
+.clothing-grid .shop-card .btn { margin-top: auto; align-self: flex-start; }
+.shop-coming {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 2.25rem 1.75rem;
+  box-shadow: var(--shadow);
+  max-width: 40rem;
+}
+.shop-coming h2 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.1;
+  margin: 0 0 0.75rem;
+  color: var(--ink);
+}
+.shop-coming p:last-child { margin: 0; color: var(--muted); }
 .shop-detail { display: grid; gap: 0.75rem; }
 .shop-detail h2 {
   font-family: var(--display);
@@ -406,7 +463,34 @@ main h1 {
 }
 
 @media (max-width: 860px) {
-  .nav { display: none; }
+  .header-inner { flex-wrap: wrap; }
+  .js-nav .nav-toggle { display: inline-flex; }
+  .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    order: 5;
+    padding-bottom: 0.4rem;
+  }
+  .nav a {
+    padding: 0.8rem 0;
+    border-top: 1px solid var(--line);
+  }
+  .js-nav .nav {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    width: auto;
+    order: 0;
+    padding: 0.25rem 1.25rem 1rem;
+    background: #f6f1e8;
+    border-bottom: 1px solid var(--line);
+    box-shadow: var(--shadow);
+  }
+  .js-nav .nav.is-open { display: flex; }
   .hero-grid, .card-grid, .lane-grid, .form-row, .shop-layout {
     grid-template-columns: 1fr;
   }

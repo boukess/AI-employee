@@ -22,6 +22,10 @@
       "destination": "/employees/website-designer-employee/member-projects/bouke/dist/shop.html"
     },
     {
+      "source": "/clothing.html",
+      "destination": "/employees/website-designer-employee/member-projects/bouke/dist/clothing.html"
+    },
+    {
       "source": "/success.html",
       "destination": "/employees/website-designer-employee/member-projects/bouke/dist/success.html"
     },
@@ -40,6 +44,14 @@
     {
       "source": "/shop.js",
       "destination": "/employees/website-designer-employee/member-projects/bouke/dist/shop.js"
+    },
+    {
+      "source": "/clothing.js",
+      "destination": "/employees/website-designer-employee/member-projects/bouke/dist/clothing.js"
+    },
+    {
+      "source": "/nav.js",
+      "destination": "/employees/website-designer-employee/member-projects/bouke/dist/nav.js"
     },
     {
       "source": "/products.json",
