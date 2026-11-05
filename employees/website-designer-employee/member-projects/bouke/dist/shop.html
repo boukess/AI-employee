@@ -3,21 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BOUKE shop</title>
+  <title>BOUKE packages</title>
   <meta name="description" content="BOUKE editing and photography packages: Shorts Starter, Creator Growth, Local Business Visuals, and Game-day coverage. Payment happens on Stripe." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
+  <script>document.documentElement.classList.add("js-nav")</script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="logo" href="./index.html" aria-label="BOUKE home">BOUKE</a>
-      <nav class="nav" aria-label="Primary">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav" aria-label="Primary">
         <a href="./index.html#content">Content</a>
-        <a href="./shop.html" aria-current="page">Shop</a>
+        <a href="./clothing.html">Shop</a>
+        <a href="./shop.html" aria-current="page">Packages</a>
         <a href="./index.html#help-ways">Ways we help</a>
         <a href="./index.html#need-help">Need help</a>
         <a href="./index.html#business">Business</a>
@@ -30,7 +33,7 @@
       <div class="wrap">
         <div class="section-head">
           <p class="eyebrow">BOUKE LLC</p>
-          <h1>Shop</h1>
+          <h1>Packages</h1>
           <p>
             Editing and photography packages from BOUKE. Monthly packages renew each month until you cancel.
             Card numbers are never typed on this page. Stripe hosts the payment page.
@@ -54,6 +57,7 @@
       </div>
       <div class="footer-links">
         <a href="./index.html">Home</a>
+        <a href="./clothing.html">Shop</a>
         <a href="https://ai-employee-bouke1.vercel.app" rel="noopener noreferrer">Fleet host</a>
         <a href="https://github.com/boukess/AI-employee" rel="noopener noreferrer">GitHub</a>
       </div>
@@ -62,6 +66,7 @@
       <p class="fineprint">No card or bank details are collected on this site. Payments are processed by Stripe.</p>
     </div>
   </footer>
+  <script src="./nav.js"></script>
   <script src="./shop.js"></script>
 </body>
 </html>

@@ -1,11 +1,11 @@
 # Project status — BOUKE
 
 - Brand slug: `bouke`
-- Status: **First site draft plus an example shop (Stripe test mode)**
+- Status: **Site draft, package shop (Stripe), and clothing shop (Shopify)**
 - Publishable path: `member-projects/bouke/dist/`
-- Records: BRAND-BRIEF, DESIGN-BRIEF, ASSET-MANIFEST, QA, STORE-SETUP (this folder)
-- Preview: serve `dist/` with a static server (see below). Shop: `/shop.html`
-- Blockers: Contact email Unknown; no logo; no member content posts yet; form backend unfinished by design; real goods are not listed; Stripe test keys are not in the repo
+- Records: BRAND-BRIEF, DESIGN-BRIEF, ASSET-MANIFEST, QA, STORE-SETUP, SHOPIFY-SETUP (this folder)
+- Preview: serve `dist/` with a static server (see below). Clothing shop: `/clothing.html`. Packages: `/shop.html`
+- Blockers: Contact email Unknown; no logo; no member content posts yet; form backend unfinished by design; Shopify storefront token is not in the repo (the clothing page stays on coming soon until it is set; see SHOPIFY-SETUP.md)
 - Next: Member review; replace example products; connect Stripe test keys on Vercel (see STORE-SETUP); optional connect email/form backend; add real content cards
 - CoS: Parent will FYI Chief of Staff
 

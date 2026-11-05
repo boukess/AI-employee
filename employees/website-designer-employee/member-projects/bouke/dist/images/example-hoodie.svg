@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Example graphic, not a product photo">
+  <rect width="800" height="600" fill="#f6f1e8"/>
+  <path d="M246 188 L330 132 L400 196 L470 132 L554 188 L518 262 L478 236 L492 470 L308 470 L322 236 L282 262 Z" fill="#c45c26"/>
+  <path d="M352 214 H448 V292 H352 Z" fill="#f6f1e8"/>
+  <text x="400" y="540" text-anchor="middle" font-family="Georgia, serif" font-size="42" fill="#c45c26">EXAMPLE</text>
+</svg>

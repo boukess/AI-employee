@@ -30,4 +30,5 @@ Project record. Keep outside the published website. Blank fields are unknown, no
 - Reversible choices made and why: Content-forward warm portfolio/hub (not Lab cinematic dark demo) to match a multi-offer content + help brand without fake product theater.
 - Missing essentials or conflicting evidence: No logo, no contact email, no member posts yet for the content grid.
 - Facts deliberately omitted from public copy: No invented case studies, testimonials, or “messages sent” states.
-- Shop exception, 2026-11-02: `store/products.json` holds three labelled EXAMPLE products with placeholder prices. They are not offers and not real BOUKE prices. The shop page says so. See STORE-SETUP.md.
+- Shop exception, 2026-11-02: `store/products.json` holds the service packages. See STORE-SETUP.md.
+- Clothing shop, 2026-11-05: `/clothing.html` reads the Shopify Storefront API on the server. With no token or no published products it shows a coming soon state. It does not invent live garments. See SHOPIFY-SETUP.md.

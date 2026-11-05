@@ -13,7 +13,8 @@ Checked against Stripe's docs on 2026-11-02. Stripe changes eligibility, so open
 | Product file (edit this) | `employees/website-designer-employee/member-projects/bouke/store/products.json` |
 | Public copy of that file | `dist/products.json` (created by the sync command below) |
 | Pricing, checkout, webhook logic | `store/checkout.mjs`, `store/webhook.mjs`, `store/catalog.mjs` |
-| Shop pages | `dist/shop.html`, `dist/success.html`, `dist/cancel.html`, `dist/shop.js` |
+| Package pages | `dist/shop.html`, `dist/success.html`, `dist/cancel.html`, `dist/shop.js` |
+| Clothing shop | `dist/clothing.html`, `dist/clothing.js`, `/api/shopify-products` |
 | Vercel functions | `/api/create-checkout-session` and `/api/stripe-webhook` at the repository root |
 
 The Vercel project `ai-employee` (team bouke1, domains `https://frbouke.com` and `https://ai-employee-bouke1.vercel.app`) deploys this whole repository with no framework preset. Root `vercel.json` serves the BOUKE site at `/` and leaves `/api` as serverless functions. Do not put secrets in `vercel.json`.
@@ -169,7 +170,7 @@ The test fails if `dist/products.json` does not match `store/products.json`.
 ## 8. Try a test payment
 
 1. Deploy with the test key and `SITE_URL` set.
-2. Open `/shop.html`.
+2. Open `/shop.html` (the package catalog). The clothing shop is `/clothing.html` and does not use this Stripe checkout.
 3. Add a package (for example Game-day coverage, set to 2 games, or Shorts Starter for a subscription). Continue to Stripe.
 4. Pay with Stripe's test card `4242 4242 4242 4242`, any future expiry, any CVC, any postal code. Use Stripe's test mode prompts for Affirm, Klarna, or PayPal. Do not use a real card.
 5. You should land on `/success.html`. Canceling lands on `/cancel.html` and keeps the cart in this browser.
@@ -183,7 +184,7 @@ From `employees/website-designer-employee/member-projects/bouke/dist`:
 python3 -m http.server 8765
 ```
 
-Open `http://127.0.0.1:8765/shop.html`. The grid, detail, and cart work. Checkout stays on "coming soon" because the API and keys are not there. That is expected.
+Open `http://127.0.0.1:8765/shop.html`. The package grid, detail, and cart work. Checkout stays on "coming soon" because the API and keys are not there. That is expected. The clothing shop is `http://127.0.0.1:8765/clothing.html` (see SHOPIFY-SETUP.md).
 
 Full checkout locally needs the Vercel CLI (`vercel dev`) with the same env vars in a gitignored `.env`. This repository does not require that for the tests. The tests mock Stripe.
 
