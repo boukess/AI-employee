@@ -45,21 +45,21 @@ Sources: help.gohighlevel.com/support/solutions/articles/155000009082, 155000001
 
 ## Part B — leads
 
-`leads.csv` has **245 leads**; **57** are imported into HighLevel so far (column `hl_contact_id` / `hl_opportunity_id` filled). Each imported contact has tags `webdev-outreach`, `batch-webdev-1`, `lang-xx`, `country-xx`; Service Interest = Freelance/Business Services; Lead Source = the page where the email was found (business's own site where we found it there, otherwise its public OpenStreetMap listing); custom fields Outreach Opener and Outreach Language; and an open opportunity "<Business> – Webdev outreach" in **BOUKE Clients → New Lead**.
+`leads.csv` has **244 leads**; **84** are imported into HighLevel so far (column `hl_contact_id` / `hl_opportunity_id` filled). Each imported contact has tags `webdev-outreach`, `batch-webdev-1`, `lang-xx`, `country-xx`; Service Interest = Freelance/Business Services; Lead Source = the page where the email was found (business's own site where we found it there, otherwise its public OpenStreetMap listing); custom fields Outreach Opener and Outreach Language; and an open opportunity "<Business> – Webdev outreach" in **BOUKE Clients → New Lead**.
 
 | Country | Leads in CSV | Imported to HighLevel |
 |---|---|---|
-| United States (US) | 118 | 28 |
-| Mexico (MX) | 30 | 7 |
-| Colombia (CO) | 19 | 4 |
-| Argentina (AR) | 15 | 4 |
-| Chile (CL) | 14 | 3 |
-| Brazil (BR) | 14 | 3 |
-| Australia (AU) | 10 | 2 |
-| Peru (PE) | 10 | 2 |
-| New Zealand (NZ) | 8 | 2 |
-| Philippines (PH) | 7 | 2 |
-| **Total** | **245** | **57** |
+| United States (US) | 117 | 40 |
+| Mexico (MX) | 30 | 11 |
+| Colombia (CO) | 19 | 6 |
+| Argentina (AR) | 15 | 5 |
+| Chile (CL) | 14 | 4 |
+| Brazil (BR) | 14 | 4 |
+| Australia (AU) | 10 | 4 |
+| Peru (PE) | 10 | 4 |
+| New Zealand (NZ) | 8 | 3 |
+| Philippines (PH) | 7 | 3 |
+| **Total** | **244** | **84** |
 
 Languages (all leads): en 145, es 89, pt 13; imported: en 23, es 14, pt 2 (en = English, es = Spanish, pt = Portuguese).
 
@@ -94,4 +94,4 @@ See `EMAIL-COPY.md`: English master + Spanish (with Peru/Argentina/Chile variant
 
 ## Blocked / not done
 - HighLevel's API cannot add a dedicated sending domain → the UI steps above (DKIM record pending).
-- Remaining 188 CSV leads (blank `hl_contact_id`) not yet imported to HighLevel; they can be added next run.
+- Remaining 160 CSV leads (blank `hl_contact_id`) not yet imported to HighLevel; they can be added next run.
