@@ -1,0 +1,31 @@
+[submodule "integrations/take-one"]
+	path = integrations/take-one
+	url = https://github.com/boukess/take-one.git
+
+[submodule "integrations/rossark-motion-skill"]
+	path = integrations/rossark-motion-skill
+	url = https://github.com/boukess/rossark-motion-skill.git
+
+[submodule "integrations/huashu-motion"]
+	path = integrations/huashu-motion
+	url = https://github.com/boukess/huashu-motion.git
+
+[submodule "integrations/reanimate"]
+	path = integrations/reanimate
+	url = https://github.com/boukess/reanimate.git
+
+[submodule "integrations/argo"]
+	path = integrations/argo
+	url = https://github.com/boukess/argo.git
+
+[submodule "integrations/explainroo"]
+	path = integrations/explainroo
+	url = https://github.com/boukess/explainroo.git
+
+[submodule "integrations/video-director"]
+	path = integrations/video-director
+	url = https://github.com/boukess/video-director.git
+
+[submodule "integrations/earshot"]
+	path = integrations/earshot
+	url = https://github.com/boukess/earshot.git
