@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "phase": "awaiting_metrics",
+  "metrics_files": [],
+  "posts_ingested": 0,
+  "hypotheses_open": 0,
+  "rules_confirmed": 0,
+  "last_brief": null,
+  "last_handle_audit": null,
+  "next_action": "Ask the member for metric exports; run handle audit for frbouke if asked.",
+  "updated_at": "2026-11-07"
+}

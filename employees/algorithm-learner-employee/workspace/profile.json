@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "brand": "BOUKE",
+  "handle": "frbouke",
+  "site": "https://frbouke.com",
+  "pillars": ["photography", "sports", "gaming", "lifestyle"],
+  "platforms": ["youtube", "youtube-shorts", "tiktok", "instagram-reels", "x"],
+  "channel_urls": {},
+  "named_public_competitors": [],
+  "metric_sources": [],
+  "rule_recipients": ["social-media-employee", "thumbnail-employee", "video-editor-employee", "seo-employee"],
+  "open_questions": ["Channel URLs per platform", "Which exports can you provide (YouTube Studio, TikTok, Instagram, X, Buffer)?", "Public competitor/brand accounts to benchmark"],
+  "updated_at": "2026-11-07"
+}

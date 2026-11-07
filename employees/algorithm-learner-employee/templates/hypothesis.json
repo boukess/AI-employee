@@ -1,0 +1,13 @@
+{
+  "id": "H-001",
+  "platform": "tiktok | youtube | shorts | instagram-reels | x",
+  "statement": "Posts with a hook <=1.5s get higher engagement rate than 3-5s hooks",
+  "dimension": "hook | hour | weekday | format | caption | thumbnail",
+  "metric": "engagement_rate | avg_view_pct | views",
+  "evidence": {"source_files": [], "groups": {}, "n_total": 0},
+  "test_plan": "Next 6 posts: alternate hook lengths, same pillar",
+  "status": "open",
+  "rule_for": ["social-media-employee", "video-editor-employee"],
+  "created": "YYYY-MM-DD",
+  "checked": []
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "ai-employee/1",
+  "slug": "algorithm-learner-employee",
+  "name": "Algorithm Learner Employee",
+  "role": "Platform algorithm learning and posting rules",
+  "version": "1.0.0",
+  "standard": "kit",
+  "repository": "https://github.com/boukess/AI-employee",
+  "license": "MIT",
+  "requires": {"harness": ["grok-bot", "claude-code", "codex", "chatgpt-project", "claude-project"]},
+  "integrations": [
+    {"path": "integrations/social-media-performance-analysis", "license": "not reported", "use": "BOUKE's own post metrics dashboard"},
+    {"path": "integrations/social-analyzer", "license": "AGPL-3.0", "use": "frbouke handle audit and member-named public brand accounts only; never private individuals"}
+  ],
+  "connections": [],
+  "routines": [],
+  "files": {
+    "kit": ["AGENTS.md","GROK.md","README.md","START-HERE.md","CAPABILITIES.md","CONTRACT.md","ROLE.md","INTEGRATIONS.md","VERSION","employee.json",".agents/skills/**","templates/**","scripts/**","docs/**"],
+    "member": ["workspace/**"]
+  },
+  "notes": {
+    "kind": "Conversational analytics kit. Weekly algorithm rules brief for Social Media, Thumbnail, Video Editor, SEO employees. Never posts.",
+    "member": "workspace/ holds profile, metrics, rules, briefs, outputs. Upgrades must not wipe member workspace."
+  }
+}
