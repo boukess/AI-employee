@@ -9,7 +9,7 @@
 | Google Fonts | DM Sans, Instrument Serif | fonts.googleapis.com | Public webfont | Requires network for styled preview |
 | Fleet host link | https://ai-employee-bouke1.vercel.app | Member / fleet | Public URL | Footer + content card |
 | GitHub link | https://github.com/boukess/AI-employee | Fleet | Public URL | Content + footer |
-| Logo | — | — | Missing | Wordmark CSS only |
+| Logo | `dist/assets/bouke-mark-clear.png` (other mark files sit beside it) | Designer restyle 2026-11-05 | Member project | Transparent white mark. Used in the header and hero. |
 | Photos / product shots | — | — | None supplied | Not used |
 | Generated imagery | — | — | N/A | None generated |
 

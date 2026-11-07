@@ -60,6 +60,10 @@
     {
       "source": "/images/:file",
       "destination": "/employees/website-designer-employee/member-projects/bouke/dist/images/:file"
+    },
+    {
+      "source": "/assets/:file",
+      "destination": "/employees/website-designer-employee/member-projects/bouke/dist/assets/:file"
     }
   ]
 }

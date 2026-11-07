@@ -7,7 +7,7 @@
   <meta name="description" content="BOUKE is a hub for content, freelance work, and business help with AI employees. Enjoy the work, ask for help, or start a business conversation." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
   <script>document.documentElement.classList.add("js-nav")</script>
 </head>
@@ -16,7 +16,10 @@
 
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="logo" href="#top" aria-label="BOUKE home">BOUKE</a>
+      <a class="logo" href="#top" aria-label="BOUKE home">
+        <img class="logo-mark" src="./assets/bouke-mark-clear.png" alt="ブーケ" width="120" height="32" />
+        <span class="logo-word">BOUKE <span class="logo-jp">ブーケ</span></span>
+      </a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
       <nav class="nav" id="site-nav" aria-label="Primary">
         <a href="#content">Content</a>
@@ -46,6 +49,7 @@
           </div>
         </div>
         <div class="hero-panel" aria-hidden="true">
+          <img class="hero-panel-mark" src="./assets/bouke-mark-clear.png" alt="" width="320" height="85" />
           <div class="orbit">
             <span class="chip chip-a">Freelance</span>
             <span class="chip chip-b">Content</span>
@@ -65,9 +69,9 @@
         </div>
         <div class="card-grid">
           <article class="card">
-            <h3>Fleet &amp; tools</h3>
-            <p>Live AI employee fleet and product work lives on the host site. Open it when you want the working apps, not just the overview.</p>
-            <a class="text-link" href="https://ai-employee-bouke1.vercel.app" rel="noopener noreferrer">Open ai-employee-bouke1.vercel.app</a>
+            <h3>Public site</h3>
+            <p>The live BOUKE hub is at frbouke.com. Open it when you want the public site, not just this draft preview.</p>
+            <a class="text-link" href="https://frbouke.com" rel="noopener noreferrer">Open frbouke.com</a>
           </article>
           <article class="card">
             <h3>Coming soon on this page</h3>
@@ -75,9 +79,9 @@
             <p class="muted">No posts published on this page yet.</p>
           </article>
           <article class="card">
-            <h3>GitHub</h3>
-            <p>Open source and employee kits for the fleet.</p>
-            <a class="text-link" href="https://github.com/boukess/AI-employee" rel="noopener noreferrer">github.com/boukess/AI-employee</a>
+            <h3>AI employee fleet</h3>
+            <p>Design, advisory, sales, and related kits live in the BOUKE fleet. The GitHub repo for that kit is private, so visitors cannot browse it publicly.</p>
+            <a class="text-link" href="https://github.com/boukess" rel="noopener noreferrer">github.com/boukess</a>
           </article>
         </div>
       </div>
@@ -93,12 +97,7 @@
           </p>
         </div>
         <a class="btn" href="./clothing.html">Visit the shop</a>
-      </div>
-    </section>
-
-    <section class="section" id="packages">
-      <div class="wrap">
-        <div class="section-head">
+        <div class="section-head section-follow">
           <h2>Packages</h2>
           <p>
             Editing and photography packages: Shorts Starter ($400 a month), Creator Growth ($900 a month),
@@ -144,6 +143,7 @@
             Open blank for anything. Forms on this page are <strong>not connected to a server yet</strong>.
             Your answers stay in the browser until you download a <code>.txt</code> note or copy them.
             No fake “sent” confirmation.
+            Prefer email? Write <a href="mailto:boukeorg@gmail.com">boukeorg@gmail.com</a> — forms still do not auto-send.
           </p>
         </div>
         <form class="form" id="help-form" novalidate>
@@ -177,6 +177,7 @@
           <p>
             For business inquiries so BOUKE can get more detail. Unknowns are fine — leave a field blank.
             Same rule: <strong>not emailed automatically</strong>. Download or copy your answers; connect a real inbox later.
+            Or email <a href="mailto:boukeorg@gmail.com">boukeorg@gmail.com</a> directly.
           </p>
         </div>
         <form class="form" id="biz-form" novalidate>
@@ -233,17 +234,19 @@
       <div>
         <strong>BOUKE LLC</strong>
         <p class="muted">Freelance · Content creation · Business &amp; AI employees</p>
+        <p class="muted">frbouke</p>
       </div>
       <div class="footer-links">
-        <a href="https://ai-employee-bouke1.vercel.app" rel="noopener noreferrer">Fleet host</a>
-        <a href="https://github.com/boukess/AI-employee" rel="noopener noreferrer">GitHub</a>
+        <a href="https://frbouke.com" rel="noopener noreferrer">frbouke.com</a>
+        <a href="https://github.com/boukess" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:boukeorg@gmail.com">boukeorg@gmail.com</a>
         <a href="./clothing.html">Shop</a>
         <a href="./shop.html">Packages</a>
         <a href="#need-help">Need help</a>
       </div>
     </div>
     <div class="wrap">
-      <p class="fineprint">Contact email not set on this page yet. Forms do not submit to a server.</p>
+      <p class="fineprint">Contact: <a href="mailto:boukeorg@gmail.com">boukeorg@gmail.com</a>. Forms do not submit to a server — download or copy only.</p>
     </div>
   </footer>
 
