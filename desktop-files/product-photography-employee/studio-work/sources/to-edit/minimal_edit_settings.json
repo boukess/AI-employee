@@ -1,0 +1,182 @@
+[
+  {
+    "file": "IDG_20261011_162137_035_minimal.jpg",
+    "size": [
+      4024,
+      3016
+    ],
+    "exposure_ev": 0.12,
+    "shadow_lift": 0.12,
+    "white_balance_rgb": [
+      1.012,
+      1.0,
+      0.992
+    ],
+    "color": 1.015
+  },
+  {
+    "file": "IMG_0022_minimal.jpg",
+    "size": [
+      1570,
+      3141
+    ],
+    "exposure_ev": 0.08,
+    "shadow_lift": 0.1,
+    "white_balance_rgb": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "color": 1.01
+  },
+  {
+    "file": "IMG_2216_minimal.jpg",
+    "size": [
+      3024,
+      4032
+    ],
+    "exposure_ev": 0.08,
+    "shadow_lift": 0.07,
+    "white_balance_rgb": [
+      1.012,
+      1.0,
+      0.99
+    ],
+    "color": 1.0
+  },
+  {
+    "file": "IMG_3760_minimal.jpg",
+    "size": [
+      2304,
+      1536
+    ],
+    "exposure_ev": 0.02,
+    "shadow_lift": 0.04,
+    "white_balance_rgb": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "color": 1.01
+  },
+  {
+    "file": "IMG_3859_minimal.jpg",
+    "size": [
+      4000,
+      6000
+    ],
+    "exposure_ev": 0.0,
+    "shadow_lift": 0.025,
+    "white_balance_rgb": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "color": 1.0
+  },
+  {
+    "file": "IMG_3965_minimal.jpg",
+    "size": [
+      3024,
+      4032
+    ],
+    "exposure_ev": 0.0,
+    "shadow_lift": 0.04,
+    "white_balance_rgb": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "color": 1.0
+  },
+  {
+    "file": "IMG_5740_minimal.jpg",
+    "size": [
+      3024,
+      4032
+    ],
+    "exposure_ev": 0.03,
+    "shadow_lift": 0.055,
+    "white_balance_rgb": [
+      1.008,
+      1.0,
+      0.994
+    ],
+    "color": 1.015
+  },
+  {
+    "file": "IMG_5743_minimal.jpg",
+    "size": [
+      1637,
+      2456
+    ],
+    "exposure_ev": 0.03,
+    "shadow_lift": 0.05,
+    "white_balance_rgb": [
+      1.008,
+      1.0,
+      0.994
+    ],
+    "color": 1.015
+  },
+  {
+    "file": "IMG_5766_minimal.jpg",
+    "size": [
+      3024,
+      4032
+    ],
+    "exposure_ev": 0.03,
+    "shadow_lift": 0.055,
+    "white_balance_rgb": [
+      1.008,
+      1.0,
+      0.994
+    ],
+    "color": 1.015
+  },
+  {
+    "file": "IMG_7704_minimal.jpg",
+    "size": [
+      4536,
+      8064
+    ],
+    "exposure_ev": 0.07,
+    "shadow_lift": 0.14,
+    "white_balance_rgb": [
+      1.008,
+      1.0,
+      1.008
+    ],
+    "color": 1.0
+  },
+  {
+    "file": "IMG_7881_minimal.jpg",
+    "size": [
+      1242,
+      2208
+    ],
+    "exposure_ev": 0.0,
+    "shadow_lift": 0.025,
+    "white_balance_rgb": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "color": 1.0
+  },
+  {
+    "file": "IMG_7909_minimal.jpg",
+    "size": [
+      4536,
+      8064
+    ],
+    "exposure_ev": 0.0,
+    "shadow_lift": 0.025,
+    "white_balance_rgb": [
+      0.989,
+      1.0,
+      1.018
+    ],
+    "color": 1.0
+  }
+]

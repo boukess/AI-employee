@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Start here · AI Ghostwriter Employee</title>
+<style>
+:root{color-scheme:light;--ink:#111;--paper:#fdfdfb;--muted:#595953;--line:#deded6;--yellow:#ffda28}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.wrap{max-width:1080px;margin:auto;padding:36px 44px 52px}header{display:flex;align-items:center;justify-content:space-between;padding-bottom:26px;border-bottom:1px solid var(--ink);gap:24px}.brand{font-size:13px;font-weight:850;letter-spacing:.12em}.edition{font-size:12px;color:var(--muted)}
+main{padding-top:52px}.eyebrow{font-size:12px;font-weight:750;letter-spacing:.15em;text-transform:uppercase;display:flex;align-items:center;gap:10px}.dot{width:9px;height:9px;background:var(--yellow);border:1px solid var(--ink);border-radius:50%}
+h1{font-size:clamp(48px,7vw,82px);font-weight:850;line-height:1;letter-spacing:-.065em;margin:22px 0 24px;max-width:840px}h1 span{background:linear-gradient(transparent 58%,var(--yellow) 58%);padding-right:8px}.intro{color:var(--muted);max-width:620px;font-size:19px;margin-bottom:38px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;border-top:1px solid var(--line);padding:28px 0 32px}.number{font:13px/1.2 monospace;color:var(--muted)}h2{font-size:19px;line-height:1.25;margin:13px 0 9px;letter-spacing:-.02em}.steps p{font-size:14px;color:var(--muted);margin:0}.steps strong{color:var(--ink)}
+.launch{border:1px solid var(--ink);border-radius:12px;padding:25px 28px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;background:white}.label{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}.prompt{font-size:17px;font-weight:650;margin:0;max-width:680px;white-space:pre-wrap}.actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}button,.button{border:1px solid var(--ink);border-radius:7px;background:var(--ink);color:white;font:650 14px/1.4 inherit;padding:12px 17px;cursor:pointer;text-decoration:none;display:inline-block;white-space:nowrap}button{font-family:inherit;font-size:14px}.button.secondary{background:white;color:var(--ink)}button:hover,.button:hover{opacity:.8}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #2471cf;outline-offset:4px}#copy-status{min-height:23px;font-size:13px;color:var(--muted);margin:8px 0 16px}
+.fallback{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:32px;border-bottom:1px solid var(--line)}.fallback p{font-size:14px;margin:0;max-width:630px}.fallback strong{display:block;margin-bottom:3px}
+.bottom{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin:26px 0}.bottom p,.bottom li{color:var(--muted);font-size:14px}.bottom ul{padding-left:19px}.bottom li{padding-bottom:6px}details{border-top:1px solid var(--line);padding:17px 0;font-size:14px}summary{font-weight:650;cursor:pointer}details p{max-width:760px;color:var(--muted)}a{color:inherit;text-underline-offset:3px}footer{display:flex;justify-content:space-between;gap:20px;margin-top:26px;font-size:11px;letter-spacing:.03em;color:var(--muted)}
+@media(max-width:720px){.wrap{padding:24px}.edition{max-width:125px;text-align:right}main{padding-top:34px}.steps{grid-template-columns:1fr;gap:23px}.steps section{display:grid;grid-template-columns:28px 1fr;column-gap:10px}.steps h2{margin:0 0 7px}.steps p{grid-column:2}.number{padding-top:5px}.launch{grid-template-columns:1fr;padding:21px}.fallback{align-items:flex-start;flex-direction:column}.bottom{grid-template-columns:1fr;gap:8px}h1{font-size:54px}.intro{font-size:17px}footer{flex-direction:column;gap:6px}.prompt{font-size:16px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+@media print{button,.actions,#copy-status{display:none}.wrap{padding:0}.launch{display:block}details{display:block}footer{margin-top:12px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><div class="brand">AI EMPLOYEE LAB</div><div class="edition">GHOSTWRITER / 01<br>MEMBER STARTER</div></header>
+<main>
+<div class="eyebrow"><span class="dot" aria-hidden="true"></span>Your AI Ghostwriter Employee</div>
+<h1>Your ideas.<br><span>In your voice.</span></h1>
+<p class="intro">Turn rough thoughts into emails, articles, and stories that sound like you. Your employee finds useful samples, learns from your edits, and handles the drafting.</p>
+<div class="steps">
+<section><span class="number">01</span><h2>Open a conversation.</h2><p>Use Claude or ChatGPT. A fresh chat works. A project is useful if you want to keep the work together.</p></section>
+<section><span class="number">02</span><h2>Add your employee.</h2><p>Attach the downloaded <strong>zip</strong>. If it will not open, use the single text file below.</p></section>
+<section><span class="number">03</span><h2>Say “Go.”</h2><p>Your employee starts with what it can access and asks for a simple sample only when it needs one.</p></section>
+</div>
+<div class="launch"><div><div class="label">Your first message</div><p class="prompt" id="kickoff">Go. Read the AI Ghostwriter Employee instructions and start. Use the context and tools you can access, find samples of my voice, and write a short first draft.</p></div><button type="button" id="copy">Copy message</button></div>
+<p id="copy-status" role="status" aria-live="polite"></p>
+<div class="fallback"><p><strong>Zip not opening? Use this file.</strong>Upload GHOSTWRITER.txt instead. It contains the whole workflow. You can also open it, copy the text, and paste it into the chat.</p><a class="button secondary" href="GHOSTWRITER.txt" download>Get the text file</a></div>
+<div class="bottom">
+<section><h2>You already have a voice.</h2><p>Sent emails. Social posts. A video where you explain something. Even a messy voice note. Your employee helps you find a starting point.</p><p>No writing samples? Tell it: <strong>“Ask me something I can answer naturally.”</strong></p></section>
+<section><h2>Give it something to work on.</h2><ul><li>“Turn this idea into an email to my customers.”</li><li>“Write an article about this in my voice.”</li><li>“Help me tell the story of what happened.”</li><li>“Suggest three things I could write this week.”</li></ul></section>
+</div>
+<details><summary>How do I keep my progress?</summary><p>Say <strong>“Save my progress.”</strong> Keep the MY-GHOSTWRITER-MEMORY.txt file or text it gives you. In a new chat, add it alongside GHOSTWRITER.txt and say <strong>“Continue.”</strong> Keep this personal save for yourself.</p></details>
+<details><summary>What if I use a local project folder?</summary><p>Open the unzipped <strong>AI Ghostwriter Employee</strong> folder in Claude Code, Codex, or an assistant with folder access. Say <strong>“Go.”</strong> Its instructions are in AGENTS.md and CLAUDE.md, and your work is saved in workspace/ when file writing is available.</p></details>
+<details><summary>Can it use my computer and old conversations?</summary><p>Only when your assistant actually has that access. It uses relevant available tools and memory, then gives you an easy alternative for anything it cannot open. The download itself does not install tools or grant access. It works during your active conversation.</p></details>
+</main>
+<footer><span>AI GHOSTWRITER EMPLOYEE · VERSION 1.0.0</span><span>YOUR PRIVATE SAVE IS SEPARATE FROM THIS STARTER.</span></footer>
+</div>
+<script>
+document.getElementById('copy').addEventListener('click',async function(){
+ const el=document.getElementById('kickoff'),status=document.getElementById('copy-status');
+ try{if(!navigator.clipboard)throw new Error('Unavailable');await navigator.clipboard.writeText(el.textContent);status.textContent='Copied. Paste it into your conversation after adding the file.';this.textContent='Copied';}
+ catch(error){const range=document.createRange();range.selectNodeContents(el);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);status.textContent='Message selected. Press Ctrl+C or Command+C to copy, then paste it into your conversation.';}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "durationInFrames": 1163,
+  "scenes": [
+    {
+      "id": "hook",
+      "from": 0,
+      "duration": 110,
+      "kind": "custom",
+      "layout": "top",
+      "theme": "corpus-white",
+      "title": ""
+    },
+    {
+      "id": "resolve-intro",
+      "from": 110,
+      "duration": 75,
+      "kind": "custom",
+      "layout": "full",
+      "theme": "corpus-white",
+      "title": ""
+    },
+    {
+      "id": "manual",
+      "from": 185,
+      "duration": 130,
+      "kind": "custom",
+      "layout": "top",
+      "theme": "corpus-white",
+      "title": ""
+    },
+    {
+      "id": "connect",
+      "from": 315,
+      "duration": 105,
+      "kind": "custom",
+      "layout": "top",
+      "theme": "corpus-white",
+      "title": ""
+    },
+    {
+      "id": "your-video",
+      "from": 420,
+      "duration": 107,
+      "kind": "custom",
+      "layout": "top",
+      "theme": "corpus-white",
+      "title": ""
+    },
+    {
+      "id": "automatic",
+      "from": 527,
+      "duration": 108,
+      "kind": "custom",
+      "layout": "full",
+      "theme": "corpus-white",
+      "title": ""
+    },
+    {
+      "id": "color",
+      "from": 635,
+      "duration": 58,
+      "kind": "custom",
+      "layout": "top",
+      "theme": "corpus-white",
+      "title": ""
+    },
+    {
+      "id": "trim",
+      "from": 693,
+      "duration": 40,
+      "kind": "custom",
+      "layout": "top",
+      "theme": "corpus-white",
+      "title": ""
+    },
+    {
+      "id": "motion",
+      "from": 733,
+      "duration": 97,
+      "kind": "custom",
+      "layout": "full",
+      "theme": "corpus-white",
+      "title": ""
+    },
+    {
+      "id": "prompt",
+      "from": 830,
+      "duration": 111,
+      "kind": "custom",
+      "layout": "top",
+      "theme": "corpus-white",
+      "title": ""
+    },
+    {
+      "id": "pipeline",
+      "from": 941,
+      "duration": 67,
+      "kind": "custom",
+      "layout": "full",
+      "theme": "corpus-white",
+      "title": ""
+    },
+    {
+      "id": "comment",
+      "from": 1008,
+      "duration": 102,
+      "kind": "custom",
+      "layout": "top",
+      "theme": "corpus-white",
+      "title": ""
+    },
+    {
+      "id": "guide",
+      "from": 1110,
+      "duration": 53,
+      "kind": "custom",
+      "layout": "top",
+      "theme": "corpus-white",
+      "title": ""
+    }
+  ],
+  "captionCues": []
+}

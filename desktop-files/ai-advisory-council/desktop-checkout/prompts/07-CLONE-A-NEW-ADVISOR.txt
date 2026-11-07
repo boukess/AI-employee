@@ -1,0 +1,32 @@
+AI ADVISORY COUNCIL | PROMPT 07: CLONE A NEW ADVISOR
+
+Add someone to your council: a business owner you admire, a mentor (with their permission), or yourself. Give them a seat the council does not already cover, such as operations, finance, hiring, sales or your industry.
+
+LOCAL FOLDER (Claude Code, Cowork or Codex): use Part A. The AI researches the person, builds the advisor into advisors/ and adds them to your roster. Standard depth takes 1 to 3 hours of the AI working; deep takes 3 to 6. It needs Python 3 and a free tool called yt-dlp, and it asks before installing anything. To clone yourself, put your transcripts, SOPs and posts in clone-a-brain/sources/ first.
+
+WEB PROJECT (Claude or ChatGPT): first build the clone with the Clone-A-Brain Kit prompts: clone-a-brain/prompts/01 to 03 (or 05 for yourself or a mentor), then test it with 04. Upload the new Brain file to your council project, then use Part B in a chat inside that project.
+
+Fill in the [BRACKETS] and paste only the part you need.
+
+================ PART A: LOCAL FOLDER. COPY FROM HERE DOWN TO PART B ================
+
+Clone [FULL NAME, PLUS COMPANY OR ROLE]'s brain and add them to my council.
+Seat: [THE QUESTIONS THEY SHOULD OWN, OR "suggest one"]
+Depth: [standard OR deep]
+Must include: [A BOOK, PODCAST OR ERA YOU KNOW MATTERS, OR "none"]
+
+Follow clone-a-brain/CLONE-PROCEDURE.md: Part A for a public person, or Part B if this is me or a mentor who has agreed (my files are in clone-a-brain/sources/). Write the advisor into advisors/ and add them to council/Council-Roster.md: a seats row, their names, the routing rows that fit their seat, and an agree and clash line with each advisor. Then run the five tests from Part C and tell me what passed. Keep me posted with one line per stage.
+
+================ PART B: WEB PROJECT. COPY EVERYTHING BELOW THIS LINE ================
+
+Add a new advisor to my council: [NAME]. Their brain is [PREFIX]-Brain.md in project knowledge.
+
+Read their brain (sections 1, 3, 10 and 13) and Council-Roster.md. Then give me the complete updated Council-Roster.md in one block, with:
+1. A new row in the seats table (advisor, seat, best for, not for, files), marked "(cloned, [MONTH YEAR])".
+2. Their names in the names table.
+3. Their name added to the routing rows that match their seat.
+4. One agree and clash line with each existing advisor, from section 13 of their brain. Write "stated views" where nothing is documented.
+Change nothing else in the roster.
+
+Then tell me in 3 lines: the seat they hold, which questions will now go to them, and the 3 best first questions to ask them.
+I will delete the old Council-Roster.md from project knowledge and upload the new one.

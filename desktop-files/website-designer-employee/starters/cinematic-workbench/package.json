@@ -1,0 +1,16 @@
+{
+  "name": "cinematic-workbench-starter",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/scene.js --bundle --minify --format=iife --target=es2020 --outfile=dist/scene.js --legal-comments=eof"
+  },
+  "dependencies": {
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  },
+  "description": "An original, fictional cinematic website starter with locally bundled Three.js."
+}

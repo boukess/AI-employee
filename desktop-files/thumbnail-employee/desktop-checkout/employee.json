@@ -1,0 +1,46 @@
+{
+  "schema": "ai-employee/1",
+  "slug": "thumbnail-employee",
+  "name": "Thumbnail Employee",
+  "role": "Thumbnails",
+  "version": "1.0.0",
+  "standard": "kit",
+  "repository": "https://github.com/boukess/AI-employee",
+  "license": "MIT",
+  "requires": {
+    "harness": [
+      "grok-bot",
+      "claude-code",
+      "codex",
+      "chatgpt-project",
+      "claude-project"
+    ]
+  },
+  "connections": [],
+  "routines": [],
+  "files": {
+    "kit": [
+      "AGENTS.md",
+      "GROK.md",
+      "CAPABILITIES.md",
+      "CONTRACT.md",
+      "ROLE.md",
+      "VERSION",
+      "employee.json",
+      "START-HERE.md",
+      "CHATGPT-STARTER.txt",
+      "PACKAGE-MANIFEST.json",
+      "thumbnail-designer/**",
+      "templates/**",
+      "scripts/**",
+      "docs/**"
+    ],
+    "member": [
+      "workspace/**"
+    ]
+  },
+  "notes": {
+    "kind": "Conversational thumbnail design kit. No Standard 1.5 scheduled routines. One agent; builds reference library and generates thumbnails with host image tools.",
+    "member": "workspace/ holds profile, library, briefs, and outputs. Upgrades must not wipe member workspace."
+  }
+}

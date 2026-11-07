@@ -1,0 +1,60 @@
+CLONE-A-BRAIN | PROMPT 03 OF 05: WRITE THE INSTRUCTIONS
+
+WHAT THIS DOES
+Writes the instructions you paste into a ChatGPT or Claude Project. They tell the AI who it is, how the person thinks, how they talk and how to answer. Under 7,500 characters, because some apps cut off longer instructions without warning.
+
+HOW TO USE
+1. Stay in the same chat as prompt 02, or start a new one.
+2. Attach:
+   - [First-Last]-Brain.md (from prompt 02)
+   - templates/INSTRUCTIONS-TEMPLATE.txt
+3. Fill in the [BRACKETS] below the line and paste everything below the line.
+4. Save the result as [First-Last]-Instructions.txt.
+5. Check the length: paste it into any free online character counter. It must be under 7,500 characters, spaces included. If it is over, reply: "Trim it to under 7,300 characters. Keep the guardrails."
+6. Then set it up. The steps are at the bottom of this file.
+
+================ COPY EVERYTHING BELOW THIS LINE ================
+
+Write the project instructions for an AI advisor, by filling in the attached INSTRUCTIONS-TEMPLATE.txt from the attached brain file.
+
+PERSON: [Full name as people know them. Example: Alex Hormozi]
+FILE PREFIX: [Example: Alex-Hormozi]
+RESEARCH DATE: [Month and year. Example: October 2026]
+
+RULES
+1. Follow the template's structure and headings exactly: WHO YOU ARE, YOUR KNOWLEDGE, HOW YOU THINK, YOUR FRAMEWORKS, HOW YOU DIAGNOSE, HOW YOU TALK, HOW YOU ANSWER, GUARDRAILS.
+2. Replace {NAME} and {Name} with the person's name. Where the template names a file, use the prefix: [PREFIX]-Brain.md.
+3. Take the seat from the brain's header. Take the content from the brain only. Do not add anything from memory.
+4. HOW YOU THINK: the 8 to 12 most important core beliefs, one line each.
+5. YOUR FRAMEWORKS: the 5 to 8 most useful frameworks, one to two lines each, with enough of the mechanics that the advisor can use them even if it never opens the brain file.
+6. HOW YOU DIAGNOSE: the 5 to 8 questions they ask first.
+7. HOW YOU TALK: tone, sentence patterns and how they deliver hard truths, then 5 to 8 signature phrases with the note "used sparingly".
+8. Keep HOW YOU ANSWER and every GUARDRAILS line from the template. Replace {Month YYYY} with the research date.
+9. Plain text only. No Markdown, no bold, no bullet symbols other than "-". Straight quotes.
+10. HARD LIMIT: under 7,500 characters including spaces and line breaks. Aim for 6,500 to 7,300. If you can run code, count the characters with code and report the exact number. If you cannot, estimate carefully and say it is an estimate.
+11. If you must trim, trim in this order: framework lines to one line each, fewer signature phrases, shorter belief lines. Never cut the guardrails.
+
+OUTPUT
+The finished instructions inside one code block, then one line: "Characters: [number] (counted with code / estimated)".
+
+================ AFTER THIS PROMPT: SET UP YOUR ADVISOR ================
+
+You need two files: [First-Last]-Instructions.txt and [First-Last]-Brain.md.
+If an upload rejects the .md file, rename it to .txt and upload again.
+
+CLAUDE PROJECT (any plan, including Free)
+1. Go to claude.ai/projects, or open Projects in the left sidebar.
+2. Click + New project. Name it, for example "Alex Hormozi Advisor". Create it.
+3. Click Set project instructions. Paste everything in [First-Last]-Instructions.txt. Click Save instructions.
+4. In project knowledge, click + and upload [First-Last]-Brain.md.
+5. Start a chat inside the project.
+
+CHATGPT PROJECT (any plan)
+1. In the sidebar, click New project. Enter a name and pick an icon and color.
+2. Open the project, then ••• > Project settings. Paste everything in [First-Last]-Instructions.txt. Optional: set Memory to Project-only memory. Save.
+3. In the project's Sources area, add [First-Last]-Brain.md.
+4. Start a new chat from inside the project.
+
+Custom GPTs: only Business, Enterprise and Edu workspaces can still create them, and they are scheduled to retire on 11 December 2026. Use a Project.
+
+NEXT: run the five tests in 04-Test-Your-Clone.txt inside the new project.

@@ -1,0 +1,38 @@
+"""Portable paths; no machine-specific configuration is distributed."""
+import os
+from pathlib import Path
+import shutil
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+
+def project_path(value):
+    path = Path(value).expanduser()
+    return path if path.is_absolute() else ROOT / path
+
+def resolve_python(config):
+    override = os.environ.get('AI_VIDEO_EDITOR_RESOLVE_PYTHON') or config.get('resolve_python')
+    if override and override != 'auto':
+        candidate = project_path(override)
+        if candidate.is_file():
+            return str(candidate)
+        raise FileNotFoundError('Configured ResolvePython is missing: ' + str(candidate))
+    candidates = [
+        Path('/Applications/DaVinci Resolve/DaVinci Resolve.app/Contents/Applications/ResolvePython'),
+        Path(os.environ.get('ProgramFiles', r'C:\Program Files')) / 'Blackmagic Design/DaVinci Resolve/ResolvePython/ResolvePython.exe',
+        Path('/opt/resolve/bin/ResolvePython'),
+    ]
+    for candidate in candidates:
+        if candidate.is_file():
+            return str(candidate)
+    raise FileNotFoundError('ResolvePython not found. Install DaVinci Resolve Studio 21.1+ or set resolve_python in config/editor.json to its executable.')
+
+def remotion_command():
+    node = shutil.which('node')
+    cli = ROOT / 'node_modules/@remotion/cli/remotion-cli.js'
+    if not node or not cli.is_file():
+        raise RuntimeError('Run setup first: Node.js and local Remotion are required.')
+    return [node, str(cli)]
+
+def venv_python():
+    return ROOT / '.venv' / ('Scripts/python.exe' if os.name == 'nt' else 'bin/python3')

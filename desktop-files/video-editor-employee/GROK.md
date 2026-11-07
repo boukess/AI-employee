@@ -1,0 +1,7 @@
+﻿# AI Video Editor (Grok)
+
+Read and follow **AGENTS.md** in this folder; it is the shared operating instruction for this employee. Use Grok Bot with local execution on the same computer as DaVinci Resolve (IBP_Desktop Shell / computer tools), not a cloud-only chat upload.
+
+For setup, read docs/SETUP.md and docs/SETUP-GROK.md. On IBP_Desktop the installed Resolve is the **free** edition, so this pack runs in free mode (`resolve_edition: free`); read docs/FREE-RESOLVE.md. For a raw video, run the inbox diagnostic and proceed through docs/WORKFLOW.md to the final MP4. Work as one editing agent with no review or critique agents. Ask for creative feedback only after export.
+
+Add-on packs (Split-Screen Editor, Brand Motion Studio, Remotion effect skills) live under `addons/`. Read `addons/ADDONS.md` when the request is split-screen, brand/logo promo, or a listed effect skill rather than a talking-head Resolve edit.

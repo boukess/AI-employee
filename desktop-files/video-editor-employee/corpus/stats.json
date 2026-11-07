@@ -1,0 +1,12 @@
+{
+  "indexed": 38,
+  "sources": 4,
+  "types": {
+    "overlay_split": 21,
+    "cutaway_fullscreen": 17
+  },
+  "median_segment_seconds": 2.593,
+  "missing": [],
+  "indexed_at": "2026-10-25T01:10:54.228192+00:00",
+  "note": "Labels come from the supplied face-position classifier; captions describe whole source videos, not individual shots."
+}

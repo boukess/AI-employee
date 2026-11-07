@@ -1,0 +1,36 @@
+# Grok Bot routines (parent registers). America/New_York.
+# Each recurring task: name = routine id, fire = SCHEDULE.md fire column, prompt = Shape B line below.
+# Cron expressions below are 5-field, America/New_York.
+
+# web-site-sweep | mon-fri | 06:45 | window 06:30-09:45 | budget 25 | browser heavy
+# cron: 45 6 * * 1-5
+Read /workspace/AI-employee/employees/web-dev-employee/routines/web-site-sweep/SKILL.md and follow it.
+
+# web-standup | mon-fri | 07:30 | window 07:15-11:30 | budget 15 | browser never
+# cron: 30 7 * * 1-5
+Read /workspace/AI-employee/employees/web-dev-employee/routines/web-standup/SKILL.md and follow it.
+
+# web-fix-runner | mon-fri | 08:10 | window 08:00-13:00 | budget 40 | browser conditional
+# cron: 10 8 * * 1-5
+Read /workspace/AI-employee/employees/web-dev-employee/routines/web-fix-runner/SKILL.md and follow it.
+
+# web-platform-guard | mon | 10:30 | window 10:15-15:00 | budget 30 | browser heavy
+# cron: 30 10 * * 1
+Read /workspace/AI-employee/employees/web-dev-employee/routines/web-platform-guard/SKILL.md and follow it.
+
+# web-inventory-refresh | first-weekday | 11:45 | window 11:30-16:00 | budget 45 | browser light
+# cron: approximate; Grok Bot may need "first weekday" semantics. Fire 11:45 local. Suggested: 45 11 1-7 * 1-5 with routine window/day guard deciding.
+# Prefer harness first-weekday if available. Else: 45 11 * * 1-5 and let Step 0.1 skip non-first-weekdays.
+Read /workspace/AI-employee/employees/web-dev-employee/routines/web-inventory-refresh/SKILL.md and follow it.
+
+# web-dependency-run | wed | 13:30 | window 13:15-17:00 | budget 40 | browser conditional
+# cron: 30 13 * * 3
+Read /workspace/AI-employee/employees/web-dev-employee/routines/web-dependency-run/SKILL.md and follow it.
+
+# web-weekly-report | fri | 15:30 | window 15:15-18:00 | budget 35 | browser light
+# cron: 30 15 * * 5
+Read /workspace/AI-employee/employees/web-dev-employee/routines/web-weekly-report/SKILL.md and follow it.
+
+# web-guardrail-review | last-weekday | 16:45 | window 16:30-19:30 | budget 20 | browser never
+# cron: approximate last weekday. Suggested: 45 16 * * 1-5 with routine deciding last-weekday.
+Read /workspace/AI-employee/employees/web-dev-employee/routines/web-guardrail-review/SKILL.md and follow it.

@@ -1,0 +1,7 @@
+#!/bin/sh
+set -eu
+EDITOR_ROOT=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+if [ -x "$EDITOR_ROOT/.venv/bin/python3" ]; then
+  exec "$EDITOR_ROOT/.venv/bin/python3" "$EDITOR_ROOT/scripts/editor.py" "$@"
+fi
+exec python3 "$EDITOR_ROOT/scripts/editor.py" "$@"

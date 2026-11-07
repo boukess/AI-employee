@@ -1,0 +1,60 @@
+{
+  "currency": "usd",
+  "shippingCountries": ["US"],
+  "maxQuantity": 10,
+  "products": [
+    {
+      "id": "shorts-starter",
+      "example": false,
+      "lane": "editing",
+      "name": "Shorts Starter",
+      "billing": "monthly",
+      "maxQuantity": 1,
+      "description": "Monthly editing for creators and small businesses. Each month: 8 edited vertical shorts (cuts, captions, sound) and 8 matching covers or thumbnails, with a 48 hour turnaround per batch once your raw footage arrives. Billed $400 every month until you cancel.",
+      "priceCents": 40000,
+      "shippable": false,
+      "images": [],
+      "variants": []
+    },
+    {
+      "id": "creator-growth",
+      "example": false,
+      "lane": "editing",
+      "name": "Creator Growth",
+      "billing": "monthly",
+      "maxQuantity": 1,
+      "description": "Monthly editing for channels that post long form and short form. Each month: 12 edited shorts, 2 long form edits, a thumbnail for each video, and 1 montage. Billed $900 every month until you cancel.",
+      "priceCents": 90000,
+      "shippable": false,
+      "images": [],
+      "variants": []
+    },
+    {
+      "id": "local-business-visuals",
+      "example": false,
+      "lane": "photography",
+      "name": "Local Business Visuals",
+      "billing": "one_time",
+      "maxQuantity": 1,
+      "description": "One half day shoot at your business, then 15 retouched product photos or headshots and 4 Reels cut from the shoot. We confirm the shoot date and location with you after checkout. One payment of $650.",
+      "priceCents": 65000,
+      "shippable": false,
+      "images": [],
+      "variants": []
+    },
+    {
+      "id": "game-day-coverage",
+      "example": false,
+      "lane": "sports",
+      "name": "Game-day coverage",
+      "billing": "one_time",
+      "unitLabel": "game",
+      "maxQuantity": 10,
+      "description": "Photo coverage of one game or event, an edited gallery delivered within 48 hours, and 1 highlight short. $150 per game. Set the quantity to the number of games. We confirm dates and venue permission with you after checkout.",
+      "priceCents": 15000,
+      "shippable": false,
+      "images": [],
+      "variants": []
+    }
+  ]
+}

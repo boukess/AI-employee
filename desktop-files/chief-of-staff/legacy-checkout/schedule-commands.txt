@@ -1,0 +1,34 @@
+# Chief of Staff schedule commands for parent registration on Grok Bot.
+# Times from SCHEDULE.md. Timezone: America/New_York.
+# Parent creates seven UpdateRoutine jobs. This install did NOT register them.
+# scheduled execution: not yet verified
+
+# cos-fleet-reconcile | days mon-fri | fire 07:15 | window 07:00-11:30 | budget 20 min | browser never
+# Invoke: run the routine at /workspace/AI-employee/employees/chief-of-staff/routines/cos-fleet-reconcile
+
+# cos-fault-dossier | days mon-fri | fire 14:30 | window 14:15-18:00 | budget 25 min | browser never
+# Invoke: run the routine at /workspace/AI-employee/employees/chief-of-staff/routines/cos-fault-dossier
+
+# cos-market-sweep | days wed | fire 10:00 | window 09:45-14:00 | budget 40 min | browser heavy
+# Invoke: run the routine at /workspace/AI-employee/employees/chief-of-staff/routines/cos-market-sweep
+
+# cos-metrics-review | days thu | fire 10:30 | window 10:15-15:00 | budget 30 min | browser conditional
+# Invoke: run the routine at /workspace/AI-employee/employees/chief-of-staff/routines/cos-metrics-review
+
+# cos-decision-brief | days fri | fire 16:00 | window 15:45-19:00 | budget 30 min | browser never
+# Invoke: run the routine at /workspace/AI-employee/employees/chief-of-staff/routines/cos-decision-brief
+
+# cos-charter-and-fleet-audit | days first-weekday | fire 12:00 | window 11:45-17:00 | budget 45 min | browser light
+# Invoke: run the routine at /workspace/AI-employee/employees/chief-of-staff/routines/cos-charter-and-fleet-audit
+
+# cos-decision-review | days last-weekday | fire 13:00 | window 12:45-17:30 | budget 30 min | browser never
+# Invoke: run the routine at /workspace/AI-employee/employees/chief-of-staff/routines/cos-decision-review
+
+routine_ids:
+cos-fleet-reconcile
+cos-fault-dossier
+cos-market-sweep
+cos-metrics-review
+cos-decision-brief
+cos-charter-and-fleet-audit
+cos-decision-review

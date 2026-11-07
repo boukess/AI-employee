@@ -1,0 +1,45 @@
+{
+  "gaming_caption": {
+    "recommended_font": "Anton",
+    "fallback": "Arial Bold",
+    "size_px_at_1080x1920": 72,
+    "fill": "#FFFFFF",
+    "stroke": "#000000",
+    "stroke_px": 7,
+    "max_words": 5,
+    "emphasis": "#FFD447",
+    "position": "center x=500, y=1260; adjust around HUD"
+  },
+  "athlete_title": {
+    "recommended_font": "Bebas Neue",
+    "fallback": "Arial Bold",
+    "size_px_at_1080x1920": 110,
+    "fill": "#FFFFFF",
+    "tracking_px": 3,
+    "accent": "#FF4141",
+    "position": "x=110,y=360"
+  },
+  "meme_punchline": {
+    "recommended_font": "Bangers",
+    "fallback": "Arial Bold",
+    "size_px_at_1080x1920": 90,
+    "fill": "#FFFFFF",
+    "stroke": "#000000",
+    "stroke_px": 8
+  },
+  "tech_label": {
+    "recommended_font": "Space Mono",
+    "fallback": "Consolas",
+    "size_px_at_1080x1920": 48,
+    "fill": "#B6FF69",
+    "background": "#101014"
+  },
+  "cinematic_title": {
+    "recommended_font": "Bebas Neue",
+    "fallback": "Arial",
+    "size_px_at_1920x1080": 78,
+    "fill": "#F4F0E7",
+    "tracking_px": 5,
+    "animation": "fade in 8 frames; hold; fade out 8 frames"
+  }
+}

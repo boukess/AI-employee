@@ -1,0 +1,3 @@
+{"ts":"2026-10-24T07:31:00","routine":"leadgen-desk-standup","status":"ok","period":"2026-10-24","notes":"brief written; status READY NOW=0 on fresh kit"}
+{"ts":"2026-10-24T06:50:00","routine":"leadgen-source-run","status":"skipped-out-of-window","period":"2026-10-24"}
+{"ts":"2026-10-24T14:05:00","routine":"leadgen-export-run","status":"partial","period":"2026-10-24","blockers":["READY NOW=0"],"notes":"no qualified rows yet"}

@@ -1,0 +1,69 @@
+{
+  "last_period": "2026-10",
+  "started": "2026-10-23T22:42:00-04:00",
+  "complete": true,
+  "progress": [
+    "phase0-machine",
+    "phase1-business",
+    "phase2-fleet-map",
+    "phase3-charter",
+    "phase4-dashboard",
+    "phase5-schedule-commands-and-routines",
+    "phase6-reconcile-and-stop",
+    "phase7-handover"
+  ],
+  "recipes": [],
+  "budget_minutes_used": 45,
+  "assumptions": [
+    "BOUKE LLC has no official home website yet (member confirmed 2026-10-23). Overturn when a BOUKE landing URL is named.",
+    "wealth-check-mustang and cera-bouke1 are related install hints only, not BOUKE home.",
+    "Working hours defaulted to Mon-Fri 07:00-18:00 America/New_York; overturn by editing charter/constraints.md",
+    "Skipped claude auth status: harness is Grok Bot not Claude Code",
+    "Sibling Employees have contract+schedule but no completed first run yet; first_run none",
+    "Seven Grok Bot UpdateRoutine jobs registered by parent after Phase 6 file work",
+    "Member confirmed fleet map complete with eight Employees; no additional roots",
+    "Member confirmed no claim lines defendable yet; Member claims left empty"
+  ],
+  "first_run_completed_on": "2026-10-23",
+  "cos_root": "/workspace/AI-employee/employees/chief-of-staff",
+  "timezone_id_at_intake": "America/New_York",
+  "capability_notes": [
+    "file read outside COS_ROOT works",
+    "web.fetch and WebSearch used for crawl",
+    "browser not required for install crawl",
+    "Vercel MCP connected; Finance needsAuth; GitHub and Origin connected"
+  ],
+  "employee_roots": [
+    "/workspace/AI-employee/employees/chief-of-staff",
+    "/workspace/AI-employee/employees/ad-manager-employee",
+    "/workspace/AI-employee/employees/customer-satisfaction-employee",
+    "/workspace/AI-employee/employees/gtm-engineer",
+    "/workspace/AI-employee/employees/sales-employee",
+    "/workspace/AI-employee/employees/seo-employee",
+    "/workspace/AI-employee/employees/social-media-employee",
+    "/workspace/AI-employee/employees/web-dev-employee"
+  ],
+  "search_roots": [
+    "/workspace/AI-employee/employees"
+  ],
+  "dashboard_tabs": [
+    "Fleet",
+    "Decisions",
+    "Charter",
+    "Market",
+    "Metrics"
+  ],
+  "registered_times": {
+    "cos-fleet-reconcile": "07:15 mon-fri America/New_York",
+    "cos-fault-dossier": "14:30 mon-fri America/New_York",
+    "cos-market-sweep": "10:00 wed America/New_York",
+    "cos-metrics-review": "10:30 thu America/New_York",
+    "cos-decision-brief": "16:00 fri America/New_York",
+    "cos-charter-and-fleet-audit": "12:00 weekdays (first-weekday guard) America/New_York",
+    "cos-decision-review": "13:00 weekdays (last-weekday guard) America/New_York"
+  },
+  "seeded": {
+    "priorities": true,
+    "watchlist": true
+  }
+}

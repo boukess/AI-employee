@@ -1,0 +1,63 @@
+CLONE-A-BRAIN | PROMPT 02 OF 05: BUILD THE BRAIN
+
+WHAT THIS DOES
+Turns your research notes into the brain file (the advisor's knowledge file) and the sources file.
+
+HOW TO USE
+1. Start a NEW chat in ChatGPT or Claude. Use the strongest model you have, with extended thinking on if your plan has it. Research mode is not needed for this step.
+2. Attach these files:
+   - Your research file(s) from prompt 01
+   - templates/BRAIN-TEMPLATE.md
+   - templates/SOURCES-TEMPLATE.md
+   - Optional, but it makes the voice much better: 2 to 5 transcripts of the person talking. On YouTube in a desktop browser, open the video's description, click "Show transcript", select all of it and paste it into a text file. Pick long interviews or talks.
+3. Fill in the [BRACKETS] below the line and paste everything below the line.
+4. The brain is too long for one reply, so it comes in 4 parts. After each part, type: next
+5. Save the result:
+   - Parts 1 to 3, in order, into one plain text file named [First-Last]-Brain.md
+   - Part 4 into a file named [First-Last]-Sources.md
+   If the chat offers a downloadable file, use that instead. If your upload later rejects .md files, rename them to .txt.
+
+================ COPY EVERYTHING BELOW THIS LINE ================
+
+You are writing the knowledge file for an AI advisor built from a real business owner's public work. It must be specific enough that an AI using it gives advice that sounds like them and reasons like them, grounded in their real frameworks, rules and stories.
+
+PERSON: [Full name as people know them. Example: Alex Hormozi]
+FILE PREFIX: [Their name with hyphens. Example: Alex-Hormozi]
+THEIR SEAT ON MY COUNCIL: [Example: offers, pricing, lead generation and scaling]
+OTHER ADVISORS ON MY COUNCIL: [Example: Alex Hormozi, Gary Vee, Sam Altman, Brian Chesky, MrBeast. Or "none yet".]
+RESEARCH DATE: [Month and year. Example: October 2026]
+
+ATTACHED
+- Research notes (one or more files) with tagged items and a sources table.
+- BRAIN-TEMPLATE.md: the structure you must follow.
+- SOURCES-TEMPLATE.md: the structure for the sources file.
+- Possibly some transcripts of the person talking. Use them for voice and to confirm quotes.
+
+RULES
+1. Follow BRAIN-TEMPLATE.md exactly: all 13 sections, the same headings in the same order. Replace every piece of template guidance with real content. Replace {Name} with the person's name, and use the FILE PREFIX in file names (for example [PREFIX]-Sources.md).
+2. Use only what is in the attached files. Do not add facts, numbers, stories or quotes from memory. If a section has thin material, write what the research supports and say it is thin. Do not pad.
+3. Every framework, belief and story cites its source (short source name, from the research).
+4. Quotes: only words that appear as a [QUOTE] in the research or word for word in an attached transcript. Under 25 words each. Never write a new quote. If you are not sure it is verbatim, paraphrase without quote marks.
+5. Stories: retell only the [STORY] items from the research. Never invent a story.
+6. Paraphrase book content in your own words. No long passages.
+7. Exact mechanics: steps, numbers, thresholds and examples. "Focus on the customer" is useless. Keep the specifics from the research.
+8. Section 6: answer all 12 problems listed in the template, then add 2 to 5 problems specific to their expertise. When a problem is outside their lane, say so and give what they would still say from their principles.
+9. Section 10 (blind spots): fair and factual, with context. No gossip.
+10. Section 11: separate views from the last two years from older ones, with dates.
+11. Section 12: label it exactly "Illustrative answers written by the AI advisor, not real quotes." Each answer is 120 to 250 words, uses their frameworks and ends with what to do this week.
+12. Section 13: cover every advisor listed in OTHER ADVISORS ON MY COUNCIL. Use documented [RELATION] items where they exist. Where they do not, reason from both people's stated views and write "based on their stated views". If there are no other advisors yet, write "No other advisors yet" and still fill "Asks the member before answering" and "Their default action item".
+13. Keep the disclaimer at the top of the template. The advisor is an AI built from their public work. It is not them and not endorsed by them.
+14. Total length: 6,000 to 12,000 words across parts 1 to 3. Dense and specific. No filler.
+
+OUTPUT, IN 4 PARTS
+Put each part inside one code block so I can copy it cleanly. If you can create downloadable files, you may create the files instead.
+- Part 1: the title, the disclaimer, the header lines (seat, lens in one sentence, researched date and source count), and sections 1 to 4. Then stop and wait for me to type "next".
+- Part 2: sections 5 to 7. Then stop and wait.
+- Part 3: sections 8 to 13. Then stop and wait.
+- Part 4: the sources file, following SOURCES-TEMPLATE.md, with every source from the research, grouped as the template shows. Include the total count, the research date and a "Could not verify" list from the research's GAPS section.
+
+After part 4, give me:
+- the approximate word count of the brain,
+- any template section you could not fill well from the research, and which lens (1, 2, 3 or 4) I should run again to fill it.
+
+Start with part 1.

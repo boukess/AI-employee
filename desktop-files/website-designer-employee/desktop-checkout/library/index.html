@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="SCENE: an original cinematic website library and AI website director for AI Employee Lab members.">
+  <title>SCENE — Your next website starts here.</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="catalog.js" defer></script><script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#library">Skip to the library</a>
+<header class="topbar"><a class="wordmark" href="#">SCENE<span>✳</span></a><span class="byline">A creative toolkit by<br><strong>AI Employee Lab</strong></span><nav aria-label="Main"><a href="#library">The library</a><a href="#employee">Your AI director</a><a class="nav-cta" href="../START-HERE.md" download>Get started <span>↗</span></a></nav></header>
+<main>
+<section class="intro" aria-labelledby="intro-title">
+  <div class="eyebrow"><span class="status-dot"></span> ORIGINAL ASSETS. YOUR POINT OF VIEW.</div>
+  <h1 id="intro-title">Make something<br><em>worth looking at.</em></h1>
+  <div class="intro-bottom"><p>Cinematic scenes. Thoughtful motion. An AI director that makes them yours.<br class="desktop"> Start with a feeling. Build around your brand.</p><a class="circle-link" href="#library" aria-label="Explore the library">↓</a></div>
+</section>
+<section class="feature" aria-labelledby="feature-title">
+  <div class="feature-art" id="feature-art"></div>
+  <div class="feature-overlay"><span class="chip">01 / FEATURED SCENE</span><h2 id="feature-title">A little depth.<br>A different dimension.</h2><p>Meet Orbit. An original, real-time 3D sculpture<br>with a point of view all its own.</p><button class="light-button" data-open="orbit-sculpture">Explore Orbit <span>↗</span></button></div>
+  <button id="feature-motion" class="feature-motion" aria-pressed="false">▷ Play preview</button><span class="feature-caption">PROCEDURAL WEBGL / NO EXTERNAL ASSETS</span>
+</section>
+<section class="collection" id="library" aria-labelledby="library-title">
+  <div class="section-head"><div><span class="eyebrow">THE STARTING POINTS</span><h2 id="library-title">Choose your scene.</h2></div><p>Five original directions.<br>Endless ways to make them yours.</p></div>
+  <div class="toolbar"><div class="filters" role="group" aria-label="Filter scenes"><button aria-pressed="true" data-filter="All">All scenes <span>05</span></button><button aria-pressed="false" data-filter="3D scenes">3D scenes</button><button aria-pressed="false" data-filter="Spatial layouts">Spatial layouts</button><button aria-pressed="false" data-filter="Motion & type">Motion & type</button></div><label class="search"><span class="sr-only">Search scenes</span><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Find a feeling…" autocomplete="off"></label></div>
+  <p class="result-status sr-only" id="result-status" role="status"></p><div class="grid" id="scene-grid"></div><p id="empty-state" hidden>No scenes match that search. Try “warm”, “portfolio”, or “3D”.</p>
+</section>
+<section class="employee" id="employee" aria-labelledby="employee-title"><div class="employee-left"><span class="eyebrow">MEET YOUR AI WEBSITE DIRECTOR</span><h2 id="employee-title">Your story.<br>Its creative brief.</h2><p>SCENE learns what makes you different, chooses a direction, and turns a starter into a website that belongs to you.</p><span class="compatible">MADE FOR CLAUDE CODE + CODEX</span></div><div class="employee-right"><ol><li><span>01</span><div><h3>Give it a starting point.</h3><p>Your business name, a website link, or a rough idea. It researches what it can and asks for what matters.</p></div></li><li><span>02</span><div><h3>Find your visual language.</h3><p>It selects a scene and adapts the story, composition, colors, and motion around your brand.</p></div></li><li><span>03</span><div><h3>Build. See. Refine.</h3><p>It builds the site, checks desktop and mobile, and leaves you with editable files.</p></div></li></ol><button class="dark-button" id="copy-kickoff">Copy employee launch prompt <span>↗</span></button><p class="small-note">Open the unzipped kit in your coding agent first. Your AI plan and hosting are separate.</p></div></section>
+<section class="closing"><p>Good taste needs<br><em>good starting points.</em></p><a href="#library">Find yours ↑</a></section>
+</main>
+<footer><span class="wordmark">SCENE<span>✳</span></span><p>Original community edition · 01<br>Built to be made your own.</p><a href="../HOW-IT-WORKS.md" download>How it works ↗</a></footer>
+<dialog id="scene-dialog" aria-labelledby="dialog-title"><div class="dialog-head"><div><span class="eyebrow" id="dialog-category"></span><h2 id="dialog-title"></h2></div><button id="close-dialog" class="close-button" aria-label="Close scene preview">×</button></div><div class="dialog-body"><div class="preview-column"><div class="preview-tools"><span>LIVE PREVIEW</span><div><button id="desktop-preview" aria-pressed="true">Desktop</button><button id="mobile-preview" aria-pressed="false">Phone</button></div><a id="open-full" target="_blank" rel="noopener">Open full ↗</a></div><div class="preview-stage"><iframe id="scene-preview" title="Selected scene preview" sandbox="allow-scripts" loading="lazy"></iframe></div><p class="preview-hint">Desktop scales the full composition. Phone uses a 390px layout. Use “Open full” to explore every section.</p></div><div class="details-column"><span class="technique" id="scene-technique"></span><p id="scene-description"></p><h3>Make it yours.</h3><p class="detail-note">These details shape a prompt for your coding agent. The preview shows the original starter.</p><form id="brand-form"><label>Your brand<input id="brand-name" placeholder="e.g. Juniper Studio" maxlength="120"></label><label>What do you offer?<input id="brand-offer" placeholder="e.g. Handmade ceramics" maxlength="300"></label><label>Who is it for?<input id="brand-audience" placeholder="e.g. Design-conscious homeowners" maxlength="250"></label><label>What should visitors do?<input id="brand-cta" placeholder="e.g. Inquire about a commission" maxlength="250"></label></form><button class="dark-button" id="copy-prompt">Copy personalized build prompt <span>↗</span></button><button class="outline-button" id="download-source">Download original HTML ↓</button><p id="dialog-status" class="dialog-status" role="status" aria-live="polite"></p><details class="prompt-details"><summary>Read or select the prompt</summary><textarea id="prompt-output" readonly aria-label="Personalized build prompt"></textarea></details><p class="detail-note">Original editable source · No paid asset subscription · Fictional demo content</p></div></div></dialog>
+<dialog id="copy-dialog" aria-labelledby="copy-title"><h2 id="copy-title">Your launch prompt</h2><p>Copy this into Claude Code or Codex with the unzipped kit open.</p><textarea id="copy-text" readonly aria-label="Employee launch prompt"></textarea><button class="dark-button" id="close-copy">Done</button></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<noscript><div class="noscript">Enable JavaScript for the gallery controls, or open the individual HTML files in the layers folder. <a href="layers/orbit-sculpture.html">Open Orbit</a></div></noscript>
+</body></html>

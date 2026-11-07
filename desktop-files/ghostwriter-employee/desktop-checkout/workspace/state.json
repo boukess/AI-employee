@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "member": "BOUKE LLC",
+  "stage": "starter_profile_ideas_ready_awaiting_samples",
+  "updated_at": "2026-10-28",
+  "capabilities_note": "file read/write available; web fetch of bouke1 and fawn hosts returned 404; no founder human_original corpus yet; no publish/send",
+  "next_action": "Show calibration draft + three ideas; collect 2-3 founder-written samples or one sentence rewrite; then draft chosen idea",
+  "calibration_draft": "workspace/drafts/2026-10-28-calibration-linkedin-note.md",
+  "ideas_brief": "workspace/briefs/2026-10-28-three-ideas.md",
+  "sources_indexed": ["SRC-001", "SRC-002", "SRC-003", "SRC-004", "SRC-005"]
+}

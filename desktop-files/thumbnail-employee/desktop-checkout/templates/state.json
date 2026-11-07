@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "phase": "onboarding",
+  "research_status": "not_started",
+  "research_target": {"verified_thumbnails": 300, "creators": 20, "topic_clusters": 5},
+  "research_counts": {"verified_thumbnails": 0, "creators": 0, "topic_clusters": 0, "local_images": 0},
+  "coverage_gaps": [],
+  "completed_batches": [],
+  "next_research_actions": [],
+  "active_job": null,
+  "next_action": "Read available context and begin the creator interview.",
+  "updated_at": null
+}

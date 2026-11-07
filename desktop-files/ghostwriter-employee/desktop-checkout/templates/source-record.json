@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "id": "replace-with-stable-id",
+  "author": "member name",
+  "author_evidence": "How you know whose words these are",
+  "origin": "URL or relative path or conversation label",
+  "group": "one-original-work-id",
+  "title": "sample title",
+  "medium": "email",
+  "authorship": "unknown",
+  "purpose": "facts",
+  "confidence": "low",
+  "privacy": "private",
+  "permission_basis": "Explain ownership, user supply, or allowed excerpt use",
+  "published_at": null,
+  "retrieved_at": "YYYY-MM-DD",
+  "text": "Retained analysis text, with private identifiers removed where needed",
+  "raw_sha256": "computed when available",
+  "text_sha256": "computed when available",
+  "transformations": [],
+  "limitations": ["Authorship not yet established"]
+}

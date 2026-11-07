@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web Dev Employee</title>
+<style>
+body{font-family:system-ui,sans-serif;margin:0;background:#0f1419;color:#e7ecf3}
+header{padding:1rem 1.25rem;border-bottom:1px solid #2a3441}
+h1{margin:0;font-size:1.25rem}
+nav{display:flex;gap:0.5rem;flex-wrap:wrap;padding:0.75rem 1.25rem;border-bottom:1px solid #2a3441}
+nav button{background:#1c2430;color:#e7ecf3;border:1px solid #2a3441;border-radius:6px;padding:0.4rem 0.75rem;cursor:pointer}
+nav button.active{background:#2f6fed;border-color:#2f6fed}
+main{padding:1.25rem;max-width:960px}
+.card{background:#1c2430;border:1px solid #2a3441;border-radius:8px;padding:1rem;margin-bottom:1rem}
+.muted{color:#9aa7b8;font-size:0.9rem}
+table{width:100%;border-collapse:collapse}
+td,th{text-align:left;padding:0.35rem 0.5rem;border-bottom:1px solid #2a3441;vertical-align:top}
+.panel{display:none}
+.panel.active{display:block}
+</style>
+</head>
+<body>
+<header><h1>Web Dev Employee</h1><p class="muted">Inventory snapshot. Numbers today live in health/health-latest.md and brief-latest.md.</p></header>
+<nav>
+<button type="button" class="active" data-panel="panel-overview">Overview</button>
+<button type="button" class="" data-panel="panel-cera">cera</button>
+<button type="button" class="" data-panel="panel-nexus">nexus</button>
+<button type="button" class="" data-panel="panel-rncont">rncont</button>
+<button type="button" class="" data-panel="panel-wealth-check-mustang">wealth-check-mustang</button>
+</nav>
+<main>
+<section class="panel active" id="panel-overview">
+  <div class="card">
+    <h2>Overview</h2>
+    <p>4 projects in inventory/projects.json (generated_on 2026-10-23).</p>
+    <p class="muted">Today's numbers: health/health-latest.md and brief-latest.md.</p>
+    <table>
+      <tr><th>Project</th><th>Host project</th><th>Hostname</th><th>Test</th></tr>
+      <tr><td>CERA</td><td>cera</td><td>cera-bouke1.vercel.app</td><td>present</td></tr>
+      <tr><td>RnCont</td><td>rncount</td><td>(unread)</td><td>present</td></tr>
+      <tr><td>Wealth-Check-Mustang</td><td>wealth-check-mustang</td><td>wealth-check-mustang.vercel.app</td><td>missing</td></tr>
+      <tr><td>nexus</td><td>nexus</td><td>(unread)</td><td>missing</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="panel" id="panel-cera">
+  <div class="card">
+    <h2>CERA</h2>
+    <p class="muted">Today's numbers: health/health-latest.md and brief-latest.md.</p>
+    <table><tr><th>priority</th><td>1</td></tr><tr><th>remote</th><td>https://github.com/boukess/CERA.git</td></tr><tr><th>default_branch</th><td>main</td></tr><tr><th>production_branch</th><td>(unread)</td></tr><tr><th>package_manager</th><td>npm</td></tr><tr><th>build_command</th><td>node scripts/package-source.mjs && next build</td></tr><tr><th>test_command</th><td>tsx --test tests/*.test.ts</td></tr><tr><th>host_project</th><td>cera</td></tr><tr><th>database_project</th><td>(unbound)</td></tr><tr><th>tracked_path</th><td>/</td></tr><tr><th>public_paths</th><td>/</td></tr><tr><th>repo_path</th><td>(no local clone)</td></tr></table>
+    <h3>Hostnames</h3>
+    <table><tr><th>Hostname</th><th>Certificate expires</th></tr><tr><td>cera-bouke1.vercel.app</td><td>(unread)</td></tr></table>
+  </div>
+</section>
+
+<section class="panel" id="panel-nexus">
+  <div class="card">
+    <h2>nexus</h2>
+    <p class="muted">Today's numbers: health/health-latest.md and brief-latest.md.</p>
+    <table><tr><th>priority</th><td>4</td></tr><tr><th>remote</th><td>https://github.com/boukess/nexus.git</td></tr><tr><th>default_branch</th><td>main</td></tr><tr><th>production_branch</th><td>(unread)</td></tr><tr><th>package_manager</th><td>pnpm</td></tr><tr><th>build_command</th><td>next build</td></tr><tr><th>test_command</th><td>(none)</td></tr><tr><th>host_project</th><td>nexus</td></tr><tr><th>database_project</th><td>(unbound)</td></tr><tr><th>tracked_path</th><td>/</td></tr><tr><th>public_paths</th><td>/, /auth</td></tr><tr><th>repo_path</th><td>(no local clone)</td></tr></table>
+    <h3>Hostnames</h3>
+    <table><tr><th>Hostname</th><th>Certificate expires</th></tr><tr><td colspan=2>(no hostname read this run)</td></tr></table>
+  </div>
+</section>
+
+<section class="panel" id="panel-rncont">
+  <div class="card">
+    <h2>RnCont</h2>
+    <p class="muted">Today's numbers: health/health-latest.md and brief-latest.md.</p>
+    <table><tr><th>priority</th><td>2</td></tr><tr><th>remote</th><td>https://github.com/boukess/RnCont.git</td></tr><tr><th>default_branch</th><td>main</td></tr><tr><th>production_branch</th><td>(unread)</td></tr><tr><th>package_manager</th><td>npm</td></tr><tr><th>build_command</th><td>vite build</td></tr><tr><th>test_command</th><td>node --test tests/*.test.js</td></tr><tr><th>host_project</th><td>rncount</td></tr><tr><th>database_project</th><td>(unbound)</td></tr><tr><th>tracked_path</th><td>/</td></tr><tr><th>public_paths</th><td>/</td></tr><tr><th>repo_path</th><td>(no local clone)</td></tr></table>
+    <h3>Hostnames</h3>
+    <table><tr><th>Hostname</th><th>Certificate expires</th></tr><tr><td colspan=2>(no hostname read this run)</td></tr></table>
+  </div>
+</section>
+
+<section class="panel" id="panel-wealth-check-mustang">
+  <div class="card">
+    <h2>Wealth-Check-Mustang</h2>
+    <p class="muted">Today's numbers: health/health-latest.md and brief-latest.md.</p>
+    <table><tr><th>priority</th><td>3</td></tr><tr><th>remote</th><td>https://github.com/boukess/Wealth-Check-Mustang.git</td></tr><tr><th>default_branch</th><td>main</td></tr><tr><th>production_branch</th><td>(unread)</td></tr><tr><th>package_manager</th><td>(unread)</td></tr><tr><th>build_command</th><td>(none)</td></tr><tr><th>test_command</th><td>(none)</td></tr><tr><th>host_project</th><td>wealth-check-mustang</td></tr><tr><th>database_project</th><td>(unbound)</td></tr><tr><th>tracked_path</th><td>/</td></tr><tr><th>public_paths</th><td>/</td></tr><tr><th>repo_path</th><td>(no local clone)</td></tr></table>
+    <h3>Hostnames</h3>
+    <table><tr><th>Hostname</th><th>Certificate expires</th></tr><tr><td>wealth-check-mustang.vercel.app</td><td>(unread)</td></tr></table>
+  </div>
+</section>
+
+</main>
+<script>
+document.querySelectorAll('nav button').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('nav button').forEach(function(b){b.classList.remove('active')});
+    document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active')});
+    btn.classList.add('active');
+    var id = btn.getAttribute('data-panel');
+    var panel = document.getElementById(id);
+    if (panel) panel.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

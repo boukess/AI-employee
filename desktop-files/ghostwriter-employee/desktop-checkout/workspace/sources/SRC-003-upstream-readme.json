@@ -1,0 +1,15 @@
+{
+  "id": "SRC-003",
+  "title": "AI-employee repo README (upstream-style marketing)",
+  "canonical_url": "https://github.com/boukess/AI-employee",
+  "source_date": null,
+  "retrieval_date": "2026-10-28",
+  "authorship": "third_party",
+  "author_verification": "README still largely mirrors markfulton/ai-employees upstream marketing; not established as BOUKE founder prose.",
+  "purpose": "excluded",
+  "privacy": "public",
+  "permission_basis": "public repo read",
+  "confidence": "high_that_it_is_not_BOUKE_personal_voice",
+  "limitations": "Excluded from personal voice learning. May inform product vocabulary (AI Employee, routines) as business facts only.",
+  "retained_excerpt": "An AI Employee is a folder of scheduled routines that covers one business role."
+}

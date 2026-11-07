@@ -1,0 +1,7 @@
+cut,recipe
+hard_cut,Cut directly on action; no transition.
+punch_in,"On the punchline, cut from 100% to 118% crop."
+match_cut,Match subject position and motion across shots.
+j_cut,Start the next scene audio 0.25s before its picture.
+l_cut,Continue the previous scene audio 0.35s after its picture changes.
+reaction_hold,Hold the reaction briefly before cutting to the payoff.

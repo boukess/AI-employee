@@ -1,0 +1,8 @@
+# Member meeting notes (template README stays tracked)
+sessions/*
+!sessions/README.md
+sessions/.gitkeep
+
+# OS junk
+.DS_Store
+Thumbs.db

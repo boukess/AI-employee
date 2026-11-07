@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Ad Copywriter</title>
+<style>
+  :root {
+    --bg: #faf6ee;
+    --card: #fffdf8;
+    --ink: #1f1b16;
+    --muted: #6b6257;
+    --line: #e7dfd1;
+    --accent: #b4532a;
+    --accent-ink: #ffffff;
+    --code: #f3ede2;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 48px 20px 80px; }
+  h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 700; line-height: 1.2; }
+  h1 { font-size: 40px; margin: 0 0 12px; letter-spacing: -0.5px; }
+  h2 { font-size: 26px; margin: 48px 0 12px; }
+  h3 { font-size: 19px; margin: 24px 0 8px; }
+  p { margin: 0 0 14px; }
+  .lede { font-size: 19px; color: var(--muted); }
+  .steps { counter-reset: s; list-style: none; padding: 0; margin: 0; }
+  .steps > li {
+    counter-increment: s; position: relative; padding: 14px 16px 14px 60px; margin: 0 0 10px;
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  }
+  .steps > li::before {
+    content: counter(s); position: absolute; left: 16px; top: 14px; width: 30px; height: 30px; border-radius: 50%;
+    background: var(--ink); color: var(--bg); font: 700 15px/30px Georgia, serif; text-align: center;
+  }
+  .steps b { display: block; }
+  .muted { color: var(--muted); font-size: 15px; }
+  .tabs { display: flex; gap: 6px; flex-wrap: wrap; margin: 16px 0 0; }
+  .tab {
+    appearance: none; border: 1px solid var(--line); background: var(--card); color: var(--ink);
+    padding: 10px 16px; border-radius: 999px; font: 600 15px/1 inherit; font-family: inherit; cursor: pointer;
+  }
+  .tab[aria-selected="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .panel { display: none; margin-top: 16px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; }
+  .panel.active { display: block; }
+  .panel ol { padding-left: 22px; margin: 0; }
+  .panel li { margin: 0 0 10px; }
+  .copybox { position: relative; margin: 10px 0 4px; }
+  .copybox pre {
+    margin: 0; background: var(--code); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; padding-right: 86px; white-space: pre-wrap; word-break: break-word;
+    font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  .copy {
+    position: absolute; top: 8px; right: 8px; border: 0; border-radius: 8px; cursor: pointer;
+    background: var(--accent); color: var(--accent-ink); font: 600 13px/1 inherit; font-family: inherit; padding: 8px 12px;
+  }
+  code { background: var(--code); padding: 1px 6px; border-radius: 5px; font-size: 0.9em; }
+  .note { border-left: 3px solid var(--accent); padding: 4px 0 4px 14px; margin: 16px 0; color: var(--muted); }
+  ul.plain { padding-left: 20px; }
+  footer { margin-top: 56px; color: var(--muted); font-size: 14px; }
+  @media (max-width: 520px) { h1 { font-size: 32px; } main { padding: 32px 16px 64px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>AI Ad Copywriter</h1>
+  <p class="lede">An AI employee that writes your Facebook and Instagram ad copy. Give it your creative, get back three variations of primary text, headline and description, each based on real ads already running in your niche.</p>
+
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li><b>It interviews you</b><span class="muted">Your business, your offer, who it's for, and how you sound. About 3 minutes.</span></li>
+    <li><b>It studies your niche</b><span class="muted">It pulls the ads your competitors are running from the Meta Ad Library and works out which ones have run long enough to be working. About 5 to 10 minutes.</span></li>
+    <li><b>It writes your copy</b><span class="muted">Drop in an image or video ad. Get three checked, ready-to-paste variations with different angles. About 2 minutes per creative.</span></li>
+  </ol>
+  <p class="muted">You only do the first two steps once. After that: drop a creative, get copy.</p>
+
+  <h2>Set it up</h2>
+  <p>Pick the tool you use.</p>
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" aria-selected="true" data-tab="claude">Claude Code</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="codex">Codex</button>
+    <button class="tab" role="tab" aria-selected="false" data-tab="chatgpt">ChatGPT</button>
+  </div>
+
+  <section class="panel active" id="claude" role="tabpanel">
+    <ol>
+      <li>Unzip the download and move the <b>AI Ad Copywriter</b> folder to your Desktop.</li>
+      <li>Open the folder in Claude Code. In the Claude desktop app: <b>Code</b> tab, then "Open folder". Or in Terminal:
+        <div class="copybox"><pre>cd ~/Desktop/"AI Ad Copywriter"
+claude</pre><button class="copy">Copy</button></div>
+      </li>
+      <li>Type this and press Enter:
+        <div class="copybox"><pre>go</pre><button class="copy">Copy</button></div>
+      </li>
+      <li>When it asks to run a script, choose <b>Yes, and don't ask again</b>. The scripts only touch files inside this folder.</li>
+    </ol>
+    <p class="note">To give it a creative, drag the image or video into the Claude Code window. If you have the Claude in Chrome extension, Claude can open the Ad Library itself. Otherwise it gives you links to paste back in.</p>
+  </section>
+
+  <section class="panel" id="codex" role="tabpanel">
+    <ol>
+      <li>Unzip the download and move the <b>AI Ad Copywriter</b> folder to your Desktop.</li>
+      <li>Open the folder in Codex. In the Codex app: add a project and pick the folder. Or in Terminal:
+        <div class="copybox"><pre>cd ~/Desktop/"AI Ad Copywriter"
+codex</pre><button class="copy">Copy</button></div>
+      </li>
+      <li>Type this and press Enter:
+        <div class="copybox"><pre>go</pre><button class="copy">Copy</button></div>
+      </li>
+      <li>Approve the script commands when asked. They don't need internet and only touch files inside this folder.</li>
+    </ol>
+    <p class="note">For the research step, Codex gives you Ad Library links. Open each one, select all, copy, and paste the page back. About a minute per link.</p>
+  </section>
+
+  <section class="panel" id="chatgpt" role="tabpanel">
+    <ol>
+      <li>Start a new chat in ChatGPT. Optional: create a Project called "Ad Copywriter" first and start the chat inside it.</li>
+      <li>Upload <b>AI Ad Copywriter.zip</b>. Don't unzip it.</li>
+      <li>Send this with it:
+        <div class="copybox"><pre>I uploaded the AI Ad Copywriter zip. Unzip it with your Python tool to /mnt/data/ai-ad-copywriter/, read AGENTS.md completely, and follow it exactly. You are running in ChatGPT, so follow the ChatGPT notes in AGENTS.md. If I also uploaded a workspace zip from an earlier session, unzip it into the workspace folder first.
+
+go</pre><button class="copy">Copy</button></div>
+      </li>
+      <li>At the end, download the <b>workspace zip</b> it gives you. Next time, upload both zips and send the same message. It will skip straight to writing.</li>
+    </ol>
+    <p class="note">ChatGPT can't browse the Ad Library from its file tool. It gives you links to open, and you paste the pages back in. In Agent mode it may open them itself.</p>
+  </section>
+
+  <h2>Copying ads from the Ad Library</h2>
+  <p>In the research step, the copywriter may ask you to grab a few pages. For each link it gives you:</p>
+  <ol class="steps">
+    <li><b>Open the link</b><span class="muted">It opens a Meta Ad Library search. No login needed.</span></li>
+    <li><b>Scroll down 3 or 4 times</b><span class="muted">More ads load as you scroll.</span></li>
+    <li><b>Select all and copy</b><span class="muted">Cmd+A then Cmd+C on Mac. Ctrl+A then Ctrl+C on Windows.</span></li>
+    <li><b>Paste it into the chat</b><span class="muted">It's fine if it looks messy. It only needs the text.</span></li>
+  </ol>
+
+  <h2>Want to see an example first?</h2>
+  <p>Open the <code>examples/ai-employee-lab</code> folder. It shows two steps for a real business: the brand file the interview produces, and how the copywriter reads a 47-second video ad (frames, transcript and creative read). Or type <b>show me the example</b> after you start.</p>
+
+  <h2>Good to know</h2>
+  <ul class="plain">
+    <li>Your business info stays in the <code>workspace</code> folder on your computer (in ChatGPT, it stays in your chat and the workspace zip).</li>
+    <li>It never makes up numbers, reviews or results. If it needs a fact, it asks you.</li>
+    <li>Every variation is checked against Meta's length limits and ad policies before you see it.</li>
+  </ul>
+
+  <footer>AI Ad Copywriter. Instructions live in AGENTS.md. Setup guides are in the docs folder.</footer>
+</main>
+<script>
+  document.querySelectorAll(".tab").forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      document.querySelectorAll(".tab").forEach(function (t) { t.setAttribute("aria-selected", "false"); });
+      document.querySelectorAll(".panel").forEach(function (p) { p.classList.remove("active"); });
+      tab.setAttribute("aria-selected", "true");
+      document.getElementById(tab.dataset.tab).classList.add("active");
+    });
+  });
+  function fallbackCopy(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+  document.querySelectorAll(".copy").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var text = btn.parentElement.querySelector("pre").innerText;
+      var done = function () { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "Copy"; }, 1500); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
+      } else { fallbackCopy(text); done(); }
+    });
+  });
+</script>
+</body>
+</html>

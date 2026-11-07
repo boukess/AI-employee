@@ -1,0 +1,31 @@
+# Setup procedure for the editing AI
+
+Use a local shell in the extracted employee root. Do not move this folder after setup; Python environments and existing Resolve project media paths refer to its location. If moved, rebuild `.venv`, rerun setup and reassemble any existing jobs from their plans.
+
+## Prerequisites
+
+- macOS (verified Apple Silicon) or native Windows (adapter provided, not yet end-to-end tested).
+- DaVinci Resolve **Studio 21.1 or newer**, installed and running. This release uses the bundled ResolvePython interpreter introduced in 21.1; old Resolve installs and the free edition are not a promised zero-touch route. Preferences → System → General → External scripting must be **Local**. Keep automatic scripted actions at its existing safe setting.
+- Node.js 22+ with npm; Python 3.10–3.12, 64-bit (3.12 recommended).
+- Internet for dependency/model downloads and real topic media research. No cloud media-generation API is required.
+
+Downloads: [Resolve](https://www.blackmagicdesign.com/products/davinciresolve), [Node.js](https://nodejs.org/en/download), [Python](https://www.python.org/downloads/). Do not purchase software on a member's behalf. Have them complete app installers/sign-in steps that need their interaction.
+
+## Run setup
+
+On macOS, run `sh "Setup Mac.command"`, or `python3.12 scripts/setup.py` with an available supported Python. On Windows use `py -3.12 scripts\setup.py` (the double-click Setup Windows.cmd runs this too).
+
+The setup script creates a project-local .venv, installs requirements.txt, runs npm ci, downloads a checksum-verified RVM model from its official release, installs the Remotion browser, indexes bundled references and typechecks the graphics. It then checks the live Resolve connection. It does not replace global packages or alter security preferences.
+
+Run `./editor doctor` on macOS; `editor.cmd doctor` on Windows. **Only ready: true means setup is complete.** Dependencies installed without a Resolve connection is incomplete setup. Fix the named failure and retry the diagnostic; do not claim a disconnected machine is ready.
+
+Auto-discovery uses these standard ResolvePython locations:
+
+- macOS: `/Applications/DaVinci Resolve/DaVinci Resolve.app/Contents/Applications/ResolvePython`
+- Windows: `%ProgramFiles%\Blackmagic Design\DaVinci Resolve\ResolvePython\ResolvePython.exe`
+
+For a custom install, set `resolve_python` in config/editor.json to the actual executable or use AI_VIDEO_EDITOR_RESOLVE_PYTHON. Relative config paths resolve from the employee root, independent of the caller's working directory. Keep corpus_root at references/corpus for the included pack. A compatible larger corpus with manifest.jsonl can be selected and reindexed later.
+
+`small` is a multilingual local Whisper model and downloads on first transcription. The presenter model processes footage locally. Raw media is not uploaded by the pipeline; the chosen AI service still processes the conversation and any images/text/files sent to it by its own tools.
+
+The bridge configuration is based on the README supplied with Resolve 21.1 under Developer/Scripting. Run the actual connection check on each member's machine.

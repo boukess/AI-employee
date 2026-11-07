@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web Dev Employee</title>
+<style>
+body{font-family:system-ui,sans-serif;margin:0;background:#0f1419;color:#e7ecf3}
+header{padding:1rem 1.25rem;border-bottom:1px solid #2a3441}
+h1{margin:0;font-size:1.25rem}
+nav{display:flex;gap:0.5rem;flex-wrap:wrap;padding:0.75rem 1.25rem;border-bottom:1px solid #2a3441}
+nav button{background:#1c2430;color:#e7ecf3;border:1px solid #2a3441;border-radius:6px;padding:0.4rem 0.75rem;cursor:pointer}
+nav button.active{background:#2f6fed;border-color:#2f6fed}
+main{padding:1.25rem;max-width:960px}
+.card{background:#1c2430;border:1px solid #2a3441;border-radius:8px;padding:1rem;margin-bottom:1rem}
+.muted{color:#9aa7b8;font-size:0.9rem}
+table{width:100%;border-collapse:collapse}
+td,th{text-align:left;padding:0.35rem 0.5rem;border-bottom:1px solid #2a3441;vertical-align:top}
+.panel{display:none}
+.panel.active{display:block}
+</style>
+</head>
+<body>
+<header><h1>Web Dev Employee</h1><p class="muted">Inventory snapshot. Numbers today live in health/health-latest.md and brief-latest.md.</p></header>
+<nav>
+<!--NAV-->
+</nav>
+<main>
+<!--PANELS-->
+</main>
+<script>
+document.querySelectorAll('nav button').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('nav button').forEach(function(b){b.classList.remove('active')});
+    document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active')});
+    btn.classList.add('active');
+    var id = btn.getAttribute('data-panel');
+    var panel = document.getElementById(id);
+    if (panel) panel.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

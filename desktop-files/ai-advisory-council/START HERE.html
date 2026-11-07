@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>AI Advisory Council · Start here</title>
+<style>
+:root{--bg:#f7f5ef;--ink:#252724;--muted:#596054;--micro:#626859;--card:#fffefa;--white:#fff;--line:#e0dfd6;--line2:#deded2;--accent:#c87960;--accent-ink:#a95a41;--link:#835541;--green:#354531;--note:#edeedf;--note-ink:#4f5747;--prompt:#f4f3ed;--code:#eeeede;--focus:#2d5f86}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.55;overflow-wrap:break-word}
+a{color:var(--link);text-underline-offset:4px}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px}
+.skip{position:absolute;left:-9999px;top:10px;background:var(--white);color:var(--ink);padding:10px 14px;border-radius:10px;border:1px solid var(--line);z-index:10}
+.skip:focus{left:16px}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+main{max-width:1120px;margin:auto;padding:36px 32px 70px}
+.brand{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#676c63;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.brand .ver{margin-left:auto;letter-spacing:0;font-weight:400;text-transform:none;font-size:13px}
+.mark{display:inline-grid;place-items:center;width:30px;height:30px;background:var(--accent);border-radius:9px}
+.mark svg{display:block}
+.pill{font-size:12px;letter-spacing:.5px;border:1px solid var(--line2);border-radius:20px;padding:5px 12px;display:inline-block;background:var(--card)}
+h1{font-family:Georgia,serif;font-size:clamp(48px,6vw,76px);line-height:1.04;letter-spacing:-3px;margin:22px 0 14px;font-weight:400}
+h2{font-family:Georgia,serif;font-size:32px;letter-spacing:-.8px;line-height:1.2;margin:0 0 16px;font-weight:400}
+h3{font-size:19px;margin:0 0 8px;line-height:1.3}
+h4{font-size:16px;margin:0 0 6px}
+p{margin:0 0 14px}
+.hero{display:grid;grid-template-columns:1fr 330px;gap:60px;align-items:center;padding:46px 0 40px}
+.tagline{font-family:Georgia,serif;font-size:24px;color:var(--green);margin:0 0 14px;line-height:1.3}
+.hero .lede{font-size:18px;color:var(--muted);max-width:600px}
+.flow{display:flex;flex-wrap:wrap;gap:9px;margin:25px 0 0;padding:0;list-style:none;font-size:13px;font-weight:bold}
+.flow li{border:1px solid #dddcd2;border-radius:9px;padding:8px 12px;background:var(--card)}
+.flow li span{color:var(--accent-ink);margin-right:4px}
+.tablefig{margin:0}
+.tablefig svg{width:100%;max-width:330px;height:auto;display:block;margin:auto}
+.caption{font-size:12px;color:#6a6f66;margin-top:10px;text-align:center}
+.jump{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;margin:0 0 22px;padding:0;list-style:none}
+.jump li:first-child{color:var(--micro)}
+.note{background:var(--note);border-radius:12px;padding:16px 20px;color:var(--note-ink);font-size:14px;margin-bottom:25px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px;margin-bottom:22px}
+.intro{color:var(--muted);max-width:760px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.num{display:inline-grid;place-items:center;width:31px;height:31px;border-radius:50%;background:#eceee4;color:#53664b;font-family:Arial,sans-serif;font-size:15px;vertical-align:middle;margin-right:9px;letter-spacing:0}
+.micro{font-size:13px;color:var(--micro)}
+code{font-family:Menlo,Consolas,monospace;font-size:.86em;background:var(--code);padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,310px),1fr));gap:18px}
+.advisor{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column}
+.advisor header{display:flex;gap:13px;align-items:center;margin-bottom:14px}
+.avatar{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-weight:bold;font-size:17px;flex:none}
+.advisor h3{margin:0}
+.aka{display:block;font-size:13px;font-weight:400;color:var(--micro)}
+.label{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--micro);font-weight:700;margin:0 0 6px}
+.seat{font-size:14.5px;color:#3a3f37;margin:0 0 14px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0 0 16px}
+.chips li{font-size:13px;border:1px solid var(--line2);background:var(--prompt);border-radius:8px;padding:4px 9px}
+.say{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--micro);display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px}
+.say strong{color:var(--ink);font-weight:700}
+.chair{background:var(--note);border:1px dashed #c9cbb6}
+.chair .avatar{background:var(--green);color:#fff;font-size:11.5px;letter-spacing:.2px}
+.chair ul{margin:0 0 14px;padding-left:20px;font-size:14.5px;color:#3a3f37}
+.chair li{margin-bottom:5px}
+.c-ah{background:#efe1d6;color:#6b3b24}.c-gv{background:#e3e7d4;color:#3f4f33}.c-sa{background:#dde4e8;color:#2f4450}.c-bc{background:#eedcdf;color:#6a3440}.c-mb{background:#ece2c6;color:#5f4a17}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 22px}
+.tab{border:1px solid #d6d9cb;background:transparent;border-radius:11px;padding:10px 16px;color:#495441;text-align:left}
+.tab:hover{background:#efeee5}
+.tab[aria-selected=true]{background:var(--green);color:#fff;border-color:var(--green)}
+.panel[hidden]{display:none}
+.panel:focus-visible{outline-offset:6px}
+.steps{padding-left:23px;margin:0 0 14px}
+.steps>li{padding:0 0 12px 7px}
+.steps ul{margin:8px 0 0;padding-left:20px}
+.steps ul li{margin-bottom:4px}
+.files{list-style:none;margin:10px 0 0;padding:12px 14px;background:var(--prompt);border:1px solid var(--line2);border-radius:12px;font-size:13.5px}
+.files li{padding:2px 0}
+.files code{background:transparent;padding:0}
+.plan{margin-top:6px;border-top:1px solid var(--line);padding-top:14px}
+.prompt{background:var(--prompt);border:1px solid var(--line2);border-radius:13px;padding:18px;font-size:14px;white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
+.prompt.big{font-size:23px;font-family:Georgia,serif;line-height:1.35}
+.copy{margin-top:12px;border:0;border-radius:10px;background:var(--accent-ink);color:#fff;padding:10px 17px;font-weight:700}
+.copy:hover{background:#934c36}
+.copy.small{margin:0;padding:6px 12px;font-size:13px;flex:none}
+.fmt{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:22px}
+.fmt .said{display:inline-block;font-family:Georgia,serif;font-size:17px;color:var(--green);margin:0 0 10px}
+.fmt p{font-size:14.5px}
+.fmt p:last-child{margin-bottom:0}
+.also{margin:22px 0 0;padding:18px 20px;border-radius:14px;background:var(--prompt);border:1px solid var(--line2)}
+.also ul{margin:0;padding-left:20px;font-size:14.5px}
+.also li{margin-bottom:6px}
+.doc{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:0;font-size:15px;overflow:hidden}
+.ex-head{background:#f6e9e1;border-bottom:1px solid #ead2c4;padding:16px 26px}
+.ex-head p{margin:8px 0 0;font-size:14px;color:#6a4435}
+.ex-badge{display:inline-block;background:var(--accent-ink);color:#fff;font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase;border-radius:20px;padding:5px 12px}
+.doc-body{padding:24px 26px 8px}
+.doc-body h3{font-family:Georgia,serif;font-size:26px;font-weight:400;letter-spacing:-.4px;margin:0 0 4px}
+.doc-meta{font-size:13px;color:var(--micro);margin:0 0 18px}
+.doc-body h4{font-family:Georgia,serif;font-size:19px;font-weight:400;margin:22px 0 8px;padding-top:16px;border-top:1px solid var(--line)}
+.doc-body h4.first{border-top:0;padding-top:0}
+.doc-body ul,.doc-body ol{margin:0 0 12px;padding-left:22px}
+.doc-body li{margin-bottom:5px}
+.adv-h{display:flex;align-items:center;gap:10px}
+.adv-h .avatar{width:32px;height:32px;font-size:12px}
+.foot-line{font-style:italic;color:var(--micro);font-size:14px;margin-top:20px}
+.ex-end{background:#f6e9e1;border-top:1px solid #ead2c4;padding:12px 26px;font-size:13px;color:#6a4435;font-weight:700}
+details.pd{background:var(--white);border:1px solid var(--line);border-radius:16px;margin-bottom:12px}
+details.pd>summary{list-style:none;cursor:pointer;display:flex;gap:14px;align-items:flex-start;padding:18px 20px;border-radius:16px}
+details.pd>summary::-webkit-details-marker{display:none}
+details.pd>summary:hover{background:#fbfaf5}
+.pn{font-family:Georgia,serif;font-size:22px;color:var(--accent-ink);line-height:1.1;flex:none;min-width:30px}
+.ps{display:block;font-size:14px;color:var(--micro);margin-top:3px}
+.ps code{font-size:.9em}
+.chev{margin-left:auto;flex:none;width:26px;height:26px;border-radius:50%;border:1px solid var(--line2);display:grid;place-items:center;color:var(--micro);font-size:14px;transition:transform .15s}
+details[open]>summary .chev{transform:rotate(90deg)}
+.pbody{padding:0 20px 20px}
+.pbody h4{margin:22px 0 4px}
+.pbody h5{font-size:14px;margin:18px 0 2px;color:#3a3f37}
+.pbody h5 span{font-weight:400;color:var(--micro)}
+.q{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;padding:10px 0;border-top:1px solid var(--line)}
+.q p{margin:0;font-size:14px}
+.ask{font-weight:700;color:var(--green)}
+.match{list-style:none;margin:8px 0 0;padding:0;font-size:14px}
+.match li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 14px;padding:7px 0;border-top:1px solid var(--line)}
+.match li span:last-child{color:var(--micro);font-weight:700}
+.know{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:16px}
+.know>div{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:20px}
+.know>div.lead{grid-column:1/-1;background:var(--note);border-color:#d9dbc8}
+.know p,.know li{font-size:14.5px}
+.know p:last-child{margin-bottom:0}
+.know ul{margin:0;padding-left:20px}
+.know li{margin-bottom:5px}
+.links{display:flex;flex-wrap:wrap;gap:12px 18px;font-size:14px;margin-top:24px}
+footer{font-size:12px;color:#6d7268;margin-top:30px;padding-top:20px;border-top:1px solid #deded4}
+@media(max-width:860px){.hero{grid-template-columns:1fr;gap:26px;padding:30px 0}.tablefig svg{max-width:280px}.row{grid-template-columns:1fr}}
+@media(max-width:780px){main{padding:22px 16px 56px}h1{font-size:clamp(40px,12.5vw,56px);letter-spacing:-2px}h2{font-size:27px}.tagline{font-size:21px}.hero .lede{font-size:17px}.card{padding:22px 18px;border-radius:18px}.prompt.big{font-size:20px}.doc-body{padding:20px 18px 6px}.ex-head,.ex-end{padding-left:18px;padding-right:18px}details.pd>summary{padding:16px}.pbody{padding:0 16px 18px}.q{flex-direction:column;gap:8px}}
+</style>
+<noscript><style>.panel[hidden]{display:block}.tabs,.copy{display:none}</style></noscript>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<main id="content">
+<div class="brand"><span class="mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="3.4" fill="#fff"/><circle cx="9" cy="2.2" r="1.7" fill="#fff"/><circle cx="15.5" cy="6.9" r="1.7" fill="#fff"/><circle cx="13" cy="14.5" r="1.7" fill="#fff"/><circle cx="5" cy="14.5" r="1.7" fill="#fff"/><circle cx="2.5" cy="6.9" r="1.7" fill="#fff"/></svg></span> AI Advisory Council <span class="ver">Member edition · v1.0</span></div>
+
+<section class="hero" aria-labelledby="h-top">
+<div>
+<span class="pill">Your business advisory board</span>
+<h1 id="h-top">AI Advisory<br>Council.</h1>
+<p class="tagline">Your business. Five advisors. One clear call.</p>
+<p class="lede">Fill in your business profile once. Then bring any decision to a council of AI advisors built from the public work of Alex Hormozi, Gary Vee, Sam Altman, Brian Chesky and MrBeast. Each one answers from their own frameworks, in their own voice, and they keep their real disagreements. A neutral Chair weighs them against your numbers and makes the call.</p>
+<ol class="flow" aria-label="How it works">
+<li><span>01</span> Fill your profile</li>
+<li><span>02</span> Ask a question</li>
+<li><span>03</span> Each advisor answers</li>
+<li><span>04</span> The Chair decides</li>
+</ol>
+</div>
+<figure class="tablefig">
+<svg viewBox="0 0 340 340" role="img" aria-labelledby="fig-t fig-d">
+<title id="fig-t">The council table</title>
+<desc id="fig-d">Five advisors, Hormozi, Gary Vee, Altman, Chesky and MrBeast, sit around a table with you. The Chair sits in the middle and makes the call.</desc>
+<g stroke="#cfcdbf" stroke-width="1.5" stroke-dasharray="4 5" fill="none">
+<line x1="170" y1="170" x2="68" y2="229"/><line x1="170" y1="170" x2="68" y2="111"/><line x1="170" y1="170" x2="170" y2="52"/><line x1="170" y1="170" x2="272" y2="111"/><line x1="170" y1="170" x2="272" y2="229"/><line x1="170" y1="170" x2="170" y2="288"/>
+</g>
+<circle cx="170" cy="170" r="66" fill="#354531"/>
+<text x="170" y="167" text-anchor="middle" fill="#fff" font-family="Georgia,serif" font-size="20">The Chair</text>
+<text x="170" y="189" text-anchor="middle" fill="#dfe6d7" font-family="Arial,sans-serif" font-size="11.5">makes the call</text>
+<g font-family="Arial,sans-serif" font-size="12" font-weight="700" text-anchor="middle">
+<circle cx="68" cy="229" r="35" fill="#efe1d6" stroke="#e0cbbb"/><text x="68" y="233" fill="#6b3b24">Hormozi</text>
+<circle cx="68" cy="111" r="35" fill="#e3e7d4" stroke="#cfd5bb"/><text x="68" y="115" fill="#3f4f33">Gary Vee</text>
+<circle cx="170" cy="52" r="35" fill="#dde4e8" stroke="#c6d1d8"/><text x="170" y="56" fill="#2f4450">Altman</text>
+<circle cx="272" cy="111" r="35" fill="#eedcdf" stroke="#dcc2c7"/><text x="272" y="115" fill="#6a3440">Chesky</text>
+<circle cx="272" cy="229" r="35" fill="#ece2c6" stroke="#dacca5"/><text x="272" y="233" fill="#5f4a17">MrBeast</text>
+<circle cx="170" cy="288" r="35" fill="#a95a41"/><text x="170" y="292" fill="#fff" font-size="13">You</text>
+</g>
+</svg>
+<figcaption class="caption">One AI plays every role, one at a time. You make the final decision.</figcaption>
+</figure>
+</section>
+
+<div class="note"><strong>Works where you already use AI.</strong> Run it in a Claude or ChatGPT Project in the browser or desktop app (most members), or open this folder in Claude Code or Codex. No API key and nothing to install.</div>
+
+<nav aria-label="On this page"><ul class="jump"><li>On this page:</li><li><a href="#council">The advisors</a></li><li><a href="#setup">Set up</a></li><li><a href="#formats">Meeting formats</a></li><li><a href="#example">Example meeting</a></li><li><a href="#prompts">Prompts</a></li><li><a href="#clone">Clone your own</a></li><li><a href="#know">Good to know</a></li></ul></nav>
+
+<section class="card" id="council" aria-labelledby="h-council">
+<h2 id="h-council"><span class="num">1</span> Meet your council</h2>
+<p class="intro">Five advisors, each with a seat: the questions they own. The Chair seats the 3 to 5 who fit your question, and always includes one who is likely to disagree.</p>
+<div class="grid">
+
+<article class="advisor">
+<header><span class="avatar c-ah" aria-hidden="true">AH</span><h3>Alex Hormozi</h3></header>
+<p class="label">Seat</p>
+<p class="seat">Offers and pricing, lead generation, sales and closing, and the unit economics that decide whether a small business can scale on its own cash.</p>
+<p class="label">Frameworks</p>
+<ul class="chips"><li>The Grand Slam Offer</li><li>The Core Four</li><li>LTGP to CAC</li></ul>
+<p class="say"><span>Say <strong>Ask Hormozi: ...</strong></span><span>100 sources</span></p>
+</article>
+
+<article class="advisor">
+<header><span class="avatar c-gv" aria-hidden="true">GV</span><h3>Gary Vee <span class="aka">Gary Vaynerchuk</span></h3></header>
+<p class="label">Seat</p>
+<p class="seat">Attention and where it is underpriced right now, content and social media, brand and reputation, and playing the long game.</p>
+<p class="label">Frameworks</p>
+<ul class="chips"><li>Day Trading Attention</li><li>The GaryVee Content Model</li><li>Jab, Jab, Jab, Right Hook</li></ul>
+<p class="say"><span>Say <strong>Ask Gary: ...</strong></span><span>116 sources</span></p>
+</article>
+
+<article class="advisor">
+<header><span class="avatar c-sa" aria-hidden="true">SA</span><h3>Sam Altman</h3></header>
+<p class="label">Seat</p>
+<p class="seat">Strategy and big bets, finding what compounds, product love and growth, focus and hiring, and building a business that gets stronger (not weaker) as AI improves.</p>
+<p class="label">Frameworks</p>
+<ul class="chips"><li>Love Before Growth</li><li>Flashlight App vs Uber</li><li>Hire for Slope</li></ul>
+<p class="say"><span>Say <strong>Ask Sam: ...</strong></span><span>132 sources</span></p>
+</article>
+
+<article class="advisor">
+<header><span class="avatar c-bc" aria-hidden="true">BC</span><h3>Brian Chesky</h3></header>
+<p class="label">Seat</p>
+<p class="seat">Product and customer experience, design, brand and word of mouth, focus, and founder-led leadership: what to build, how it should feel to the customer, what to cut, and how the founder should run the company as it grows.</p>
+<p class="label">Frameworks</p>
+<ul class="chips"><li>The 11-Star Experience</li><li>Founder Mode</li><li>One, Ten, Many</li></ul>
+<p class="say"><span>Say <strong>Ask Chesky: ...</strong></span><span>78 sources</span></p>
+</article>
+
+<article class="advisor">
+<header><span class="avatar c-mb" aria-hidden="true">MB</span><h3>MrBeast <span class="aka">Jimmy Donaldson</span></h3></header>
+<p class="label">Seat</p>
+<p class="seat">Content that spreads: choosing ideas, packaging (title, thumbnail and the first five seconds), retention and format design, and running a creative team that ships big projects on time. Second lane: launching a product off an audience.</p>
+<p class="label">Frameworks</p>
+<ul class="chips"><li>Packaging First</li><li>The Purple Cow Test</li><li>Minute-by-Minute Retention Map</li></ul>
+<p class="say"><span>Say <strong>Ask MrBeast: ...</strong></span><span>101 sources</span></p>
+</article>
+
+<article class="advisor chair">
+<header><span class="avatar" aria-hidden="true">Chair</span><h3>The Chair <span class="aka">Neutral. Not a persona.</span></h3></header>
+<ul>
+<li>Restates your question as a clear choice.</li>
+<li>Pulls the facts that matter from your profile.</li>
+<li>Seats the right advisors and keeps their disagreements intact.</li>
+<li>Makes one call for your business. It never averages the advice.</li>
+</ul>
+<p class="say"><span>Say <strong>Ask the council: ...</strong></span></p>
+</article>
+
+</div>
+<p class="micro" style="margin:16px 0 0">Every advisor is an AI built from that person's public work. The full seat, best-for and not-for list, plus where each pair agrees and clashes, is in <code>council/Council-Roster.md</code>.</p>
+</section>
+
+<section class="card" id="setup" aria-labelledby="h-setup">
+<h2 id="h-setup"><span class="num">2</span> Set it up once</h2>
+<p class="intro">About 10 minutes. Pick where you will run your council.</p>
+<div class="tabs" role="tablist" aria-label="Where you will run your council">
+<button class="tab" role="tab" id="tab-chatgpt" aria-controls="panel-chatgpt" aria-selected="true" tabindex="0">ChatGPT</button>
+<button class="tab" role="tab" id="tab-claude" aria-controls="panel-claude" aria-selected="false" tabindex="-1">Claude</button>
+<button class="tab" role="tab" id="tab-local" aria-controls="panel-local" aria-selected="false" tabindex="-1">Local (Claude Code or Codex)</button>
+</div>
+
+<div class="panel" role="tabpanel" id="panel-chatgpt" aria-labelledby="tab-chatgpt" tabindex="0">
+<ol class="steps">
+<li>Unzip <strong>AI Advisory Council</strong> into a folder you will keep, such as Documents.</li>
+<li>In the ChatGPT sidebar, click <strong>New project</strong>. Name it "AI Advisory Council".</li>
+<li>Open the project, then click <strong>•••</strong> › <strong>Project settings</strong>. Paste everything in <code>council/Council-Instructions.txt</code> and save. Optional: set Memory to <strong>Project-only memory</strong>.</li>
+<li>In the project's <strong>Sources</strong>, add these 7 files:
+<ul class="files" aria-label="Files to add">
+<li><code>council/Council-Roster.md</code></li>
+<li><code>council/Council-Protocol.md</code></li>
+<li><code>advisors/alex-hormozi/Alex-Hormozi-Brain.md</code></li>
+<li><code>advisors/gary-vee/Gary-Vee-Brain.md</code></li>
+<li><code>advisors/sam-altman/Sam-Altman-Brain.md</code></li>
+<li><code>advisors/brian-chesky/Brian-Chesky-Brain.md</code></li>
+<li><code>advisors/mrbeast/MrBeast-Brain.md</code></li>
+</ul></li>
+<li>Start a new chat inside the project. Paste the <strong>setup prompt</strong> below and answer the 12 questions in one reply.</li>
+<li>ChatGPT gives you your profile in one block. Save it as <code>Business-Profile.md</code> (ask for it as a downloadable file) and add it to <strong>Sources</strong>. That is file 8.</li>
+<li>Start a new chat in the project and ask your first question: <strong>Ask the council: [your decision]</strong>.</li>
+</ol>
+<p class="micro plan"><strong>Plan:</strong> the full council is 8 files, so it needs <strong>Go, Plus or higher</strong>. Free allows 5 files per project and 3 uploads a day; you can run a 3-advisor council instead. Click-by-click help, the Free plan route and Custom GPTs: <a href="docs/SETUP-CHATGPT.md">full ChatGPT setup</a>.</p>
+</div>
+
+<div class="panel" role="tabpanel" id="panel-claude" aria-labelledby="tab-claude" tabindex="0" hidden>
+<ol class="steps">
+<li>Unzip <strong>AI Advisory Council</strong> into a folder you will keep, such as Documents.</li>
+<li>Go to claude.ai/projects, or open <strong>Projects</strong> in the left sidebar. Click <strong>+ New project</strong> and name it "AI Advisory Council".</li>
+<li>Click <strong>Set project instructions</strong>. Paste everything in <code>council/Council-Instructions.txt</code> and click <strong>Save instructions</strong>.</li>
+<li>In project knowledge, click <strong>+</strong> and upload these 7 files:
+<ul class="files" aria-label="Files to upload">
+<li><code>council/Council-Roster.md</code></li>
+<li><code>council/Council-Protocol.md</code></li>
+<li><code>advisors/alex-hormozi/Alex-Hormozi-Brain.md</code></li>
+<li><code>advisors/gary-vee/Gary-Vee-Brain.md</code></li>
+<li><code>advisors/sam-altman/Sam-Altman-Brain.md</code></li>
+<li><code>advisors/brian-chesky/Brian-Chesky-Brain.md</code></li>
+<li><code>advisors/mrbeast/MrBeast-Brain.md</code></li>
+</ul></li>
+<li>Start a chat inside the project. Paste the <strong>setup prompt</strong> below and answer the 12 questions in one reply.</li>
+<li>Claude gives you your profile in one block. Save it as <code>Business-Profile.md</code> (ask for it as a downloadable file) and upload it to project knowledge. That is file 8.</li>
+<li>Start a new chat in the project and ask your first question: <strong>Ask the council: [your decision]</strong>.</li>
+</ol>
+<p class="micro plan"><strong>Plan:</strong> Projects work on every plan. Free has no RAG, and the five brains are about 59,000 words together, so check the capacity indicator in project knowledge. If it is over, upload only the 3 brains you will use most. Click-by-click help: <a href="docs/SETUP-CLAUDE.md">full Claude setup</a>.</p>
+</div>
+
+<div class="panel" role="tabpanel" id="panel-local" aria-labelledby="tab-local" tabindex="0" hidden>
+<ol class="steps">
+<li>Unzip <strong>AI Advisory Council</strong> into a permanent folder, such as Documents. Keep the folder name as it is.</li>
+<li>Open the folder in one of these:
+<ul>
+<li><strong>Claude desktop app:</strong> click <strong>Code</strong> › <strong>Local</strong> › <strong>Select folder</strong> and pick the <code>AI Advisory Council</code> folder.</li>
+<li><strong>Cowork:</strong> <strong>Projects</strong> › <strong>+</strong> › <strong>Use an existing folder</strong>. In the instructions box, paste <code>Read and follow AGENTS.md in this folder.</code></li>
+<li><strong>ChatGPT desktop app:</strong> choose <strong>Codex</strong>, open a project, then <strong>Edit project</strong> › <strong>Add folder</strong> › <strong>Make primary</strong>. Start a <strong>New chat</strong>.</li>
+<li><strong>Terminal:</strong> <code>cd</code> into the folder and run <code>claude</code> or <code>codex</code>.</li>
+</ul></li>
+<li>Paste the <strong>setup prompt</strong> below, or just say <strong>"Set up my council."</strong> Answer the 12 questions in one reply. Your profile is saved to <code>my-business/Business-Profile.md</code>.</li>
+<li>Ask your first question: <strong>Ask the council: [your decision]</strong>. The meeting shows in the chat and is saved to <code>sessions/</code>.</li>
+</ol>
+<p class="micro plan"><strong>Plan:</strong> Claude Code needs Pro, Max, Team or Enterprise. Codex is in the ChatGPT desktop app. In Codex, make the <code>AI Advisory Council</code> folder itself primary, not a folder above or inside it. Full steps: <a href="docs/SETUP-CLAUDE.md">Claude</a> and <a href="docs/SETUP-CHATGPT.md">ChatGPT</a>.</p>
+</div>
+
+<h3 style="margin-top:25px">Your one-time setup prompt</h3>
+<div class="prompt" id="setup-prompt">Set up my AI Advisory Council.
+
+If you are working in a local folder: read AGENTS.md and follow its Setup steps. Check that the advisors and council files are there, interview me, and save my-business/Business-Profile.md.
+
+If you are in a web project: follow your project instructions. Tell me in one line which advisor Brain files and council files you can see in project knowledge, and whether any are missing. Then interview me. When I answer, give me my complete Business-Profile.md in one block, in the same layout as the template, so I can save it and upload it to project knowledge.
+
+The interview: ask me the 12 setup questions from Council-Protocol.md, all in one message, numbered. I will answer in a sentence or two each. "Don't know" is fine. Don't ask a second round; write "Unknown" for anything I skip.
+
+Optional, read this first to pre-fill what you can: [YOUR WEBSITE OR MAIN SOCIAL LINK, OR DELETE THIS LINE]
+
+When the profile is done, give me:
+1. A 5-line summary of my business as the council sees it.
+2. The 3 unknowns that matter most.
+3. 3 first questions I should ask the council, each as a ready-to-paste line.</div>
+<button class="copy" data-copy="setup-prompt">Copy setup prompt</button>
+<p class="micro" style="margin-top:12px">Answer in a sentence or two each. "Don't know" is fine, and voice dictation works. Already filled in <code>my-business/Business-Profile.md</code> by hand? Upload it with the other files and skip this prompt. Do not upload the advisors' <code>*-Instructions.txt</code>, <code>*-Sources.md</code> or <code>SETUP.md</code> files to a council project.</p>
+</section>
+
+<section class="card" id="formats" aria-labelledby="h-formats">
+<h2 id="h-formats"><span class="num">3</span> Ask your first question</h2>
+<p class="intro">Bring a real decision you are stuck on, with a number in it. Not a general topic.</p>
+<div class="prompt big" id="first-q">Ask the council: Should I raise my price from $249 to $299 a month, or add a cheaper tier first?</div>
+<button class="copy" data-copy="first-q">Copy example question</button>
+<p style="margin-top:16px">You get the decision restated as a choice, the facts from your profile that matter, and an answer from each seated advisor with one thing to do this week. Then the Chair's call, your next 3 actions and what would change the call.</p>
+
+<h3 style="margin-top:28px">Six meeting formats</h3>
+<p class="micro">Just type the words in quotes. Copy-paste versions are in <a href="#prompts">the prompts below</a>.</p>
+<div class="grid" style="margin-top:14px">
+<div class="fmt"><h4>Council meeting</h4><p class="said">"Ask the council: ..."</p><p>The Chair seats 3 to 5 advisors. Each gives a diagnosis, a recommendation with a named framework, and one thing to do this week. Then the Chair makes the call. Say "Full council: ..." for all five.</p><p class="micro">Best for any real decision.</p></div>
+<div class="fmt"><h4>Ask one advisor</h4><p class="said">"Ask Hormozi: ..."</p><p>One advisor in their own voice. They may ask you up to 3 questions first, then end with "Do this week". Gary, Sam, Chesky and MrBeast work too.</p><p class="micro">Best when you know whose lane it is.</p></div>
+<div class="fmt"><h4>Debate</h4><p class="said">"Debate Hormozi vs Chesky: ..."</p><p>Two advisors argue their real positions over three rounds: opening, rebuttal and closing. The Chair gives a verdict for your business.</p><p class="micro">Best when two paths pull you different ways.</p></div>
+<div class="fmt"><h4>Hot seat</h4><p class="said">"Hot seat: ..."</p><p>The advisors ask you up to 12 sharp questions first. Answer by number, or say "go", and the full meeting runs with what they learned.</p><p class="micro">Best for big decisions.</p></div>
+<div class="fmt"><h4>Board review</h4><p class="said">"Board review"</p><p>Once a month, every advisor. Your numbers go in. A scorecard, each advisor's read and 3 priorities with owners and dates come out.</p><p class="micro">Best for staying on track.</p></div>
+<div class="fmt"><h4>Quick poll</h4><p class="said">"Quick poll: ..."</p><p>One line from each advisor: yes, no, not yet or depends. The Chair tallies the split and says what it turns on.</p><p class="micro">Best for small calls and gut checks.</p></div>
+</div>
+<div class="also">
+<h4>You can also say</h4>
+<ul>
+<li><strong>"Update my profile: ..."</strong> when something changes in your business.</li>
+<li><strong>"Follow up with Chesky"</strong> or <strong>"Go deeper with Sam"</strong> to continue the last meeting with one advisor.</li>
+<li><strong>"Ask the council without Gary: ..."</strong> to leave someone out of one meeting.</li>
+<li>Local folder only: <strong>"Show my past meetings"</strong> and <strong>"Log outcome: ..."</strong>. Every meeting is saved in <code>sessions/</code>.</li>
+</ul>
+</div>
+</section>
+
+<section class="card" id="example" aria-labelledby="h-example">
+<h2 id="h-example"><span class="num">4</span> What a meeting looks like</h2>
+<p class="intro">A short example of what comes back when you ask the council a question.</p>
+<div class="doc" role="region" aria-label="Example council meeting, written by the AI">
+<div class="ex-head"><span class="ex-badge">Example written by the AI</span><p>For illustration only. This was written by the AI for a made-up business, and every number is made up too. Each answer is shortened. Your meetings use your own profile and run longer.</p></div>
+<div class="doc-body">
+<h3>Council meeting: raise the membership price</h3>
+<p class="doc-meta">28 September 2026 | Seated: Alex Hormozi, Sam Altman, Brian Chesky</p>
+
+<h4 class="first">The decision</h4>
+<p>Raise the membership from $249 to $299 a month now, or add a cheaper $149 tier first?</p>
+
+<h4>What matters from your profile</h4>
+<ul>
+<li>Online fitness coaching group: 120 members at $249 a month, about $29,900 a month.</li>
+<li>Gross margin about 45%, so delivery costs about $137 per member a month.</li>
+<li>About 6% of members cancel each month.</li>
+<li>30 leads a month, and 25% of them buy.</li>
+<li>Unknown: why members cancel. Assuming it is not the price.</li>
+</ul>
+
+<h4>Seated</h4>
+<ul>
+<li><strong>Alex Hormozi:</strong> price and unit economics are his lane.</li>
+<li><strong>Sam Altman:</strong> checks whether members love it enough to pay more.</li>
+<li><strong>Brian Chesky:</strong> the likely dissent. He would fix the experience before touching the price.</li>
+<li>Not seated: Gary Vee and MrBeast. This is not a content or attention question.</li>
+</ul>
+
+<h4 class="adv-h"><span class="avatar c-ah" aria-hidden="true">AH</span>Alex Hormozi</h4>
+<p><strong>Diagnosis:</strong> You don't have a lead problem. You have a margin problem. At 45% you keep about $112 a member each month, and that's thin for coaching.</p>
+<p><strong>Recommendation (LTGP to CAC):</strong> With 6% leaving each month, a member is worth about $1,870 in gross profit. At $299 with the same delivery cost, that's about $2,700. Same leads, same close rate, about 45% more profit per member. Add a cheaper tier only if your best-fit buyers are the ones saying no on price. So far nobody has told you that.</p>
+<p><strong>Do this week:</strong> Monday, set the checkout to $299 for new members. After 5 sales, check the close rate. If it holds, raise another 20% and test again.</p>
+
+<h4 class="adv-h"><span class="avatar c-sa" aria-hidden="true">SA</span>Sam Altman</h4>
+<p><strong>Diagnosis:</strong> Pricing is not where my thinking goes deepest, so I'll check what sits underneath it. Do members love this enough to pay more? Losing 6% a month says maybe not yet.</p>
+<p><strong>Recommendation (Love Before Growth):</strong> Run the "really bummed" test. Call 10 members and ask what they like, what they don't, and whether they would be really bummed if you shut down tomorrow. If 7 or more say yes and some have already sent you a friend, you have room to charge more. If fewer than 5 do, fix the product first. A higher price won't hide it.</p>
+<p><strong>Do this week:</strong> Book ten 15-minute calls by Thursday. Write the answers down word for word.</p>
+
+<h4 class="adv-h"><span class="avatar c-bc" aria-hidden="true">BC</span>Brian Chesky</h4>
+<p><strong>Diagnosis:</strong> I'm reasoning from principles here, because price isn't my lane. What I see: 6% leave every month. That's a five-star experience. It works, and nobody talks about it.</p>
+<p><strong>Recommendation (The 11-Star Experience):</strong> Pick one moment: a new member's first week. Five stars is "the login works". Seven stars is a plan built for them on day one, a check-in call on day three, and a result they can see by day seven. Deliver the seven-star week by hand to your next 10 members. Raise the price once people start telling friends, not before.</p>
+<p><strong>Do this week:</strong> By Friday, write the 1 to 11 star ladder for week one and circle the version you can deliver by hand.</p>
+
+<h4>Chair's synthesis</h4>
+<p><strong>Where they agree:</strong> The price can rise if members feel the value. Nobody backs the cheaper tier yet.</p>
+<p><strong>Where they split:</strong> Hormozi says raise it now for new members. Chesky says fix the first week first. The real trade-off: about $50 more a month from every new member starting now, against charging more for an experience that still loses 6% of members a month.</p>
+<p><strong>The call:</strong> Raise the price to $299 for new members from Monday, and keep current members at $249 for now. Pricing is Hormozi's lane, and a new-member price can be reversed in a day. Move current members once 7 of 10 calls come back "really bummed" and monthly cancellations fall below 5%.</p>
+<p><strong>How I weighed them:</strong> Hormozi carries the most weight on price. Altman and Chesky are both thin on pricing by their own blind spots, so I used them for the love and retention check, not the number.</p>
+<p><strong>Next 3 actions:</strong></p>
+<ol>
+<li>Set the checkout to $299 for new members by Monday.</li>
+<li>Call 10 members by Thursday with the "really bummed" questions.</li>
+<li>Deliver the seven-star first week to the next 10 new members within 30 days.</li>
+</ol>
+<p><strong>What would change the call:</strong> The close rate drops below 18% over the next 10 sales at $299, or fewer than 5 of 10 members say they would be really bummed.</p>
+<p><strong>Follow up with:</strong> Chesky, on the first week. Say: Ask Chesky: "Run the 11-star exercise on a new member's first week."</p>
+<p class="foot-line">AI advisors built from public work, not the real people. Check anything important before you act.</p>
+</div>
+<div class="ex-end">End of the example written by the AI.</div>
+</div>
+</section>
+
+<section class="card" id="prompts" aria-labelledby="h-prompts">
+<h2 id="h-prompts"><span class="num">5</span> Copy-paste prompts</h2>
+<p class="intro">The same prompts are in the <code>prompts/</code> folder. Open one, copy it, paste it into your council project or folder, then fill in the [BRACKETS].</p>
+
+<details class="pd">
+<summary><span class="pn">01</span><span><strong>Set up</strong><span class="ps">Once, at the start. Interviews you and builds your business profile.</span></span><span class="chev" aria-hidden="true">›</span></summary>
+<div class="pbody">
+<div class="prompt" id="prompt-01">Set up my AI Advisory Council.
+
+If you are working in a local folder: read AGENTS.md and follow its Setup steps. Check that the advisors and council files are there, interview me, and save my-business/Business-Profile.md.
+
+If you are in a web project: follow your project instructions. Tell me in one line which advisor Brain files and council files you can see in project knowledge, and whether any are missing. Then interview me. When I answer, give me my complete Business-Profile.md in one block, in the same layout as the template, so I can save it and upload it to project knowledge.
+
+The interview: ask me the 12 setup questions from Council-Protocol.md, all in one message, numbered. I will answer in a sentence or two each. "Don't know" is fine. Don't ask a second round; write "Unknown" for anything I skip.
+
+Optional, read this first to pre-fill what you can: [YOUR WEBSITE OR MAIN SOCIAL LINK, OR DELETE THIS LINE]
+
+When the profile is done, give me:
+1. A 5-line summary of my business as the council sees it.
+2. The 3 unknowns that matter most.
+3. 3 first questions I should ask the council, each as a ready-to-paste line.</div>
+<button class="copy" data-copy="prompt-01">Copy prompt 01</button>
+</div>
+</details>
+
+<details class="pd">
+<summary><span class="pn">02</span><span><strong>Ask the council</strong><span class="ps">Any real business decision. Short version: <code>Ask the council: [your question]</code></span></span><span class="chev" aria-hidden="true">›</span></summary>
+<div class="pbody">
+<div class="prompt" id="prompt-02">Ask the council: [YOUR QUESTION OR DECISION. Example: Should I raise my price from $249 to $299 a month, or add a cheaper tier first?]
+
+What's new since my profile: [NEW NUMBERS OR CHANGES, OR "nothing"]
+I need to decide by: [DATE, OR "no deadline"]
+Seat: [ADVISOR NAMES, "you choose" OR "full council"]
+
+Run a council meeting as set out in Council-Protocol.md.
+Chair: restate my decision as a choice, pull what matters from my business profile, and seat the 3 to 5 advisors who fit (all of them if I said full council), including at least one who is likely to disagree.
+Each advisor answers on their own, in their own voice, from their own brain: a diagnosis, a recommendation using one of their named frameworks with my numbers, and one thing to do this week. Keep their real disagreements. No echoing.
+Then the Chair's synthesis: where they agree, where they split and the real trade-off, the call for my situation (no averaging; weigh each advisor by their blind spots), 3 next actions, what would change the call, and who to follow up with.
+
+Local folder: follow AGENTS.md and save the meeting to sessions/.</div>
+<button class="copy" data-copy="prompt-02">Copy prompt 02</button>
+</div>
+</details>
+
+<details class="pd">
+<summary><span class="pn">03</span><span><strong>Ask one advisor</strong><span class="ps">When you know whose lane it is. Includes 25 starter questions. Short version: <code>Ask Hormozi: [your question]</code></span></span><span class="chev" aria-hidden="true">›</span></summary>
+<div class="pbody">
+<div class="prompt" id="prompt-03">Ask [ADVISOR NAME]: [YOUR QUESTION]
+
+Answer only as [ADVISOR NAME], from their brain, in their voice, using my business profile. If a missing fact would change your advice, ask me up to 3 questions first and stop. Otherwise: name the real problem, prescribe with one of your named frameworks using my numbers, and end with "Do this week:" and 1 to 3 actions. If this is outside your lane, say so and tell me which advisor to ask instead.
+
+Local folder: follow AGENTS.md and save this to sessions/.</div>
+<button class="copy" data-copy="prompt-03">Copy prompt 03</button>
+<h4>Starter questions</h4>
+<p class="micro">Copy one, fill in the [BRACKETS] and paste it in. Each works on its own as a short version.</p>
+<h5>Alex Hormozi <span>offers, pricing, leads, sales and unit economics</span></h5>
+<div class="q"><p id="q-ah-1"><span class="ask">Ask Hormozi:</span> Here are my numbers: revenue [amount] a month, margin [%], price [amount], cost to get a customer [amount], and what a customer is worth over time [amount]. What is my real constraint, and what would you fix first?</p><button class="copy small" data-copy="q-ah-1">Copy<span class="sr"> Hormozi starter question 1</span></button></div>
+<div class="q"><p id="q-ah-2"><span class="ask">Ask Hormozi:</span> Here is my offer: [what I sell, price, what's included, any guarantee]. Rebuild it into a Grand Slam Offer I can sell at a higher price.</p><button class="copy small" data-copy="q-ah-2">Copy<span class="sr"> Hormozi starter question 2</span></button></div>
+<div class="q"><p id="q-ah-3"><span class="ask">Ask Hormozi:</span> I charge [price] and it costs me about [cost] to deliver. Should I raise my prices? By how much, and how do I tell my current customers?</p><button class="copy small" data-copy="q-ah-3">Copy<span class="sr"> Hormozi starter question 3</span></button></div>
+<div class="q"><p id="q-ah-4"><span class="ask">Ask Hormozi:</span> I get about [number] leads a month, mostly from [channel]. Build me a 30-day plan with daily numbers I can actually hit.</p><button class="copy small" data-copy="q-ah-4">Copy<span class="sr"> Hormozi starter question 4</span></button></div>
+<div class="q"><p id="q-ah-5"><span class="ask">Ask Hormozi:</span> Here is my sales process from first contact to payment: [steps]. I close [%] of calls. Where am I losing sales, and what should I change first?</p><button class="copy small" data-copy="q-ah-5">Copy<span class="sr"> Hormozi starter question 5</span></button></div>
+<h5>Gary Vee <span>attention, content, social media, brand and the long game</span></h5>
+<div class="q"><p id="q-gv-1"><span class="ask">Ask Gary:</span> Here is how customers find me today: [your channels]. Where is my customers' attention underpriced right now, and what would you move first?</p><button class="copy small" data-copy="q-gv-1">Copy<span class="sr"> Gary starter question 1</span></button></div>
+<div class="q"><p id="q-gv-2"><span class="ask">Ask Gary:</span> Last month I posted [number] pieces on [platforms]. My best post got [views]. Audit this and give me a 30-day posting plan I can actually keep up with.</p><button class="copy small" data-copy="q-gv-2">Copy<span class="sr"> Gary starter question 2</span></button></div>
+<div class="q"><p id="q-gv-3"><span class="ask">Ask Gary:</span> I have about one hour a week for content. What pillar should I record, and how do I turn it into 30 pieces across platforms?</p><button class="copy small" data-copy="q-gv-3">Copy<span class="sr"> Gary starter question 3</span></button></div>
+<div class="q"><p id="q-gv-4"><span class="ask">Ask Gary:</span> I have [$ amount] a month for ads. How do I post organically first and only pay behind the winners, for my business?</p><button class="copy small" data-copy="q-gv-4">Copy<span class="sr"> Gary starter question 4</span></button></div>
+<div class="q"><p id="q-gv-5"><span class="ask">Ask Gary:</span> Write me a Thank You Economy plan for my past customers: who to contact, what to say, and how often.</p><button class="copy small" data-copy="q-gv-5">Copy<span class="sr"> Gary starter question 5</span></button></div>
+<h5>Sam Altman <span>strategy, focus, product love, growth, hiring and AI</span></h5>
+<div class="q"><p id="q-sa-1"><span class="ask">Ask Sam:</span> Here is my business in one sentence: [your sentence]. Run the "really bummed" test with me. Do my customers love it enough to grow, and what should I fix first?</p><button class="copy small" data-copy="q-sa-1">Copy<span class="sr"> Sam starter question 1</span></button></div>
+<div class="q"><p id="q-sa-2"><span class="ask">Ask Sam:</span> My revenue for the last six months was [numbers]. Why am I not growing faster? Pick my one metric and name the three things blocking it.</p><button class="copy small" data-copy="q-sa-2">Copy<span class="sr"> Sam starter question 2</span></button></div>
+<div class="q"><p id="q-sa-3"><span class="ask">Ask Sam:</span> Here is how my team and I use AI today: [list]. Which few-hour tasks should we hand to AI first, and which one workflow should I redesign AI-first?</p><button class="copy small" data-copy="q-sa-3">Copy<span class="sr"> Sam starter question 3</span></button></div>
+<div class="q"><p id="q-sa-4"><span class="ask">Ask Sam:</span> I want to build [AI product or service]. Is it a flashlight app or an Uber? What happens to it when a much better model ships?</p><button class="copy small" data-copy="q-sa-4">Copy<span class="sr"> Sam starter question 4</span></button></div>
+<div class="q"><p id="q-sa-5"><span class="ask">Ask Sam:</span> I'm running these projects: [list]. Which pretty-good idea should I kill so I can go all in on the great one?</p><button class="copy small" data-copy="q-sa-5">Copy<span class="sr"> Sam starter question 5</span></button></div>
+<h5>Brian Chesky <span>customer experience, product, brand, focus and leading a growing team</span></h5>
+<div class="q"><p id="q-bc-1"><span class="ask">Ask Chesky:</span> Here is my business and the moment a new customer first experiences it: [describe]. Run the 11-star exercise on that moment and tell me which 7-star version I can deliver by hand next week.</p><button class="copy small" data-copy="q-bc-1">Copy<span class="sr"> Chesky starter question 1</span></button></div>
+<div class="q"><p id="q-bc-2"><span class="ask">Ask Chesky:</span> Here is every project and offer I'm running right now: [list]. Which 20% should I keep, what should I pause, and how should I review the work each week?</p><button class="copy small" data-copy="q-bc-2">Copy<span class="sr"> Chesky starter question 2</span></button></div>
+<div class="q"><p id="q-bc-3"><span class="ask">Ask Chesky:</span> Here are my most common customer complaints from the last 90 days: [paste]. Map them to my customer journey and tell me what to fix first.</p><button class="copy small" data-copy="q-bc-3">Copy<span class="sr"> Chesky starter question 3</span></button></div>
+<div class="q"><p id="q-bc-4"><span class="ask">Ask Chesky:</span> I want to launch [new offer or product]. Have I earned permission yet? If yes, how do I pilot it one, ten, many?</p><button class="copy small" data-copy="q-bc-4">Copy<span class="sr"> Chesky starter question 4</span></button></div>
+<div class="q"><p id="q-bc-5"><span class="ask">Ask Chesky:</span> I'm hiring my first [role] so I can step back. How do I find great people without a job ad, and how do I hand off without the quality slipping?</p><button class="copy small" data-copy="q-bc-5">Copy<span class="sr"> Chesky starter question 5</span></button></div>
+<h5>MrBeast <span>content ideas, packaging, retention, creative teams and products off an audience</span></h5>
+<div class="q"><p id="q-mb-1"><span class="ask">Ask MrBeast:</span> Here are the titles, views, click-through rate and average view duration of my last 10 videos: [paste]. Rank them out of 10, tell me what the winners have in common, and write 10 better titles for my next one.</p><button class="copy small" data-copy="q-mb-1">Copy<span class="sr"> MrBeast starter question 1</span></button></div>
+<div class="q"><p id="q-mb-2"><span class="ask">Ask MrBeast:</span> My next idea is [idea]. Is it a purple cow or just a cow? Write the title, describe the thumbnail, and plan the first 5 seconds and the first minute.</p><button class="copy small" data-copy="q-mb-2">Copy<span class="sr"> MrBeast starter question 2</span></button></div>
+<div class="q"><p id="q-mb-3"><span class="ask">Ask MrBeast:</span> My videos lose most viewers at [time stamps]. Here's what happens at those moments: [describe]. Map my video minute by minute and tell me what to cut, move or add.</p><button class="copy small" data-copy="q-mb-3">Copy<span class="sr"> MrBeast starter question 3</span></button></div>
+<div class="q"><p id="q-mb-4"><span class="ask">Ask MrBeast:</span> My team of [number] keeps missing deadlines on [type of project]. Find the critical component and the bottleneck, and set up a daily check-in system we can start Monday.</p><button class="copy small" data-copy="q-mb-4">Copy<span class="sr"> MrBeast starter question 4</span></button></div>
+<div class="q"><p id="q-mb-5"><span class="ask">Ask MrBeast:</span> I have [audience size] on [platforms] and want to launch [product]. Run the creator-product test: is it better than the shelf, will people buy it again, and would brand deals pay me more?</p><button class="copy small" data-copy="q-mb-5">Copy<span class="sr"> MrBeast starter question 5</span></button></div>
+</div>
+</details>
+
+<details class="pd">
+<summary><span class="pn">04</span><span><strong>Debate</strong><span class="ps">Two advisors who would pull you different ways, at full strength. Short version: <code>Debate Hormozi vs Chesky: [your question]</code></span></span><span class="chev" aria-hidden="true">›</span></summary>
+<div class="pbody">
+<div class="prompt" id="prompt-04">Debate: [YOUR QUESTION. Example: Should I spend $3,000 a month on Facebook ads, or put that money into making my customer experience worth talking about?]
+Advisors: [TWO NAMES, e.g. Hormozi vs Chesky, OR "you pick the two who disagree most on this"]
+
+Run a debate as set out in Council-Protocol.md. Each advisor argues their own real position from their brain, in their own voice, applied to my business profile.
+Round 1: opening position with a named framework.
+Round 2: rebuttal that answers the other's strongest point directly.
+Round 3: closing, with what would change their mind and one thing to do this week.
+Then the Chair's verdict for my business: which way and why (using my profile and each advisor's blind spots), what the other side got right, 3 next actions, and what would flip the verdict.
+
+Local folder: follow AGENTS.md and save the debate to sessions/.</div>
+<button class="copy" data-copy="prompt-04">Copy prompt 04</button>
+<h4>Good matchups</h4>
+<p class="micro">From the clash map in <code>council/Council-Roster.md</code>.</p>
+<ul class="match"><li><span>Paid ads now, or build the brand first?</span><span>Hormozi vs Chesky</span></li><li><span>One platform, or seven?</span><span>Hormozi vs Gary</span></li><li><span>Post every day, or fewer, bigger pieces?</span><span>Gary vs MrBeast</span></li><li><span>Grow on customers' cash, or raise money and bet big?</span><span>Hormozi vs Sam</span></li><li><span>Ship at 80%, or polish until it is great?</span><span>Gary vs Chesky</span></li><li><span>Reach everyone, or only buyers?</span><span>Hormozi vs MrBeast</span></li><li><span>Brand first, or product first?</span><span>Gary vs Sam</span></li><li><span>Plug into AI platforms, or own the customer?</span><span>Sam vs Chesky</span></li><li><span>AI-made video in my content?</span><span>Sam vs MrBeast</span></li><li><span>Trust the data, or trust your taste?</span><span>MrBeast vs Chesky</span></li><li><span>Stay in the details, or hire an operator above me?</span><span>Chesky vs Hormozi</span></li></ul>
+</div>
+</details>
+
+<details class="pd">
+<summary><span class="pn">05</span><span><strong>Hot seat</strong><span class="ps">For a big decision. The advisors question you first. Short version: <code>Hot seat: [your decision]</code></span></span><span class="chev" aria-hidden="true">›</span></summary>
+<div class="pbody">
+<div class="prompt" id="prompt-05">Hot seat: [THE DECISION. Example: Should I hire a full-time head coach at $65,000 a year so I can step back from client calls?]
+Seat: [ADVISOR NAMES, OR "you choose"]
+
+Run a hot seat as set out in Council-Protocol.md.
+Chair: restate the decision as a choice and seat 3 to 5 advisors.
+Each advisor asks me their 2 or 3 sharpest questions for this decision, in their own voice, skipping anything my profile already answers. No more than 12 questions in total, numbered. Then stop and wait for my answers.
+When I reply, or say "go", run the full council meeting using my answers, and list any new facts that should go in my profile.
+
+Local folder: follow AGENTS.md, save the questions, my answers and the meeting to sessions/, and ask before updating my profile.</div>
+<button class="copy" data-copy="prompt-05">Copy prompt 05</button>
+</div>
+</details>
+
+<details class="pd">
+<summary><span class="pn">06</span><span><strong>Board review</strong><span class="ps">Once a month. Your numbers and goals in, 3 priorities for next month out.</span></span><span class="chev" aria-hidden="true">›</span></summary>
+<div class="pbody">
+<div class="prompt" id="prompt-06">Board review for [MONTH YEAR].
+
+THIS MONTH (last month in brackets, if you have it)
+- Revenue: [amount] (last month: [amount])
+- Profit or margin: [amount or %] (last month: [amount or %])
+- Cash in the bank: [amount]
+- New customers: [number] (last month: [number])
+- Lost or cancelled customers: [number]
+- Leads: [number]
+- Close rate: [%]
+- Cost to get a customer: [amount]
+- Content: [pieces posted, and your best piece with its views]
+- [ANY OTHER NUMBER YOU TRACK]: [value]
+
+GOALS
+- This quarter's goal: [Example: $60,000 a month by December]
+- Target for next month: [number]
+
+LAST MONTH'S PRIORITIES
+1. [Priority]: [done / partly / not done]
+2. [Priority]: [done / partly / not done]
+3. [Priority]: [done / partly / not done]
+
+WHAT HAPPENED
+- Wins: [what went well]
+- Problems: [what went wrong or got stuck]
+- Decisions coming up: [anything you need to decide next month]
+
+Run a board review as set out in Council-Protocol.md, with every advisor seated: the scorecard, last month's priorities, the Chair's read, each advisor's view and one priority, then 3 priorities for next month with numbers, owners and dates, one thing to stop, one risk to watch, and one number to check every week.
+
+Local folder: follow AGENTS.md, update the numbers in my-business/Business-Profile.md and save this review to sessions/.
+Web project: list which profile fields changed. Give me the full updated profile only if I ask.</div>
+<button class="copy" data-copy="prompt-06">Copy prompt 06</button>
+<p class="micro" style="margin-top:12px">Rough numbers beat none, and "unknown" is fine. In a local folder you can leave last month's priorities blank; the AI reads them from <code>sessions/</code>.</p>
+</div>
+</details>
+
+<p class="micro" style="margin:16px 0 0">Prompt 07, clone a new advisor, is in the next section.</p>
+</section>
+
+<section class="card" id="clone" aria-labelledby="h-clone">
+<h2 id="h-clone"><span class="num">6</span> Clone your own advisor</h2>
+<p class="intro">Add someone to your council: an operator in your industry, a mentor who says yes, or yourself. Give them a seat the council does not cover yet, such as operations, finance, hiring, sales or your industry. The Clone-A-Brain Kit from module 1 is already inside this folder, in <code>clone-a-brain/</code>. The five course advisors were built with this exact method.</p>
+<div class="row">
+<div>
+<h3>Local folder</h3>
+<p class="micro">Claude Code, Cowork or Codex. About 10 minutes of your time.</p>
+<ol class="steps">
+<li>Open this folder in Claude Code or Codex, as in step 2.</li>
+<li>Paste <strong>Part A</strong> below, or just say <strong>"Clone [name]'s brain."</strong> To clone yourself, put your transcripts, SOPs and posts in <code>clone-a-brain/sources/</code> first and say <strong>"Clone my brain."</strong></li>
+<li>The AI researches the person, reads real transcripts, writes the advisor into <code>advisors/</code> and adds them to your roster. Standard depth takes 1 to 3 hours of the AI working; deep takes 3 to 6.</li>
+<li>Say <strong>"Test my clone."</strong> Then seat them: <strong>"Ask the council: ..."</strong></li>
+</ol>
+<p class="micro">Needs Python 3 and a free tool called yt-dlp. The AI checks for both and asks before installing anything.</p>
+</div>
+<div>
+<h3>Web project</h3>
+<p class="micro">ChatGPT or Claude. About 1 to 3 hours, mostly waiting on research.</p>
+<ol class="steps">
+<li>Read <code>clone-a-brain/Clone-A-Brain-Method.md</code> (about 10 minutes).</li>
+<li>Run <code>clone-a-brain/prompts/01</code> to <code>03</code>: research in ChatGPT Deep research or Claude Research, build the brain, write the instructions. For yourself or a mentor, use <code>05</code> instead.</li>
+<li>Test the clone with <code>04</code>.</li>
+<li>Upload the new Brain file to your council project, then paste <strong>Part B</strong> below in a chat there. Save the updated <code>Council-Roster.md</code> it gives you, delete the old one from the project, and upload the new one.</li>
+</ol>
+<p class="micro">Check your file limit first. ChatGPT allows 5 files per project on Free, 25 on Go and Plus.</p>
+</div>
+</div>
+
+<details class="pd" style="margin-top:8px">
+<summary><span class="pn">07A</span><span><strong>Clone a new advisor: local folder</strong><span class="ps">Part A of prompt 07. The AI builds the advisor and adds them to your roster.</span></span><span class="chev" aria-hidden="true">›</span></summary>
+<div class="pbody">
+<div class="prompt" id="prompt-07a">Clone [FULL NAME, PLUS COMPANY OR ROLE]'s brain and add them to my council.
+Seat: [THE QUESTIONS THEY SHOULD OWN, OR "suggest one"]
+Depth: [standard OR deep]
+Must include: [A BOOK, PODCAST OR ERA YOU KNOW MATTERS, OR "none"]
+
+Follow clone-a-brain/CLONE-PROCEDURE.md: Part A for a public person, or Part B if this is me or a mentor who has agreed (my files are in clone-a-brain/sources/). Write the advisor into advisors/ and add them to council/Council-Roster.md: a seats row, their names, the routing rows that fit their seat, and an agree and clash line with each advisor. Then run the five tests from Part C and tell me what passed. Keep me posted with one line per stage.</div>
+<button class="copy" data-copy="prompt-07a">Copy Part A</button>
+</div>
+</details>
+<details class="pd">
+<summary><span class="pn">07B</span><span><strong>Clone a new advisor: web project</strong><span class="ps">Part B of prompt 07. Use after the new Brain file is in your council project.</span></span><span class="chev" aria-hidden="true">›</span></summary>
+<div class="pbody">
+<div class="prompt" id="prompt-07b">Add a new advisor to my council: [NAME]. Their brain is [PREFIX]-Brain.md in project knowledge.
+
+Read their brain (sections 1, 3, 10 and 13) and Council-Roster.md. Then give me the complete updated Council-Roster.md in one block, with:
+1. A new row in the seats table (advisor, seat, best for, not for, files), marked "(cloned, [MONTH YEAR])".
+2. Their names in the names table.
+3. Their name added to the routing rows that match their seat.
+4. One agree and clash line with each existing advisor, from section 13 of their brain. Write "stated views" where nothing is documented.
+Change nothing else in the roster.
+
+Then tell me in 3 lines: the seat they hold, which questions will now go to them, and the 3 best first questions to ask them.
+I will delete the old Council-Roster.md from project knowledge and upload the new one.</div>
+<button class="copy" data-copy="prompt-07b">Copy Part B</button>
+</div>
+</details>
+
+<div class="note" style="margin:18px 0 0"><strong>The rules.</strong> Build public figures from public material only, and always call the result an AI advisor built from their public work. Never sell it, present it as the real person, or imply they endorse you. Clone a private person, like a mentor, only with their permission.</div>
+</section>
+
+<section class="card" id="know" aria-labelledby="h-know">
+<h2 id="h-know"><span class="num">7</span> What you need to know</h2>
+<div class="know">
+<div class="lead">
+<h3>AI advisors, not the real people</h3>
+<p>Each advisor is an AI built from public work: books, interviews, podcasts, talks and posts. They are not the real people. This package is not affiliated with or endorsed by Alex Hormozi, Gary Vaynerchuk, Sam Altman, Brian Chesky, Jimmy Donaldson (MrBeast) or their companies.</p>
+</div>
+<div>
+<h3>Research date: September 2026</h3>
+<p>Each advisor was built from 78 to 132 sources, listed in their <code>*-Sources.md</code> file. Anything after September 2026 is not in their brain. In a local folder, say "Update Gary Vee's brain" to research what is new.</p>
+</div>
+<div>
+<h3>Advice, not guarantees</h3>
+<p>Check anything important before you act. For legal, tax, medical or investment questions, see a qualified professional.</p>
+</div>
+<div>
+<h3>Which plan you need</h3>
+<ul>
+<li>Claude Projects: every plan. Free has no RAG, so check the capacity indicator.</li>
+<li>ChatGPT: Go or Plus for the full council. Free allows 5 files per project.</li>
+<li>Local: Claude Code (Pro, Max, Team or Enterprise) or Codex in the ChatGPT desktop app.</li>
+<li>Gemini works too: make a New Gem, paste the council instructions and add the 8 files under Knowledge.</li>
+</ul>
+</div>
+<div>
+<h3>Your data</h3>
+<p>Your profile and meetings live in this folder (local) or in your project (web). Leave out passwords, account numbers and customers' personal details.</p>
+</div>
+<div>
+<h3>Keeping it current</h3>
+<ul>
+<li>Your profile: say "Update my profile: ...", or run a "Board review" each month.</li>
+<li>An advisor on the web: follow "Keeping it current" in <code>clone-a-brain/Clone-A-Brain-Method.md</code>.</li>
+<li>Replacing a file in a project? Delete the old one first, so the AI never reads two versions.</li>
+</ul>
+</div>
+<div>
+<h3>If a file is rejected</h3>
+<p>If a platform rejects a .md file, rename it to .txt (for example <code>Alex-Hormozi-Brain.txt</code>) and upload it again. Nothing inside changes.</p>
+</div>
+</div>
+</section>
+
+<div class="links"><a href="START%20HERE.md">Text quick start</a><a href="docs/SETUP-CHATGPT.md">ChatGPT setup</a><a href="docs/SETUP-CLAUDE.md">Claude setup</a><a href="council/Council-Protocol.md">How meetings run</a><a href="council/Council-Roster.md">Roster and clash map</a><a href="my-business/Business-Profile.md">Business profile template</a><a href="clone-a-brain/README.md">Clone-A-Brain Kit</a></div>
+<footer>AI Advisory Council · Member edition v1.0.0 · 28 September 2026<br>AI advisors built from public work, not the real people. Not affiliated with or endorsed by the people the advisors are built from. The council needs no API key and no software.</footer>
+</main>
+<div class="sr" aria-live="polite" id="live"></div>
+<script>
+(function(){
+  var lists=document.querySelectorAll('[role="tablist"]');
+  Array.prototype.forEach.call(lists,function(list){
+    var tabs=Array.prototype.slice.call(list.querySelectorAll('[role="tab"]'));
+    function select(tab,focus){
+      tabs.forEach(function(t){
+        var on=t===tab;
+        t.setAttribute('aria-selected',on?'true':'false');
+        t.tabIndex=on?0:-1;
+        var p=document.getElementById(t.getAttribute('aria-controls'));
+        if(p)p.hidden=!on;
+      });
+      if(focus)tab.focus();
+    }
+    tabs.forEach(function(tab,i){
+      tab.addEventListener('click',function(){select(tab,false)});
+      tab.addEventListener('keydown',function(e){
+        var j=null;
+        if(e.key==='ArrowRight'||e.key==='ArrowDown')j=(i+1)%tabs.length;
+        else if(e.key==='ArrowLeft'||e.key==='ArrowUp')j=(i-1+tabs.length)%tabs.length;
+        else if(e.key==='Home')j=0;
+        else if(e.key==='End')j=tabs.length-1;
+        if(j!==null){e.preventDefault();select(tabs[j],true)}
+      });
+    });
+  });
+
+  var live=document.getElementById('live');
+  var original=new WeakMap();
+  function fallbackCopy(text){
+    var box=document.createElement('textarea');
+    box.value=text;box.setAttribute('readonly','');
+    box.style.position='fixed';box.style.top='0';box.style.left='-9999px';box.style.opacity='0';
+    document.body.appendChild(box);box.select();box.setSelectionRange(0,text.length);
+    var ok=false;try{ok=document.execCommand('copy')}catch(e){ok=false}
+    box.remove();return ok;
+  }
+  function copyText(text){
+    if(navigator.clipboard&&window.isSecureContext){
+      return navigator.clipboard.writeText(text).then(function(){return true},function(){return fallbackCopy(text)});
+    }
+    return Promise.resolve(fallbackCopy(text));
+  }
+  document.addEventListener('click',function(e){
+    var b=e.target.closest?e.target.closest('[data-copy]'):null;
+    if(!b)return;
+    var src=document.getElementById(b.getAttribute('data-copy'));
+    if(!src)return;
+    if(!original.has(b))original.set(b,b.innerHTML);
+    copyText(src.textContent).then(function(ok){
+      b.textContent=ok?'Copied':'Selected. Press Ctrl+C or Cmd+C';
+      live.textContent=ok?'Copied to clipboard.':'Could not copy. The text is selected, so copy it by hand.';
+      if(!ok){var r=document.createRange();r.selectNodeContents(src);var s=window.getSelection();s.removeAllRanges();s.addRange(r);}
+      clearTimeout(b._t);
+      b._t=setTimeout(function(){b.innerHTML=original.get(b)},2400);
+    });
+  });
+})();
+</script>
+</body>
+</html>

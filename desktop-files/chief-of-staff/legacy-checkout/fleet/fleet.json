@@ -1,0 +1,648 @@
+{
+  "version": 1,
+  "generated_on": "2026-10-23",
+  "window": {
+    "start": "2026-10-22T22:48:27-04:00",
+    "end": "2026-10-23T22:48:27-04:00",
+    "hours": 24.0
+  },
+  "employees": [
+    {
+      "slug": "chief-of-staff",
+      "root": "/workspace/AI-employee/employees/chief-of-staff",
+      "present": true,
+      "paused": false,
+      "paused_since": null,
+      "confirmed_on": "2026-10-23",
+      "digest": "brief-latest.md",
+      "unreached": false,
+      "routines": [
+        {
+          "id": "cos-fleet-reconcile",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "cos-fault-dossier",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "cos-market-sweep",
+          "state": "running",
+          "eligible_periods": 0,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "cos-metrics-review",
+          "state": "running",
+          "eligible_periods": 0,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "cos-decision-brief",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "cos-charter-and-fleet-audit",
+          "state": "running",
+          "eligible_periods": 0,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "cos-decision-review",
+          "state": "running",
+          "eligible_periods": 0,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        }
+      ]
+    },
+    {
+      "slug": "ad-manager-employee",
+      "root": "/workspace/AI-employee/employees/ad-manager-employee",
+      "present": true,
+      "paused": false,
+      "paused_since": null,
+      "confirmed_on": "2026-10-23",
+      "digest": "ads-latest.md",
+      "unreached": false,
+      "routines": [
+        {
+          "id": "ads-account-read",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "ads-desk-standup",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "ads-creative-studio",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "ads-build-desk",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "ads-change-list",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "ads-account-intake",
+          "state": "running",
+          "eligible_periods": 0,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "ads-creative-retro",
+          "state": "running",
+          "eligible_periods": 0,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        }
+      ]
+    },
+    {
+      "slug": "customer-satisfaction-employee",
+      "root": "/workspace/AI-employee/employees/customer-satisfaction-employee",
+      "present": true,
+      "paused": false,
+      "paused_since": null,
+      "confirmed_on": "2026-10-23",
+      "digest": "csat-latest.md",
+      "unreached": false,
+      "routines": [
+        {
+          "id": "csat-inbox-sweep",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "csat-desk-standup",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "csat-reply-desk",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "csat-churn-watch",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "csat-deflection-desk",
+          "state": "running",
+          "eligible_periods": 0,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "csat-satisfaction-report",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "csat-desk-intake",
+          "state": "running",
+          "eligible_periods": 0,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "csat-taxonomy-refresh",
+          "state": "running",
+          "eligible_periods": 0,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        }
+      ]
+    },
+    {
+      "slug": "gtm-engineer",
+      "root": "/workspace/AI-employee/employees/gtm-engineer",
+      "present": true,
+      "paused": false,
+      "paused_since": null,
+      "confirmed_on": "2026-10-23",
+      "digest": "gtm-latest.md",
+      "unreached": false,
+      "routines": [
+        {
+          "id": "gtm-signal-sweep",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "gtm-board-standup",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "gtm-outreach-queue",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "gtm-launch-step-runner",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "gtm-paid-and-tracking-guard",
+          "state": "running",
+          "eligible_periods": 0,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "gtm-scoreboard",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "gtm-intake-and-dashboard",
+          "state": "running",
+          "eligible_periods": 0,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "gtm-icp-refresh",
+          "state": "running",
+          "eligible_periods": 0,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        }
+      ]
+    },
+    {
+      "slug": "sales-employee",
+      "root": "/workspace/AI-employee/employees/sales-employee",
+      "present": true,
+      "paused": false,
+      "paused_since": null,
+      "confirmed_on": "2026-10-23",
+      "digest": "sales-latest.md",
+      "unreached": false,
+      "routines": [
+        {
+          "id": "sales-prospect-sweep",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "sales-desk-standup",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "sales-first-touch-drafts",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "sales-followup-sweep",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "sales-pipeline-review",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "sales-desk-setup",
+          "state": "running",
+          "eligible_periods": 0,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "sales-qualification-refresh",
+          "state": "running",
+          "eligible_periods": 0,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        }
+      ]
+    },
+    {
+      "slug": "seo-employee",
+      "root": "/workspace/AI-employee/employees/seo-employee",
+      "present": true,
+      "paused": false,
+      "paused_since": null,
+      "confirmed_on": "2026-10-23",
+      "digest": "seo-latest.md",
+      "unreached": false,
+      "routines": [
+        {
+          "id": "seo-standup",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "seo-draft-run",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "seo-publish-run",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "seo-index-sweep",
+          "state": "running",
+          "eligible_periods": 0,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "seo-calendar-refill",
+          "state": "running",
+          "eligible_periods": 0,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "seo-answer-visibility",
+          "state": "running",
+          "eligible_periods": 0,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "seo-rank-review",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "seo-intake-and-map",
+          "state": "running",
+          "eligible_periods": 0,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        }
+      ]
+    },
+    {
+      "slug": "social-media-employee",
+      "root": "/workspace/AI-employee/employees/social-media-employee",
+      "present": true,
+      "paused": false,
+      "paused_since": null,
+      "confirmed_on": "2026-10-23",
+      "digest": "soc-latest.md",
+      "unreached": false,
+      "routines": [
+        {
+          "id": "soc-engagement-sweep",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "soc-calendar-standup",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "soc-publish-run",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "soc-material-sweep",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "soc-draft-queue",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "soc-performance-review",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "soc-intake-and-voice",
+          "state": "running",
+          "eligible_periods": 0,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        }
+      ]
+    },
+    {
+      "slug": "web-dev-employee",
+      "root": "/workspace/AI-employee/employees/web-dev-employee",
+      "present": true,
+      "paused": false,
+      "paused_since": null,
+      "confirmed_on": "2026-10-23",
+      "digest": "web-latest.md",
+      "unreached": false,
+      "routines": [
+        {
+          "id": "web-site-sweep",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "web-standup",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "web-fix-runner",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "web-platform-guard",
+          "state": "running",
+          "eligible_periods": 0,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "web-inventory-refresh",
+          "state": "running",
+          "eligible_periods": 0,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "web-dependency-run",
+          "state": "running",
+          "eligible_periods": 0,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "web-weekly-report",
+          "state": "running",
+          "eligible_periods": 1,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        },
+        {
+          "id": "web-guardrail-review",
+          "state": "running",
+          "eligible_periods": 0,
+          "records_in_window": 0,
+          "last_record": null,
+          "last_status": null,
+          "cursor_last_moved": null
+        }
+      ]
+    }
+  ],
+  "faults": []
+}

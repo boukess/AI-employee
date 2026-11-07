@@ -1,0 +1,31 @@
+{
+  "last_period": "2026-10-23",
+  "started": "2026-10-23T22:50:00-04:00",
+  "progress": [
+    "install-hand-prove",
+    "inbox-folded",
+    "brief-written"
+  ],
+  "assumptions": [
+    {
+      "id": "capacity-default",
+      "text": "Working days mon-fri, three cards a day (budgets.md Working days and hours).",
+      "corrects_with": "Edit policy/budgets.md ## Working days and hours."
+    }
+  ],
+  "budget_minutes_used": 5,
+  "inbox_cursor": 14,
+  "runlog_lines_read": 0,
+  "changes_resolved": [],
+  "next_card_id": 15,
+  "blocker_ages": {},
+  "assumptions_seen": [
+    "capacity-default"
+  ],
+  "incident_verdicts": {},
+  "expiry_warned": {},
+  "archive_last_run": null,
+  "last_run_end": "2026-10-23T22:52:00-04:00",
+  "capacity_default_recorded": true,
+  "kit_news_seen_on": null
+}

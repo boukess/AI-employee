@@ -1,0 +1,111 @@
+{
+  "package": "AI Ghostwriter Employee",
+  "version": "1.0.0",
+  "files": {
+    "AGENTS.md": {
+      "bytes": 7683,
+      "sha256": "00edac2340830090fe1ef39069679d397c2df89e7c1787def1518fe5e8ec15f9"
+    },
+    "CLAUDE.md": {
+      "bytes": 309,
+      "sha256": "780571cf269d64977fb23fb9d1372b0064d6625a842caeecd4a36c9ef55a7fac"
+    },
+    "GHOSTWRITER.txt": {
+      "bytes": 43096,
+      "sha256": "42e0e89dbbccfabf3b0799455bb5ffea8888055a8473aede7a98c7f7c1fd3d33"
+    },
+    "README.md": {
+      "bytes": 1688,
+      "sha256": "5ba4fbf724be5abab84a050497bdadb25bcce91891211fe842040bd6325398c6"
+    },
+    "START HERE.html": {
+      "bytes": 8297,
+      "sha256": "c5b25af4fd6d3987cccaa71f4e56b0aa346ba216e70fe0ab0c9f237757210584"
+    },
+    "docs/01-start.md": {
+      "bytes": 3094,
+      "sha256": "ef3a83196a3bd2668669284b29d33ca33072308b5de422bb926971f453f27d1a"
+    },
+    "docs/02-find-the-voice.md": {
+      "bytes": 6489,
+      "sha256": "809fa67c645897030abcdb1ed312c81e3599da4ddf380bf036245fd337bb6cf6"
+    },
+    "docs/03-build-the-voice.md": {
+      "bytes": 5600,
+      "sha256": "5c8094d34300c9a0ffbd7551774485b49c59457faa873ae8a408c346cfb7be4d"
+    },
+    "docs/04-write-and-edit.md": {
+      "bytes": 4989,
+      "sha256": "acb80ad57358974a9eb2fc5f943617594fc7c21a5391c61834cdacaaa96d0cd9"
+    },
+    "docs/05-natural-writing.md": {
+      "bytes": 3922,
+      "sha256": "afec529dc74dcfc6deebce35d103e9c112faae9a50a792af736b08b13f9a82bc"
+    },
+    "docs/06-memory.md": {
+      "bytes": 4561,
+      "sha256": "b9387a684f3964f0cc7ec51e4bb2b0d7313aa5c4e390a847d30527bb38bf3e6b"
+    },
+    "docs/07-platform-setup.md": {
+      "bytes": 3226,
+      "sha256": "c98633695405ec84a783823d0cb9c01d7474ca83451e70b94a8d693cd7e258f9"
+    },
+    "docs/08-example-walkthrough.md": {
+      "bytes": 1608,
+      "sha256": "b8e9d1e4ed45fc4c1ccc6e1e94952a98f866ec4859553b23414758b5766ad768"
+    },
+    "release/RELEASE-FILES.json": {
+      "bytes": 693,
+      "sha256": "527d1bb2c303f160da1400000a12223b13f9251871598b43863777309c34d849"
+    },
+    "release/SKOOL-LESSON.md": {
+      "bytes": 1989,
+      "sha256": "618697817b7de9b3ceeef116f77df002a0154a1c735063c296e2a89f4242c53d"
+    },
+    "release/TEST-REPORT.md": {
+      "bytes": 3383,
+      "sha256": "06224697f3b0242e910dcd10f108d62fb4a7fce433bb820d9c9a2a5f5fc941f0"
+    },
+    "scripts/README.md": {
+      "bytes": 2200,
+      "sha256": "bc52f565806327fbc74bc1a65e3385ac6fb79d85a7b4b3354c7a52fac87f0125"
+    },
+    "scripts/build_release.py": {
+      "bytes": 5906,
+      "sha256": "c422eeb683b7d7b67a7f508b1d2854435ef3e9e613a720bd77c15c5632663d02"
+    },
+    "scripts/voicekit.py": {
+      "bytes": 13790,
+      "sha256": "2011029f58e6bc1af8bd0e7e783c98f1113cfdf779639a2bc586f6cc9d7fa29f"
+    },
+    "templates/memory.txt": {
+      "bytes": 1525,
+      "sha256": "a80db61be8abfb1d063389f491f7d56d343a6693bc3fe4c3f14c676fad76b077"
+    },
+    "templates/source-record.json": {
+      "bytes": 767,
+      "sha256": "4fba0c50ff56f1eb84fd3e601ea1eefdb9c1dfa1a6c173076beebf51f6a42b5a"
+    },
+    "templates/state.json": {
+      "bytes": 352,
+      "sha256": "13760bad65eff3cb800adbea0f55075e9dd6c306317e62050855b7b8a8642b10"
+    },
+    "templates/voice-profile.md": {
+      "bytes": 1152,
+      "sha256": "03e6e189c3621be1687bf7a92fcb05fdec324475ac51641c78d805db36bf8dbb"
+    },
+    "tests/test_release.py": {
+      "bytes": 2881,
+      "sha256": "586a1379b43b10d439070f928569cf1988061138c06f9b11ef2943f3b0345062"
+    },
+    "tests/test_voicekit.py": {
+      "bytes": 7290,
+      "sha256": "2682abd16c8ef658af1ec9c169b63dba795d5ab07fb145d439129ac90b3d4072"
+    },
+    "workspace/README.md": {
+      "bytes": 386,
+      "sha256": "7834c2f268acd3b8c3d3882dc68430d0600870e975dea7e62a46ecfafb6643f5"
+    }
+  },
+  "privacy": "Starter only. Contains no member corpus, private proof files or populated workspace."
+}

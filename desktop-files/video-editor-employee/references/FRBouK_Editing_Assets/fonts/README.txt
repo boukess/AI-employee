@@ -1,0 +1,1 @@
+Font files are NOT bundled: network downloads failed. Official Google Fonts links are included. Download each family with its current license from its official page. Previews use locally installed Arial/Consolas; they are fallback specimens, not exact previews of the named Google Fonts. No system font files have been redistributed.

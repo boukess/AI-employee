@@ -1,0 +1,13 @@
+# AI Video Editor
+
+Open **START HERE.html** or **START HERE.md**.
+
+Member flow: keep the folder → Grok Bot local setup on this computer → drop a raw video in inbox → say “Edit my video” → get the MP4 in exports.
+
+Preferred harness: **Grok Bot** (`docs/SETUP-GROK.md`). ChatGPT and Claude setup docs remain for reference.
+
+The engine combines DaVinci Resolve, Remotion, local transcription and foreground matting. Its reference format is white/cream, compact real product visuals, short captions, custom animations and a rounded presenter frame with the head extending above it.
+
+Member instructions are at the top level and in prompts/. The AI reads AGENTS.md, GROK.md and docs/. The technical engine lives in scripts/, src/ and config/.
+
+Version 1.0.0 • adapted for Grok 24 October 2026. Read docs/VALIDATION.md for tested scope.

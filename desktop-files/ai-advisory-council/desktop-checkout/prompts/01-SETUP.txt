@@ -1,0 +1,23 @@
+AI ADVISORY COUNCIL | PROMPT 01: SET UP
+
+Use once, at the start.
+- Local folder (Claude Code, Cowork or Codex): paste it into a new chat in the AI Advisory Council folder.
+- Web project (Claude or ChatGPT): paste it into a new chat inside your council project, after the instructions and the advisor files are in.
+Fill in the optional [BRACKETS], then paste everything below the line.
+
+================ COPY EVERYTHING BELOW THIS LINE ================
+
+Set up my AI Advisory Council.
+
+If you are working in a local folder: read AGENTS.md and follow its Setup steps. Check that the advisors and council files are there, interview me, and save my-business/Business-Profile.md.
+
+If you are in a web project: follow your project instructions. Tell me in one line which advisor Brain files and council files you can see in project knowledge, and whether any are missing. Then interview me. When I answer, give me my complete Business-Profile.md in one block, in the same layout as the template, so I can save it and upload it to project knowledge.
+
+The interview: ask me the 12 setup questions from Council-Protocol.md, all in one message, numbered. I will answer in a sentence or two each. "Don't know" is fine. Don't ask a second round; write "Unknown" for anything I skip.
+
+Optional, read this first to pre-fill what you can: [YOUR WEBSITE OR MAIN SOCIAL LINK, OR DELETE THIS LINE]
+
+When the profile is done, give me:
+1. A 5-line summary of my business as the council sees it.
+2. The 3 unknowns that matter most.
+3. 3 first questions I should ask the council, each as a ready-to-paste line.

@@ -1,0 +1,82 @@
+{
+  "name": "AI-Thumbnail-Employee",
+  "version": "1.0.0",
+  "contains_member_data": false,
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 1031,
+      "sha256": "1295b4c6a5376fa83dcce03a8b749619cfc39d0ea397b84238bc1f7ac40e11df"
+    },
+    {
+      "path": "CHATGPT-STARTER.txt",
+      "bytes": 58124,
+      "sha256": "98b58d4e330704ce8b24610780757a5c2e1537ee2f46b247afe17f4f0b59f838"
+    },
+    {
+      "path": "START-HERE.md",
+      "bytes": 4176,
+      "sha256": "5995debbd8afa05f9abe57141df80641a9085eef22410aae72be5a0f70ba91e7"
+    },
+    {
+      "path": "scripts/library.py",
+      "bytes": 18667,
+      "sha256": "63013d489bb36b9342797b3e60009811a1d2cceaa67a62500cfc036cb483c082"
+    },
+    {
+      "path": "templates/assets.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "templates/profile.json",
+      "bytes": 559,
+      "sha256": "959b7a6092f1247a83de9d28361d623b2db8bf9b95ea1cda07bfc4f3a7a9ffcc"
+    },
+    {
+      "path": "templates/state.json",
+      "bytes": 480,
+      "sha256": "f49e245a77ee23ce3e92dd4042dcf547b7daff88a3b09addaeafae435d050734"
+    },
+    {
+      "path": "templates/thumbnail-brief.md",
+      "bytes": 736,
+      "sha256": "1484f68798ee005d0a8662b71aeb7e22517034c410af79aadd26402deea5b6fb"
+    },
+    {
+      "path": "thumbnail-designer/SKILL.md",
+      "bytes": 4243,
+      "sha256": "a775e64b3c55ac882fbfd53577274bfda12adb42951fa1f1c4584de8cf8b9a22"
+    },
+    {
+      "path": "thumbnail-designer/references/generation.md",
+      "bytes": 11268,
+      "sha256": "8f663b1aaff9953521d027310ff94266212d71de071cd51c4f5dbf2c5310816a"
+    },
+    {
+      "path": "thumbnail-designer/references/library-tools.md",
+      "bytes": 3389,
+      "sha256": "2e296029fa308ca37220c184bf9b151315badcf03d07fcea3f66fa6d83b791e6"
+    },
+    {
+      "path": "thumbnail-designer/references/onboarding.md",
+      "bytes": 5473,
+      "sha256": "6f6ffc561b12a23d873e7b90d75f69f8c202905208b9aca4282817ee4f34344e"
+    },
+    {
+      "path": "thumbnail-designer/references/persistence.md",
+      "bytes": 5769,
+      "sha256": "1a6747339dbb0d4b3164a08c2089ea25d6037f38d20f366343438b791a8c2200"
+    },
+    {
+      "path": "thumbnail-designer/references/research.md",
+      "bytes": 23262,
+      "sha256": "076bc169e8e9704c13c5e6e2b489fe5405fd0ab9f36aa219ee21326dd7533849"
+    },
+    {
+      "path": "workspace/README.md",
+      "bytes": 1243,
+      "sha256": "2e00f468ba47ce5fdfdb7754b761da6ac568cf3f82ff6829a9ae1b8062850f9e"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "corpus_root": "references/corpus",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "audio": {
+    "integrated_lufs": -12.0,
+    "true_peak_dbtp": -1.5,
+    "loudness_range": 5.0
+  },
+  "transcription_model": "small",
+  "resolve_python": "auto",
+  "resolve_edition": "free",
+  "free_render": {
+    "crf": 17,
+    "preset": "medium"
+  },
+  "review_agents": false,
+  "critique_agents": false,
+  "approval": "user_feedback_on_final_mp4",
+  "style_profile": "corpus-v1",
+  "presenter_effect": "rounded_camera_plus_head_alpha",
+  "audio_stream": 0
+}

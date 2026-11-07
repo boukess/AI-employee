@@ -1,0 +1,30 @@
+SPLIT SCREEN EDITOR — QUICK START
+
+Give your AI assistant a video and this project. It can plan the edit, create original motion graphics for your topic, add captions, and export a vertical MP4. Refine the result through conversation.
+
+1. DOWNLOAD AND UNZIP
+Download Split-Screen-Editor-v0.1.0.zip and unzip the entire folder. Keep its files and subfolders together.
+
+2. OPEN THE LOCAL PROJECT
+Open the extracted Split-Screen-Editor folder in a coding-capable ChatGPT/Codex workspace that can read and write local files and run terminal commands. Make it the primary project folder. You can also start Codex CLI inside it.
+
+The assistant needs an executable project workspace. Uploading the ZIP as a reference attachment alone does not provide the video-rendering tools.
+
+3. ADD YOUR VIDEO
+Put one video in the project's inputs folder. Use raw or already-cut footage. If you have a timed transcript, put its SRT, VTT, or JSON file there too. Otherwise, the assistant can set up the included local transcription option.
+
+4. START EDITING
+Copy the first prompt from Editing Prompts.txt into the conversation. Tell the assistant which video to use and whether it is already cut. Optional: add your audience, target duration, and anything that must stay.
+
+5. REVIEW AND REFINE
+The assistant creates a draft, checks it, and exports the result. Watch the video with sound and describe any changes in plain language. Keep the folder for future edits and revisions.
+
+WHERE YOUR FILES GO
+• Finished videos: renders/
+• Editable plans and review notes: jobs/
+• Custom animation code: src/custom/
+
+FIRST-TIME SETUP
+The project uses Node.js 22 or newer, npm, Remotion's browser renderer, and FFmpeg. The assistant can check the environment and install the pinned project dependencies. Initial setup needs internet access and time for downloads. Local transcription also needs Python and faster-whisper, or you can provide a timed transcript.
+
+The project includes detailed setup help in START_HERE.md and docs/RUNTIME.md. You do not need to design a storyboard or write animation code yourself.

@@ -1,0 +1,23 @@
+{
+  "last_period": "2026-10-23",
+  "started": "2026-10-23T22:48:27-04:00",
+  "progress": [
+    "state-written",
+    "walk-done",
+    "fleet-written",
+    "brief-written"
+  ],
+  "recipes": [],
+  "assumptions": [
+    "BOUKE LLC has no official home website yet (member confirmed 2026-10-23 via Grok Bot). Overturn when a BOUKE landing URL is named.",
+    "wealth-check-mustang and cera-bouke1 are related install hints only, not BOUKE home. Overturn if member names one as official.",
+    "Working hours defaulted to Mon-Fri 07:00-18:00 America/New_York; overturn by editing charter/constraints.md",
+    "Skipped claude auth status: harness is Grok Bot not Claude Code",
+    "cera-bouke1.vercel.app blocked by Vercel SSO (blocked-login); not used as home",
+    "Sibling Employees have contract+schedule but no runlog yet; recorded first_run none",
+    "schedule.register deferred to parent UpdateRoutine; schedule-commands.txt prepared instead"
+  ],
+  "budget_minutes_used": 5,
+  "inbox_cursor": 0,
+  "complete": true
+}

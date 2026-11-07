@@ -1,0 +1,23 @@
+# Raw vertical footage → corpus-style MP4
+
+1. **Understand the recording.** Run `new` and `analyze`. Inspect the actual frames, choose the correct audio stream, and read/correct the word transcript. Cut repeated takes while preserving complete speech. Inspect waveform handles on both sides of joins and gaps inside retained sections; follow PACING.md. Use the user's content, not the corpus narration.
+2. **Study the matching corpus shots.** Read STYLE-SPEC.md. Search by content, then inspect selected reference clips at several times to understand their format and motion. Record the exact anchors and traits being matched. Search is lexical caption retrieval, not a visual-embedding model or a claim of neural training.
+3. **Collect real topic media.** Follow SOURCE-MEDIA.md. Obtain official logos, real screenshots/captures and relevant demo/launch excerpts; save provenance and set asset_manifest. Plan how custom animation will highlight or connect these assets.
+4. **Composite the presenter.** Run `presenter` with appropriate scale/offset. It builds the rounded camera card with the soft foreground head extension. Check actual matte frames. Keep all originals.
+5. **Author the plan.** Cuts use `[in,out)` source frames. Scenes use OUTPUT frames after cuts. Set `style_profile: corpus-v1` and `footage_variant: presenter`. Most of this white split-format edit retains the presenter; fullscreen cutaways provide brief visual explanations. Create short source-timed caption phrases from the actual speech.
+6. **Animate inside the style.** Write the job's `motion/Scenes.tsx`. Use the corpus's compact graphic stage, white/cream background, restrained product/UI cards and short kinetic text. Brand color belongs inside relevant assets, not across a new page theme. Include no technical/demo labels or source/attribution overlays in the user's finished clip. Keep provenance in project files only. Use the bundled typography and layout.
+7. **Master and render.** `prepare` validates sourced assets, reports retained silence in cadence-report.json, and edits the audio through the same cuts, compresses it, normalizes it in two measured passes, and maps caption phrases into output time. `motion` exports an alpha ProRes layer. `assemble` places the edited presenter plate on V1 and graphics/captions on V2 in a new Resolve project; mastered dialogue is A1. The untouched normalized camera source stays in the media pool. `render` starts this project's job without clearing the queue.
+8. **Deliver.** When `status` is Complete, `finish` validates picture frames, dimensions and decodeability, muxes the measured audio and remeasures AAC. Target about -12 LUFS ±1 with <= -1 dBTP after AAC. Fix mechanical failures in the same editing session. Deliver the MP4 for the user's feedback; do not start a critique/review agent.
+9. **Revise from user feedback.** `feedback` archives the prior plan/scene code/reports and increments the revision. Make the requested change, then rebuild. Never overwrite a delivered MP4.
+
+There are no intermediate approvals. There is no background watcher or scheduled service. The editing agent makes the content and animation decisions; the scripts perform the local media operations. For batch inputs, create one job per output. The initial command pipeline supports one source recording per job and dialogue-only audio mastering.
+
+## Recovery
+
+- Missing model/font/browser: install the named local dependency from its official source, then resume. Do not upload raw footage elsewhere as a silent fallback.
+- Free DaVinci Resolve: with `resolve_edition: free`, assemble writes an FCPXML and render uses FFmpeg (docs/FREE-RESOLVE.md). Tell the member the final picture came from FFmpeg.
+- Resolve connection unavailable: open Resolve and retry doctor. This release requires a working external scripting connection; use Resolve Studio 21.1 or newer with External scripting set to Local. Run setup/doctor to check the actual machine. Do not pretend a Resolve stage ran.
+- Bad matte: repair the mask/placement; do not replace the required floating-head treatment with a plain rectangle and call it matched.
+- Clip duration mismatch: the bridge checks every insertion against expected frame count and accommodates Resolve endpoint conventions. It removes only its own failed trial insertion in the newly created job timeline.
+- Render error: repair the specific job and rerender. Audio padding in an intermediate Resolve MP4 is handled by checking picture frames independently, then muxing the exact mastered WAV.
+- Output/audio check failed: the candidate remains in the job renders folder for repair. No source or previous deliverable is deleted.

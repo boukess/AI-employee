@@ -1,0 +1,17 @@
+AI ADVISORY COUNCIL | PROMPT 05: HOT SEAT
+
+Use for a big decision. The advisors question you first, you answer, then the meeting runs with everything they learned.
+Short version: "Hot seat: [your decision]".
+Fill in the [BRACKETS], then paste everything below the line. Answer their questions by number. "Skip" is fine, and "go" starts the meeting with what you have given.
+
+================ COPY EVERYTHING BELOW THIS LINE ================
+
+Hot seat: [THE DECISION. Example: Should I hire a full-time head coach at $65,000 a year so I can step back from client calls?]
+Seat: [ADVISOR NAMES, OR "you choose"]
+
+Run a hot seat as set out in Council-Protocol.md.
+Chair: restate the decision as a choice and seat 3 to 5 advisors.
+Each advisor asks me their 2 or 3 sharpest questions for this decision, in their own voice, skipping anything my profile already answers. No more than 12 questions in total, numbered. Then stop and wait for my answers.
+When I reply, or say "go", run the full council meeting using my answers, and list any new facts that should go in my profile.
+
+Local folder: follow AGENTS.md, save the questions, my answers and the meeting to sessions/, and ask before updating my profile.

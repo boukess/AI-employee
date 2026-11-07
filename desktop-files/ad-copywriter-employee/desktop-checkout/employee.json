@@ -1,0 +1,47 @@
+{
+  "schema": "ai-employee/1",
+  "slug": "ad-copywriter-employee",
+  "name": "Ad Copywriter Employee",
+  "role": "Ad Copy",
+  "version": "1.0.0",
+  "standard": "kit",
+  "repository": "https://github.com/boukess/AI-employee",
+  "license": "MIT",
+  "requires": {
+    "harness": [
+      "grok-bot",
+      "claude-code",
+      "codex",
+      "chatgpt-project",
+      "claude-project"
+    ]
+  },
+  "connections": [],
+  "routines": [],
+  "files": {
+    "kit": [
+      "AGENTS.md",
+      "GROK.md",
+      "CLAUDE.md",
+      "CAPABILITIES.md",
+      "CONTRACT.md",
+      "ROLE.md",
+      "VERSION",
+      "employee.json",
+      "README.md",
+      "START HERE.md",
+      "START HERE.html",
+      "docs/**",
+      "scripts/**",
+      "prompts/**",
+      "examples/**"
+    ],
+    "member": [
+      "workspace/**"
+    ]
+  },
+  "notes": {
+    "kind": "Conversational Meta ad-copy kit. No Standard 1.5 scheduled routines. One agent; studies public Ad Library then writes primary text / headline / description.",
+    "member": "workspace/ holds brand.md, corpus/, creatives/, and copy/. Upgrades must not wipe member workspace."
+  }
+}

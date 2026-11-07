@@ -1,0 +1,40 @@
+AI ADVISORY COUNCIL | PROMPT 06: BOARD REVIEW
+
+Use once a month. Your numbers and goals go in. Three priorities for next month come out.
+Fill in what you have. "Unknown" is fine, and rough numbers beat none. Then paste everything below the line.
+Local folder: you can leave last month's priorities blank. The AI reads last month's review from sessions/.
+
+================ COPY EVERYTHING BELOW THIS LINE ================
+
+Board review for [MONTH YEAR].
+
+THIS MONTH (last month in brackets, if you have it)
+- Revenue: [amount] (last month: [amount])
+- Profit or margin: [amount or %] (last month: [amount or %])
+- Cash in the bank: [amount]
+- New customers: [number] (last month: [number])
+- Lost or cancelled customers: [number]
+- Leads: [number]
+- Close rate: [%]
+- Cost to get a customer: [amount]
+- Content: [pieces posted, and your best piece with its views]
+- [ANY OTHER NUMBER YOU TRACK]: [value]
+
+GOALS
+- This quarter's goal: [Example: $60,000 a month by December]
+- Target for next month: [number]
+
+LAST MONTH'S PRIORITIES
+1. [Priority]: [done / partly / not done]
+2. [Priority]: [done / partly / not done]
+3. [Priority]: [done / partly / not done]
+
+WHAT HAPPENED
+- Wins: [what went well]
+- Problems: [what went wrong or got stuck]
+- Decisions coming up: [anything you need to decide next month]
+
+Run a board review as set out in Council-Protocol.md, with every advisor seated: the scorecard, last month's priorities, the Chair's read, each advisor's view and one priority, then 3 priorities for next month with numbers, owners and dates, one thing to stop, one risk to watch, and one number to check every week.
+
+Local folder: follow AGENTS.md, update the numbers in my-business/Business-Profile.md and save this review to sessions/.
+Web project: list which profile fields changed. Give me the full updated profile only if I ask.

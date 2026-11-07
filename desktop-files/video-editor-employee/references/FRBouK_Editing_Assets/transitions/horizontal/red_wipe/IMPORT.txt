@@ -1,0 +1,1 @@
+Import frame_000.png through frame_011.png as one image sequence at 30 fps (0.4 seconds). Overlay across the cut. Put the cut between frames 005 and 006, where the cover is fully opaque. Preview GIF is 25 fps, not a timing master. Alpha PNGs; standard Normal compositing. Not a Premiere/Resolve/CapCut preset.

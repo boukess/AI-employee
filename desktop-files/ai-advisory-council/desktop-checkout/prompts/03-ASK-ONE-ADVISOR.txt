@@ -1,0 +1,51 @@
+AI ADVISORY COUNCIL | PROMPT 03: ASK ONE ADVISOR
+
+Use when you know whose lane it is. Works in your council project (web) or your council folder (local).
+Short version: "Ask Hormozi: [your question]".
+Names that work: Hormozi or Alex, Gary, Sam or Altman, Chesky or Brian, MrBeast or Jimmy, and any advisor you have cloned.
+Pick a starter question below or write your own, fill in the [BRACKETS], then paste everything below the line.
+
+STARTER QUESTIONS
+
+Alex Hormozi: offers, pricing, leads, sales and unit economics
+- Here are my numbers: revenue [amount] a month, margin [%], price [amount], cost to get a customer [amount], and what a customer is worth over time [amount]. What is my real constraint, and what would you fix first?
+- Here is my offer: [what I sell, price, what's included, any guarantee]. Rebuild it into a Grand Slam Offer I can sell at a higher price.
+- I charge [price] and it costs me about [cost] to deliver. Should I raise my prices? By how much, and how do I tell my current customers?
+- I get about [number] leads a month, mostly from [channel]. Build me a 30-day plan with daily numbers I can actually hit.
+- Here is my sales process from first contact to payment: [steps]. I close [%] of calls. Where am I losing sales, and what should I change first?
+
+Gary Vee: attention, content, social media, brand and the long game
+- Here is how customers find me today: [your channels]. Where is my customers' attention underpriced right now, and what would you move first?
+- Last month I posted [number] pieces on [platforms]. My best post got [views]. Audit this and give me a 30-day posting plan I can actually keep up with.
+- I have about one hour a week for content. What pillar should I record, and how do I turn it into 30 pieces across platforms?
+- I have [$ amount] a month for ads. How do I post organically first and only pay behind the winners, for my business?
+- Write me a Thank You Economy plan for my past customers: who to contact, what to say, and how often.
+
+Sam Altman: strategy, focus, product love, growth, hiring and AI
+- Here is my business in one sentence: [your sentence]. Run the "really bummed" test with me. Do my customers love it enough to grow, and what should I fix first?
+- My revenue for the last six months was [numbers]. Why am I not growing faster? Pick my one metric and name the three things blocking it.
+- Here is how my team and I use AI today: [list]. Which few-hour tasks should we hand to AI first, and which one workflow should I redesign AI-first?
+- I want to build [AI product or service]. Is it a flashlight app or an Uber? What happens to it when a much better model ships?
+- I'm running these projects: [list]. Which pretty-good idea should I kill so I can go all in on the great one?
+
+Brian Chesky: customer experience, product, brand, focus and leading a growing team
+- Here is my business and the moment a new customer first experiences it: [describe]. Run the 11-star exercise on that moment and tell me which 7-star version I can deliver by hand next week.
+- Here is every project and offer I'm running right now: [list]. Which 20% should I keep, what should I pause, and how should I review the work each week?
+- Here are my most common customer complaints from the last 90 days: [paste]. Map them to my customer journey and tell me what to fix first.
+- I want to launch [new offer or product]. Have I earned permission yet? If yes, how do I pilot it one, ten, many?
+- I'm hiring my first [role] so I can step back. How do I find great people without a job ad, and how do I hand off without the quality slipping?
+
+MrBeast: content ideas, packaging, retention, creative teams and products off an audience
+- Here are the titles, views, click-through rate and average view duration of my last 10 videos: [paste]. Rank them out of 10, tell me what the winners have in common, and write 10 better titles for my next one.
+- My next idea is [idea]. Is it a purple cow or just a cow? Write the title, describe the thumbnail, and plan the first 5 seconds and the first minute.
+- My videos lose most viewers at [time stamps]. Here's what happens at those moments: [describe]. Map my video minute by minute and tell me what to cut, move or add.
+- My team of [number] keeps missing deadlines on [type of project]. Find the critical component and the bottleneck, and set up a daily check-in system we can start Monday.
+- I have [audience size] on [platforms] and want to launch [product]. Run the creator-product test: is it better than the shelf, will people buy it again, and would brand deals pay me more?
+
+================ COPY EVERYTHING BELOW THIS LINE ================
+
+Ask [ADVISOR NAME]: [YOUR QUESTION]
+
+Answer only as [ADVISOR NAME], from their brain, in their voice, using my business profile. If a missing fact would change your advice, ask me up to 3 questions first and stop. Otherwise: name the real problem, prescribe with one of your named frameworks using my numbers, and end with "Do this week:" and 1 to 3 actions. If this is outside your lane, say so and tell me which advisor to ask instead.
+
+Local folder: follow AGENTS.md and save this to sessions/.

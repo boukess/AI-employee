@@ -1,0 +1,21 @@
+{
+  "reference_id": null,
+  "source_url": null,
+  "media_ingested": false,
+  "permission_notes": null,
+  "orientation": null,
+  "shots": [
+    {
+      "start_seconds": null,
+      "end_seconds": null,
+      "purpose": null,
+      "subject_position": null,
+      "camera_motion": null,
+      "caption_font": null,
+      "caption_position": null,
+      "transition": null,
+      "audio_cue": null
+    }
+  ],
+  "adaptation_for_own_footage": null
+}

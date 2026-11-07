@@ -1,0 +1,21 @@
+AI ADVISORY COUNCIL | PROMPT 02: ASK THE COUNCIL
+
+Use for any real business decision. Works in your council project (web) or your council folder (local).
+Short version: just type "Ask the council: [your question]".
+Best results: a real decision with a number in it, not a general topic.
+Fill in the [BRACKETS], then paste everything below the line.
+
+================ COPY EVERYTHING BELOW THIS LINE ================
+
+Ask the council: [YOUR QUESTION OR DECISION. Example: Should I raise my price from $249 to $299 a month, or add a cheaper tier first?]
+
+What's new since my profile: [NEW NUMBERS OR CHANGES, OR "nothing"]
+I need to decide by: [DATE, OR "no deadline"]
+Seat: [ADVISOR NAMES, "you choose" OR "full council"]
+
+Run a council meeting as set out in Council-Protocol.md.
+Chair: restate my decision as a choice, pull what matters from my business profile, and seat the 3 to 5 advisors who fit (all of them if I said full council), including at least one who is likely to disagree.
+Each advisor answers on their own, in their own voice, from their own brain: a diagnosis, a recommendation using one of their named frameworks with my numbers, and one thing to do this week. Keep their real disagreements. No echoing.
+Then the Chair's synthesis: where they agree, where they split and the real trade-off, the call for my situation (no averaging; weigh each advisor by their blind spots), 3 next actions, what would change the call, and who to follow up with.
+
+Local folder: follow AGENTS.md and save the meeting to sessions/.

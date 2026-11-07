@@ -1,0 +1,70 @@
+{
+  "on_screen_attribution": false,
+  "notes": "Example assets only; research topic-specific media for every new edit.",
+  "assets": [
+    {
+      "path": "public/assets/example-editor/claude-official.svg",
+      "kind": "logo",
+      "source_url": "https://claude.com/blog/cowork-is-now-claude",
+      "operations": "Exact website SVG paths; original site CSS brand colors resolved to fixed values.",
+      "used_in": "Claude Code graphic nodes",
+      "sha256": "4de4e66afd55ee7999877ff7bd17aae3a911ac6b1b782dfc0ab2bbfebb3f3148"
+    },
+    {
+      "path": "public/assets/example-editor/resolve-icon.png",
+      "kind": "logo",
+      "source_url": "/Applications/DaVinci Resolve/DaVinci Resolve.app/Contents/Resources/Resolve.icns",
+      "operations": "PNG conversion of genuine installed app icon; transparent image preserved.",
+      "used_in": "Resolve graphic nodes",
+      "sha256": "dbbccedf673271d1ac67c9261374b74f577e67d987a3768eb870aa2fb9dc53e1"
+    },
+    {
+      "path": "public/assets/example-editor/claude-terminal.webp",
+      "kind": "official_product_image",
+      "source_url": "https://claude.com/product/claude-code",
+      "operations": "Unmodified website asset https://assets.claude.com/d4645137a0c197beee5313fedbf9417d035452fc.webp; official illustrative terminal visual.",
+      "used_in": "Prompt scene",
+      "sha256": "bf1b63fbd6590770ee9322db0b22b89935dfecec5a6460eb5eab3a2bde84e9b6"
+    },
+    {
+      "path": "public/assets/example-editor/resolve-edit.jpg",
+      "kind": "official_screenshot",
+      "source_url": "https://www.blackmagicdesign.com/products/davinciresolve/edit",
+      "operations": "Unmodified official hero-still@2x.jpg asset. Presented with restrained camera scale.",
+      "used_in": "Resolve introduction",
+      "sha256": "e95ba75409e33bdca75cec7e5fe75b78588b306ba881f0b5259721ad4c7912e6"
+    },
+    {
+      "path": "public/assets/example-editor/resolve-timeline.jpg",
+      "kind": "official_screenshot",
+      "source_url": "https://www.blackmagicdesign.com/products/davinciresolve/edit",
+      "operations": "Unmodified official timeline/timeline-xl.jpg asset.",
+      "used_in": "Manual editing scene",
+      "sha256": "521df9e12caf42309a5e38c4891b59092fa7a650ed9d0f042b773371140e7cd4"
+    },
+    {
+      "path": "public/assets/example-editor/resolve-trim.mp4",
+      "kind": "official_demo_recording",
+      "source_url": "https://www.blackmagicdesign.com/products/davinciresolve/edit",
+      "operations": "Official /edit/trim/20200928-95d093/trim.hd.1080p.mp4. Muted picture excerpts starting at 1s and 5s.",
+      "used_in": "Automatic and trim scenes",
+      "sha256": "998cbf178c16cfa4ebb2e504f15cec37febf01b69622c1312e235dd8d28ef119"
+    },
+    {
+      "path": "public/assets/example-editor/resolve-titles.jpg",
+      "kind": "official_screenshot",
+      "source_url": "https://www.blackmagicdesign.com/products/davinciresolve/edit",
+      "operations": "Unmodified official titles/titles-xl.jpg.",
+      "used_in": "Motion graphics reveal",
+      "sha256": "f21e9c732b27b22713f4718ff5448302a89319d0b0d8a89f9fb2f0d294ffd403"
+    },
+    {
+      "path": "public/assets/example-editor/resolve-color-wheels.jpg",
+      "kind": "official_screenshot",
+      "source_url": "https://www.blackmagicdesign.com/products/davinciresolve/color",
+      "operations": "Official colorwheels/colorwheels-xl.jpg. Framed and gently scaled to focus on grading controls.",
+      "used_in": "Color scene",
+      "sha256": "952ef9b2e403359c7210cb618d9f3f7d25557b148d6fda26fb12595ed9ffd81f"
+    }
+  ]
+}

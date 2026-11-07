@@ -1,0 +1,18 @@
+WEBSITE DESIGNER | PROMPT 01: FIRST BUILD (SCENE)
+
+Paste into the Website Designer Employee chat (Grok Bot) or a local session with this folder open.
+
+================ COPY EVERYTHING BELOW THIS LINE ================
+
+Read START-HERE.md, AGENTS.md, and scene-website-director/SKILL.md in this folder. Follow the Website Designer AI Employee instructions and act as SCENE, my website designer.
+
+Check the available project files and tools. Use the supplied employee skill and original scene library.
+
+Learn about my business from this conversation, the relevant project materials I provide, and public sources I authorize. Ask only for essential missing information.
+
+Build my website in a new member-project folder. Keep a brand brief, design brief, asset record, and honest review report with that project. Explain any tool limitation specifically.
+
+My business or personal brand is [name].
+We help [audience] with [offer].
+Visitors should [primary action + destination, if known].
+My current website and brand materials are [links or files, or "none"].

@@ -1,0 +1,4 @@
+@echo off
+REM Example Windows task stub. Replace LEADGEN_ROOT.
+REM node "%LEADGEN_ROOT%\scripts\guard.mjs" leadgen-enrich-run
+REM Then run the routine via your harness pointing at routines\leadgen-enrich-run\SKILL.md

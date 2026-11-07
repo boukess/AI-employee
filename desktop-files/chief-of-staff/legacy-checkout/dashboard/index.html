@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chief of Staff</title>
+<style>
+:root {
+  --bg: #0f1419;
+  --panel: #1a222c;
+  --text: #e8eef4;
+  --muted: #9aa7b5;
+  --accent: #6db3f2;
+  --line: #2a3542;
+  --ok: #7dcea0;
+  --warn: #f0c674;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.45; }
+.topbar { display: flex; justify-content: space-between; align-items: baseline;
+  padding: 14px 20px; border-bottom: 1px solid var(--line); position: sticky; top: 0;
+  background: var(--bg); z-index: 2; }
+.brand { font-weight: 700; letter-spacing: 0.02em; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+.tabs { display: flex; gap: 4px; padding: 10px 16px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.tabs button { background: transparent; border: 1px solid var(--line); color: var(--text);
+  padding: 6px 12px; border-radius: 6px; cursor: pointer; }
+.tabs button.active { border-color: var(--accent); color: var(--accent); }
+main { padding: 20px; max-width: 960px; }
+.page { display: none; }
+.page.active { display: block; }
+h1 { font-size: 1.25rem; margin: 0 0 12px; }
+h2 { font-size: 1.05rem; margin: 18px 0 8px; color: var(--accent); }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
+  padding: 12px 14px; margin: 8px 0; }
+.muted { color: var(--muted); }
+.slug { font-weight: 600; }
+.row { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+table { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--muted); font-weight: 600; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); font-size: 0.8rem; }
+.badge.pending { color: var(--warn); border-color: var(--warn); }
+ul { margin: 6px 0; padding-left: 18px; }
+
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">Chief of Staff</div>
+  <div class="meta" id="topMeta">First run. Fleet not yet reconciled.</div>
+</header>
+<nav class="tabs" id="tabs"></nav>
+<main id="main"></main>
+<section class="page" data-tab="fleet" data-label="Fleet">
+  <h1>Fleet</h1>
+  <p class="muted">First run view from the fleet map. Employees are marked not yet reconciled because fleet.json is written by the morning reconcile, not by install.</p>
+  <div class="card"><div class="row"><span class="slug">chief-of-staff</span><span class="badge pending">not yet reconciled</span></div><div class="muted">7 routines</div></div>
+  <div class="card"><div class="row"><span class="slug">ad-manager-employee</span><span class="badge pending">not yet reconciled</span></div><div class="muted">7 routines</div></div>
+  <div class="card"><div class="row"><span class="slug">customer-satisfaction-employee</span><span class="badge pending">not yet reconciled</span></div><div class="muted">8 routines</div></div>
+  <div class="card"><div class="row"><span class="slug">gtm-engineer</span><span class="badge pending">not yet reconciled</span></div><div class="muted">8 routines</div></div>
+  <div class="card"><div class="row"><span class="slug">sales-employee</span><span class="badge pending">not yet reconciled</span></div><div class="muted">7 routines</div></div>
+  <div class="card"><div class="row"><span class="slug">seo-employee</span><span class="badge pending">not yet reconciled</span></div><div class="muted">8 routines</div></div>
+  <div class="card"><div class="row"><span class="slug">social-media-employee</span><span class="badge pending">not yet reconciled</span></div><div class="muted">7 routines</div></div>
+  <div class="card"><div class="row"><span class="slug">web-dev-employee</span><span class="badge pending">not yet reconciled</span></div><div class="muted">8 routines</div></div>
+  <p class="muted">Source: charter/fleet-map.md. Open faults: none on first run.</p>
+</section>
+
+<section class="page" data-tab="decisions" data-label="Decisions">
+  <h1>Decisions</h1>
+  <p class="muted">No rows waiting on a tick yet. The register is created by the first fleet reconcile.</p>
+  <div class="card">Source: decisions/REGISTER.md (created on first reconcile). Outcomes ledger: decisions/decisions.jsonl.</div>
+</section>
+
+<section class="page" data-tab="charter" data-label="Charter">
+  <h1>Charter</h1>
+  <h2>What is sold</h2>
+  <div class="card">WealthCheck risk questionnaire for Mustang Private Wealth clients and prospects. Source: charter/business.md, read date on that file.</div>
+  <h2>Priorities</h2>
+  <div class="card">Three derived priorities seeded on first run. Calibration: n/a (no decisions yet). Source: charter/priorities.md.</div>
+  <h2>Constraints</h2>
+  <div class="card">Working hours Mon to Fri 07:00 to 18:00 America/New_York. Ceilings left empty for the member. Source: charter/constraints.md.</div>
+</section>
+
+<section class="page" data-tab="market" data-label="Market">
+  <h1>Market</h1>
+  <p class="muted">Watchlist seeded. Weekly market page appears after the first Wednesday sweep.</p>
+  <div class="card">Surfaces on watchlist: nitrogen-pricing, nitrogen-risk-assessments, nitrogen-press, nitrogen-blog, kitces-blog, mustang-home. Source: market/watchlist.md.</div>
+</section>
+
+<section class="page" data-tab="metrics" data-label="Metrics">
+  <h1>Metrics</h1>
+  <p class="muted">Weekly scorecard appears after the first Thursday metrics review.</p>
+  <table>
+    <thead><tr><th>Metric</th><th>Source</th></tr></thead>
+    <tbody>
+      <tr><td>Employees present</td><td>charter/fleet-map.md</td></tr>
+      <tr><td>Routines classified</td><td>fleet/fleet.json</td></tr>
+      <tr><td>Open faults</td><td>fleet/fleet.json</td></tr>
+      <tr><td>Run records this period</td><td>runlog.jsonl</td></tr>
+    </tbody>
+  </table>
+  <p class="muted">Live screens: none. Rate floor: empty (shipped default applies). Source: charter/metric-map.md.</p>
+</section>
+
+<script>
+(function () {
+  var pages = Array.prototype.slice.call(document.querySelectorAll(".page"));
+  var tabs = document.getElementById("tabs");
+  pages.forEach(function (page, i) {
+    var id = page.getAttribute("data-tab") || ("tab-" + i);
+    var label = page.getAttribute("data-label") || id;
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.textContent = label;
+    btn.setAttribute("data-target", id);
+    if (i === 0) {
+      btn.className = "active";
+      page.classList.add("active");
+    }
+    btn.addEventListener("click", function () {
+      pages.forEach(function (p) { p.classList.remove("active"); });
+      Array.prototype.forEach.call(tabs.querySelectorAll("button"), function (b) { b.className = ""; });
+      page.classList.add("active");
+      btn.className = "active";
+    });
+    tabs.appendChild(btn);
+    page.id = id;
+  });
+})();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+I uploaded the AI Ad Copywriter zip. Unzip it with your Python tool to /mnt/data/ai-ad-copywriter/, read AGENTS.md completely, and follow it exactly. You are running in ChatGPT, so follow the ChatGPT notes in AGENTS.md. If I also uploaded a workspace zip from an earlier session, unzip it into the workspace folder first.
+
+go

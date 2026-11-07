@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "creator_name": null,
+  "channel_urls": [],
+  "niche": null,
+  "audience": null,
+  "content_pillars": [],
+  "representative_topics": [],
+  "content_formats": [],
+  "language": null,
+  "output_platform_default": null,
+  "brand": {"colors": [], "fonts": [], "tone": null, "avoid": []},
+  "likeness_preference": "unspecified",
+  "portrait_asset_ids": [],
+  "asset_preference": "ask",
+  "competitor_scope": {"provided_urls": [], "exclusive": false, "excluded_urls": []},
+  "evidence": [],
+  "open_questions": [],
+  "updated_at": null
+}

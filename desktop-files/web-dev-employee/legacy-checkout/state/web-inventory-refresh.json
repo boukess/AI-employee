@@ -1,0 +1,86 @@
+{
+  "last_period": "2026-10",
+  "root": "/workspace/AI-employee/employees/web-dev-employee",
+  "first_run_on": "2026-10-23",
+  "progress": [
+    "phase0-preflight",
+    "phase2-discovery",
+    "phase3-host-partial",
+    "phase4-inventory-policy",
+    "phase5-board-dashboard",
+    "phase6-schedule-reconcile-standup-prove",
+    "phase7-close"
+  ],
+  "assumptions": [
+    {
+      "id": "web-root",
+      "text": "WEB_ROOT is /workspace/AI-employee/employees/web-dev-employee (FILL THIS IN was unedited; resolved from kit folder on Grok Bot cloud computer). Sync folder rule does not apply on this harness.",
+      "corrects_with": "Edit state/web-inventory-refresh.json root if the kit moves."
+    },
+    {
+      "id": "branch-convention-default",
+      "text": "No project rule file stated a branch convention; defaulted to fix/<card-id>-<slug> and deps/<date>-<project>.",
+      "corrects_with": "Set branch_convention per project in inventory/projects.json."
+    },
+    {
+      "id": "host-bind-name-match",
+      "text": "Bound CERA->cera, RnCont->rncount, Wealth-Check-Mustang->wealth-check-mustang, nexus->nexus by exact or normalized name match after list_projects. Host connected-repo and domain evidence were unread (403).",
+      "corrects_with": "After Vercel team access works, re-run inventory and replace binds that disagree with the host's connected repository."
+    },
+    {
+      "id": "production-branch-unread",
+      "text": "production_branch left null on all four because host detail was 403; default_branch from GitHub is main.",
+      "corrects_with": "Set production_branch from the host production branch screen once host.read detail works."
+    },
+    {
+      "id": "working-hours-default",
+      "text": "Working days and hours defaulted to mon-fri 09:00 to 18:00 America/New_York.",
+      "corrects_with": "Edit policy/budgets.md ## Working days and hours."
+    },
+    {
+      "id": "claude-auth-na",
+      "text": "claude auth status login check does not apply on Grok Bot. Schedule route is Grok Bot recurring tasks with Shape B prompts (CAPABILITIES.md 9.2a).",
+      "corrects_with": "If a Claude Code CLI is later signed in on this computer, record that route under CAPABILITIES.md ## Corrections."
+    },
+    {
+      "id": "schedule-register-parent",
+      "text": "Phase 6 job registration left to parent as Grok Bot routines; schedule_registered stays empty this run. Commands and prompts are in schedule-commands.txt.",
+      "corrects_with": "Parent fills schedule_registered[] after creating the eight routines."
+    }
+  ],
+  "budget_minutes_used": 40,
+  "code_roots": [
+    "/workspace"
+  ],
+  "projects_known": [
+    "cera",
+    "rncont",
+    "wealth-check-mustang",
+    "nexus"
+  ],
+  "schedule_registered": [
+    "web-site-sweep",
+    "web-standup",
+    "web-fix-runner",
+    "web-platform-guard",
+    "web-inventory-refresh",
+    "web-dependency-run",
+    "web-weekly-report",
+    "web-guardrail-review"
+  ],
+  "member_sections": {},
+  "recipes": [],
+  "cards_filed": [
+    "inbox:14 research cards seeded 2026-10-23"
+  ],
+  "installed_employees": [
+    "ad-manager-employee",
+    "chief-of-staff",
+    "customer-satisfaction-employee",
+    "gtm-engineer",
+    "sales-employee",
+    "seo-employee",
+    "social-media-employee",
+    "web-dev-employee"
+  ]
+}
