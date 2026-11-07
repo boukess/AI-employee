@@ -2,7 +2,7 @@
 
 Turn an uploaded product photo into a studio-style product image.
 
-Authoritative workflow: `AGENTS.md` → `.agents/skills/product-photo-creator/SKILL.md`. Start: `READ-ME-FIRST.md` / `START-HERE.txt`.
+Authoritative workflow: `AGENTS.md` → `.agents/skills/product-photo-creator/SKILL.md`. Local editors and 3D mockups: `INTEGRATIONS.md`. Start: `READ-ME-FIRST.md` / `START-HERE.txt`.
 
 ## Grok Bot (BOUKE fleet)
 

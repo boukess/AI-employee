@@ -2,6 +2,14 @@
 
 The repo version tracks the kits. Each employee carries its own `CHANGELOG.md` with the detail, and this file links them.
 
+## Kits outside the installer list, 2026-11-07
+
+Not a package release. `package.json` stays at 1.9.0. `npx ai-employees list` still prints the eight. These two kits are not in that list, so this note does not need `npm publish`.
+
+- [Product Photography Employee 1.1.0](employees/product-photography-employee/CHANGELOG.md) learns PhotoCraft, GIMP-ML, Compositor, SolidCraft, and PixPic.
+- [Video Editor Employee 1.0.0](employees/video-editor-employee/CHANGELOG.md) is the in-repo kit for the IBP_Desktop editor and learns the video integrations.
+- genoffice stays unwired.
+
 ## 1.9.0, 2026-10-02
 
 Prepared for release. GitHub publication and npm publication are separate maintainer steps.

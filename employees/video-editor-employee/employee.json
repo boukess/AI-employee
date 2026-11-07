@@ -1,0 +1,41 @@
+{
+  "schema": "ai-employee/1",
+  "slug": "video-editor-employee",
+  "name": "Video Editor Employee",
+  "role": "Video Editor",
+  "version": "1.0.0",
+  "standard": "kit",
+  "repository": "https://github.com/boukess/AI-employee",
+  "license": "MIT",
+  "requires": {
+    "harness": [
+      "grok-bot",
+      "claude-code",
+      "codex"
+    ]
+  },
+  "connections": [],
+  "routines": [],
+  "files": {
+    "kit": [
+      "AGENTS.md",
+      "GROK.md",
+      "CAPABILITIES.md",
+      "CONTRACT.md",
+      "ROLE.md",
+      "README.md",
+      "INTEGRATIONS.md",
+      "VERSION",
+      "CHANGELOG.md",
+      "employee.json",
+      ".agents/**",
+      "docs/**",
+      "scripts/**"
+    ],
+    "member": []
+  },
+  "notes": {
+    "kind": "Conversational video kit. No Standard 1.5 scheduled routines. One agent. Talking-head edits use the IBP_Desktop pack in free Resolve mode. Other films use pinned integrations by reference.",
+    "member": "Source footage stays in the desktop pack inbox or a folder the member names. Never overwrite it. Concat is AGPL and is never copied into this kit. Upgrades must not wipe the desktop pack."
+  }
+}

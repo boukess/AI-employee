@@ -41,6 +41,8 @@ Continue in the same conversation for the simplest experience. Say **“Save my 
 
 This package supplies instructions and photography knowledge; your session supplies image generation. Tool availability and usage limits depend on your account and environment. Uploading the package does not install a model, enable a missing tool, or grant access to all your chat history.
 
+On a computer, `INTEGRATIONS.md` adds PhotoCraft, SolidCraft, and optional GIMP-ML. Compositor and PixPic are not used on Windows or Linux. A chat that only has this text file keeps using the host image tool.
+
 AI edits can change fine print, logos, color, and small features. Review these against your original before publishing. If you need exact packaging pixels, tell the employee; it will explain what its available editing tools can preserve and avoid promising an exact match from generation alone.
 
-Version 1.0 · October 2026. Source links and compatibility notes are included in START-HERE.txt.
+Version 1.1 · November 2026. Source links and compatibility notes are included in START-HERE.txt.

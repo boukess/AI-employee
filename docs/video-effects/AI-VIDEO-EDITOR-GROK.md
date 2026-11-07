@@ -25,3 +25,7 @@ Cleans takes and pauses, adds captions, creates custom animations, brings in rea
 5. Watch `exports` for the finished file.
 
 See `docs/SETUP-GROK.md` and `HOW-TO-ASK-GROK-FOR-EFFECTS.md` in this folder for briefing style.
+
+## Creative integrations
+
+Code films, product demos, matched animation, and sound tools are wired in the in-repo kit at `employees/video-editor-employee`. Read `INTEGRATIONS.md` there before choosing one. The talking-head path in this file does not change. Concat stays a separate AGPL program and is not copied into the pack. genoffice is not a video tool.

@@ -40,3 +40,7 @@ Choose a collision-free shoot ID and versioned filenames. Copy returned image ar
 - **No internet:** use the bundled playbook. Do not claim current marketplace specifications have been checked.
 
 Do not silently switch to a paid API or third-party service. The standard workflow uses the host's built-in image capability. API or plugin alternatives require the user's request and their actual availability.
+
+## Local computer
+
+When this folder is on a machine, `INTEGRATIONS.md` names PhotoCraft (exact pixels and PSD, Windows and Linux), SolidCraft (3D mockups, Windows and Linux), and GIMP-ML (optional, GIMP 3, member-supplied key, never stored here). Compositor does not run on Windows or Linux. PixPic does not run on Windows or Linux. A missing install is a status of needs install, not a reason to invent the file.
