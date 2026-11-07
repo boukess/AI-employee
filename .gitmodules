@@ -57,3 +57,7 @@
 [submodule "integrations/PixPic"]
 	path = integrations/PixPic
 	url = https://github.com/Yalantis/PixPic.git
+
+[submodule "integrations/meg-editor"]
+	path = integrations/meg-editor
+	url = https://github.com/GlyphXTools/meg-editor.git

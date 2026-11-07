@@ -1,6 +1,6 @@
 # Creative integrations
 
-These fifteen repositories are included as Git submodules under `integrations/`. Each is pinned to a specific commit in the parent repository, preserving its source, history and original license. They remain independent tools with their own setup requirements.
+These sixteen repositories are included as Git submodules under `integrations/`. Each is pinned to a specific commit in the parent repository, preserving its source, history and original license. They remain independent tools with their own setup requirements.
 
 | Repository | Purpose | Upstream | License |
 |---|---|---|---|
@@ -19,6 +19,7 @@ These fifteen repositories are included as Git submodules under `integrations/`.
 | [photocraft](photocraft) | PhotoCraft: An open-source, photo editor written by scratch in pure Rust | [Source](https://github.com/storytold/photocraft) | Apache-2.0 |
 | [GIMP-ML](GIMP-ML) | AI for GNU Image Manipulation Program | [Source](https://github.com/kritiksoman/GIMP-ML) | MIT |
 | [PixPic](PixPic) | PixPic, a Photo Editing App | [Source](https://github.com/Yalantis/PixPic) | MIT |
+| [meg-editor](meg-editor) | Editor for GlyphX's Mega Files | [Source](https://github.com/GlyphXTools/meg-editor) | MIT |
 
 ## Download
 
