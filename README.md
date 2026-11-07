@@ -196,6 +196,10 @@ The eight are free for good. The Agent Ops Masterclass, the premium software lib
 
 **Does it send anything?** By default, no. It drafts, fills and stages, and you press the button. **Windows, Mac or Linux?** All three. **Can I run just one?** Yes, each is a self contained folder. **Can I sell installs to clients?** Yes, it is MIT; just do not call yours by the club's name. The rest is in [docs/FAQ.md](docs/FAQ.md).
 
+## Creative tools
+
+Fifteen video, motion, audio, image editing, CAD and office repositories are available as pinned Git submodules in [integrations/](integrations/README.md). See the integration guide for download, setup and update instructions.
+
 ## Contributing
 
 Routine requests, new employee proposals, harness reports and corrections from real runs are all welcome. Post what an employee did for your business in Discussions under Show and tell. [CONTRIBUTING.md](CONTRIBUTING.md) has the rules.

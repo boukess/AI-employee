@@ -1,0 +1,59 @@
+[submodule "integrations/take-one"]
+	path = integrations/take-one
+	url = https://github.com/boukess/take-one.git
+
+[submodule "integrations/rossark-motion-skill"]
+	path = integrations/rossark-motion-skill
+	url = https://github.com/boukess/rossark-motion-skill.git
+
+[submodule "integrations/huashu-motion"]
+	path = integrations/huashu-motion
+	url = https://github.com/boukess/huashu-motion.git
+
+[submodule "integrations/reanimate"]
+	path = integrations/reanimate
+	url = https://github.com/boukess/reanimate.git
+
+[submodule "integrations/argo"]
+	path = integrations/argo
+	url = https://github.com/boukess/argo.git
+
+[submodule "integrations/explainroo"]
+	path = integrations/explainroo
+	url = https://github.com/boukess/explainroo.git
+
+[submodule "integrations/video-director"]
+	path = integrations/video-director
+	url = https://github.com/boukess/video-director.git
+
+[submodule "integrations/earshot"]
+	path = integrations/earshot
+	url = https://github.com/boukess/earshot.git
+
+[submodule "integrations/solidcraft"]
+	path = integrations/solidcraft
+	url = https://github.com/boukess/solidcraft.git
+
+[submodule "integrations/Compositor"]
+	path = integrations/Compositor
+	url = https://github.com/boukess/Compositor.git
+
+[submodule "integrations/genoffice"]
+	path = integrations/genoffice
+	url = https://github.com/genspark-ai/genoffice.git
+
+[submodule "integrations/Concat"]
+	path = integrations/Concat
+	url = https://github.com/jub0t/Concat.git
+
+[submodule "integrations/photocraft"]
+	path = integrations/photocraft
+	url = https://github.com/storytold/photocraft.git
+
+[submodule "integrations/GIMP-ML"]
+	path = integrations/GIMP-ML
+	url = https://github.com/kritiksoman/GIMP-ML.git
+
+[submodule "integrations/PixPic"]
+	path = integrations/PixPic
+	url = https://github.com/Yalantis/PixPic.git
