@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Product Photography Employee"
+  short_description: "Turn product uploads into studio-style images"
+  default_prompt: "Use $product-photo-creator to set up my product photography employee and start onboarding."
