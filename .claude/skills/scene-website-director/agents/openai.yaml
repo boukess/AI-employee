@@ -1,0 +1,4 @@
+interface:
+  display_name: "Website Designer — AI Employee"
+  short_description: "Research, build, and review your brand website"
+  default_prompt: "Use $scene-website-director to learn about my brand, choose an original design direction, and build and review my website."

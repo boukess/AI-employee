@@ -58,6 +58,30 @@
       "destination": "/employees/website-designer-employee/member-projects/bouke/store/products.json"
     },
     {
+      "source": "/work.html",
+      "destination": "/employees/website-designer-employee/member-projects/bouke/dist/work.html"
+    },
+    {
+      "source": "/work.js",
+      "destination": "/employees/website-designer-employee/member-projects/bouke/dist/work.js"
+    },
+    {
+      "source": "/portfolio.json",
+      "destination": "/employees/website-designer-employee/member-projects/bouke/dist/portfolio.json"
+    },
+    {
+      "source": "/robots.txt",
+      "destination": "/employees/website-designer-employee/member-projects/bouke/dist/robots.txt"
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/employees/website-designer-employee/member-projects/bouke/dist/sitemap.xml"
+    },
+    {
+      "source": "/images/work/:file",
+      "destination": "/employees/website-designer-employee/member-projects/bouke/dist/images/work/:file"
+    },
+    {
       "source": "/images/:file",
       "destination": "/employees/website-designer-employee/member-projects/bouke/dist/images/:file"
     },
