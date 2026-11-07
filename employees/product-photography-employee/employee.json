@@ -3,7 +3,7 @@
   "slug": "product-photography-employee",
   "name": "Product Photography Employee",
   "role": "Product Photography",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "standard": "kit",
   "repository": "https://github.com/boukess/AI-employee",
   "license": "MIT",
@@ -29,15 +29,18 @@
       "employee.json",
       "READ-ME-FIRST.md",
       "START-HERE.txt",
+      "INTEGRATIONS.md",
+      "CHANGELOG.md",
       ".agents/**",
-      "docs/**"
+      "docs/**",
+      "scripts/**"
     ],
     "member": [
       "studio-work/**"
     ]
   },
   "notes": {
-    "kind": "Conversational product photography kit. No Standard 1.5 scheduled routines. One agent; restages uploaded product photos with host image tools.",
+    "kind": "Conversational product photography kit. No Standard 1.5 scheduled routines. One agent. Host image tools restage uploaded photos. PhotoCraft, SolidCraft, and optional GIMP-ML are pinned integrations. Compositor and PixPic are not used on Windows or Linux.",
     "member": "studio-work/ holds brand notes, session notes, and outputs. Never overwrite source photographs. Upgrades must not wipe studio-work."
   }
 }
