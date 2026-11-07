@@ -1,6 +1,6 @@
 # Creative integrations
 
-These sixteen repositories are included as Git submodules under `integrations/`. Each is pinned to a specific commit in the parent repository, preserving its source, history and original license. They remain independent tools with their own setup requirements.
+These eighteen repositories are included as Git submodules under `integrations/`. Each is pinned to a specific commit in the parent repository, preserving its source, history and original license. They remain independent tools with their own setup requirements.
 
 | Repository | Purpose | Upstream | License |
 |---|---|---|---|
@@ -20,6 +20,8 @@ These sixteen repositories are included as Git submodules under `integrations/`.
 | [GIMP-ML](GIMP-ML) | AI for GNU Image Manipulation Program | [Source](https://github.com/kritiksoman/GIMP-ML) | MIT |
 | [PixPic](PixPic) | PixPic, a Photo Editing App | [Source](https://github.com/Yalantis/PixPic) | MIT |
 | [meg-editor](meg-editor) | Editor for GlyphX's Mega Files | [Source](https://github.com/GlyphXTools/meg-editor) | MIT |
+| [social-media-performance-analysis](social-media-performance-analysis) | Social Media Analytics Tool provides insights into social media engagement metrics like likes, shares, and comments. Built with Streamlit, Plotly, and LangFlow, it offers an interactive dashboard powered by AI for post-performance analysis. | [Source](https://github.com/yogeshwarghule/social-media-performance-analysis) | Not reported by GitHub |
+| [social-analyzer](social-analyzer) | API, CLI, and Web App for analyzing and finding a person's profile in 1000 social media \ websites | [Source](https://github.com/qeeqbox/social-analyzer) | AGPL-3.0 |
 
 ## Download
 

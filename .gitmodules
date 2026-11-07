@@ -61,3 +61,11 @@
 [submodule "integrations/meg-editor"]
 	path = integrations/meg-editor
 	url = https://github.com/GlyphXTools/meg-editor.git
+
+[submodule "integrations/social-media-performance-analysis"]
+	path = integrations/social-media-performance-analysis
+	url = https://github.com/yogeshwarghule/social-media-performance-analysis.git
+
+[submodule "integrations/social-analyzer"]
+	path = integrations/social-analyzer
+	url = https://github.com/qeeqbox/social-analyzer.git
