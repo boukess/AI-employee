@@ -1,0 +1,14 @@
+{
+  "name": "Job",
+  "type": "object",
+  "properties": {
+    "kind": { "type": "string", "enum": ["edit_inbox_videos", "make_thumbnails", "seo_check", "draft_outreach", "daily_brief", "product_photos"], "description": "Only these job kinds can run on the PC" },
+    "notes": { "type": "string", "description": "Extra instructions for this run" },
+    "status": { "type": "string", "enum": ["queued", "running", "done", "failed", "canceled"], "default": "queued" },
+    "result": { "type": "string" },
+    "started_at": { "type": "string", "format": "date-time" },
+    "finished_at": { "type": "string", "format": "date-time" }
+  },
+  "required": ["kind"],
+  "rls": { "create": { "user_condition": { "role": "admin" } }, "read": { "user_condition": { "role": "admin" } }, "update": { "user_condition": { "role": "admin" } }, "delete": { "user_condition": { "role": "admin" } } }
+}

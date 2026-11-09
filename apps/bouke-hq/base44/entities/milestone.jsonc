@@ -1,0 +1,13 @@
+{
+  "name": "Milestone",
+  "type": "object",
+  "properties": {
+    "title": { "type": "string", "description": "What needs to happen" },
+    "area": { "type": "string", "enum": ["website", "content", "sales", "shop", "photo", "admin"], "default": "admin" },
+    "done": { "type": "boolean", "default": false },
+    "due_date": { "type": "string", "format": "date" },
+    "notes": { "type": "string" }
+  },
+  "required": ["title"],
+  "rls": { "create": { "user_condition": { "role": "admin" } }, "read": { "user_condition": { "role": "admin" } }, "update": { "user_condition": { "role": "admin" } }, "delete": { "user_condition": { "role": "admin" } } }
+}
