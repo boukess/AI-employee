@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Support BOUKE: donate</title>
+  <meta name="description" content="Support BOUKE content and creative work with a one time or monthly donation. Secure checkout on Stripe." />
+  <link rel="canonical" href="https://frbouke.com/donate.html" />
+  <meta property="og:title" content="BOUKE packages: video editing and photography pricing" />
+  <meta property="og:description" content="Support BOUKE content and creative work with a one time or monthly donation. Secure checkout on Stripe." />
+  <meta property="og:url" content="https://frbouke.com/donate.html" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script>document.documentElement.classList.add("js-nav")</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="./index.html" aria-label="BOUKE home">
+        <img class="logo-mark" src="./assets/bouke-mark-clear.png" alt="ブーケ" width="120" height="32" />
+        <span class="logo-word">BOUKE <span class="logo-jp">ブーケ</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="./index.html#content">Content</a>
+        <a href="./clothing.html">Shop</a>
+        <a href="./work.html">Work</a>
+        <a href="./donate.html" aria-current="page">Donate</a>
+        <a href="./shop.html">Packages</a>
+        <a href="./index.html#help-ways">Ways we help</a>
+        <a href="./index.html#need-help">Need help</a>
+        <a href="./index.html#business">Business</a>
+      </nav>
+      <a class="btn btn-small" href="./donate.html" aria-current="page">Donate</a>
+    </div>
+  </header>
+  <main id="main">
+    <section class="section" id="donate">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">BOUKE LLC</p>
+          <h1>Support BOUKE</h1>
+          <p>If you enjoy the content and want to see more of it, a donation helps pay for gear, travel to games and editing time. Thank you.</p>
+        </div>
+        <p class="shop-notice" id="donate-thanks" hidden>Thank you for your support. Stripe emails your receipt.</p>
+        <p class="shop-notice" id="donate-canceled" hidden>Checkout was canceled. No payment was taken.</p>
+        <form id="donate-form" class="card" novalidate>
+          <fieldset style="border:0;padding:0;margin:0">
+            <legend><h2 style="margin:0 0 12px">Choose an amount</h2></legend>
+            <div class="donate-amounts" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px">
+              <button type="button" class="btn btn-small" data-amount="5">$5</button>
+              <button type="button" class="btn btn-small" data-amount="10">$10</button>
+              <button type="button" class="btn btn-small" data-amount="25">$25</button>
+              <button type="button" class="btn btn-small" data-amount="50">$50</button>
+            </div>
+            <label for="donate-amount">Amount in US dollars</label>
+            <input id="donate-amount" name="amount" type="number" inputmode="decimal" min="1" max="10000" step="0.01" value="10" required style="display:block;width:100%;max-width:240px;margin:6px 0 12px;padding:10px;font:inherit" />
+            <label style="display:flex;gap:8px;align-items:center;margin-bottom:16px">
+              <input id="donate-monthly" type="checkbox" /> Make it monthly (cancel any time)
+            </label>
+            <button type="submit" class="btn" id="donate-submit">Donate with Stripe</button>
+            <p class="muted" id="donate-status" role="status" aria-live="polite"></p>
+          </fieldset>
+        </form>
+        <p class="fineprint">BOUKE LLC is a business, not a registered charity, so donations are not tax deductible. Card details are entered on Stripe's secure page, never on this site. Questions or refunds: <a href="mailto:boukeorg@gmail.com">boukeorg@gmail.com</a>.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <strong>BOUKE LLC</strong>
+        <p class="muted">Freelance, content creation, business and AI employees</p>
+        <p class="muted">frbouke</p>
+      </div>
+      <div class="footer-links">
+        <a href="./index.html">Home</a>
+        <a href="./clothing.html">Shop</a>
+        <a href="https://frbouke.com" rel="noopener noreferrer">frbouke.com</a>
+        <a href="https://github.com/boukess" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:boukeorg@gmail.com">boukeorg@gmail.com</a>
+      </div>
+    </div>
+    <div class="wrap">
+      <p class="fineprint">No card or bank details are collected on this site. Payments are processed by Stripe. Contact: <a href="mailto:boukeorg@gmail.com">boukeorg@gmail.com</a>.</p>
+    </div>
+  </footer>
+  <script src="./nav.js"></script>
+  <script src="./donate.js"></script>
+</body>
+</html>
