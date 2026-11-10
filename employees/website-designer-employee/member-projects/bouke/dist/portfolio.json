@@ -1,3 +1,101 @@
 {
-  "items": []
+  "credit": "MKSWRLD Photography",
+  "items": [
+    {
+      "title": "Golden hour on the coast",
+      "kind": "portrait",
+      "image": "./images/work/mkswrld-01.jpg",
+      "note": "MKSWRLD Photography, edited by BOUKE"
+    },
+    {
+      "title": "White jacket in the alley",
+      "kind": "portrait",
+      "image": "./images/work/mkswrld-02.jpg",
+      "note": "MKSWRLD Photography, edited by BOUKE"
+    },
+    {
+      "title": "Suited at Morehouse",
+      "kind": "portrait",
+      "image": "./images/work/mkswrld-03.jpg",
+      "note": "MKSWRLD Photography, edited by BOUKE"
+    },
+    {
+      "title": "I heart LBC mural",
+      "kind": "street",
+      "image": "./images/work/mkswrld-04.jpg",
+      "note": "MKSWRLD Photography, edited by BOUKE"
+    },
+    {
+      "title": "Arms open on the forest path",
+      "kind": "portrait",
+      "image": "./images/work/mkswrld-05.jpg",
+      "note": "MKSWRLD Photography, edited by BOUKE"
+    },
+    {
+      "title": "Profile over the ocean",
+      "kind": "portrait",
+      "image": "./images/work/mkswrld-06.jpg",
+      "note": "MKSWRLD Photography, edited by BOUKE"
+    },
+    {
+      "title": "Scale on the rocks",
+      "kind": "landscape portrait",
+      "image": "./images/work/mkswrld-07.jpg",
+      "note": "MKSWRLD Photography, edited by BOUKE"
+    },
+    {
+      "title": "Backlit on the ridge",
+      "kind": "portrait",
+      "image": "./images/work/mkswrld-08.jpg",
+      "note": "MKSWRLD Photography, edited by BOUKE"
+    },
+    {
+      "title": "Snow and plaid",
+      "kind": "portrait",
+      "image": "./images/work/mkswrld-09.jpg",
+      "note": "MKSWRLD Photography, edited by BOUKE"
+    },
+    {
+      "title": "Spelman homecoming night",
+      "kind": "event",
+      "image": "./images/work/mkswrld-10.jpg",
+      "note": "MKSWRLD Photography, edited by BOUKE"
+    },
+    {
+      "title": "Poolside duo",
+      "kind": "lifestyle",
+      "image": "./images/work/mkswrld-11.jpg",
+      "note": "MKSWRLD Photography, edited by BOUKE"
+    },
+    {
+      "title": "Graduation day",
+      "kind": "event",
+      "image": "./images/work/mkswrld-12.jpg",
+      "note": "MKSWRLD Photography, edited by BOUKE"
+    },
+    {
+      "title": "Field at sunset",
+      "kind": "candid",
+      "image": "./images/work/mkswrld-13.jpg",
+      "note": "MKSWRLD Photography, edited by BOUKE"
+    },
+    {
+      "title": "Suit and shades",
+      "kind": "portrait",
+      "image": "./images/work/mkswrld-14.jpg",
+      "note": "MKSWRLD Photography, edited by BOUKE"
+    },
+    {
+      "title": "Beach sunset couple",
+      "kind": "couple",
+      "image": "./images/work/mkswrld-15.jpg",
+      "note": "MKSWRLD Photography, edited by BOUKE"
+    },
+    {
+      "title": "Under the tent",
+      "kind": "group",
+      "image": "./images/work/mkswrld-16.jpg",
+      "note": "MKSWRLD Photography, edited by BOUKE"
+    }
+  ]
 }
