@@ -82,6 +82,14 @@
       "destination": "/employees/website-designer-employee/member-projects/bouke/dist/images/work/:file"
     },
     {
+      "source": "/donate.html",
+      "destination": "/employees/website-designer-employee/member-projects/bouke/dist/donate.html"
+    },
+    {
+      "source": "/donate.js",
+      "destination": "/employees/website-designer-employee/member-projects/bouke/dist/donate.js"
+    },
+    {
       "source": "/images/:file",
       "destination": "/employees/website-designer-employee/member-projects/bouke/dist/images/:file"
     },

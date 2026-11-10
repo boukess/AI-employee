@@ -1,0 +1,12 @@
+{
+  "name": "MetricEntry",
+  "type": "object",
+  "properties": {
+    "date": { "type": "string", "format": "date" },
+    "metric": { "type": "string", "enum": ["revenue_usd", "clients", "shorts_posted", "long_videos_posted", "outreach_sent", "replies", "followers", "portfolio_pieces", "products_live"] },
+    "value": { "type": "number" },
+    "note": { "type": "string" }
+  },
+  "required": ["date", "metric", "value"],
+  "rls": { "create": { "user_condition": { "role": "admin" } }, "read": { "user_condition": { "role": "admin" } }, "update": { "user_condition": { "role": "admin" } }, "delete": { "user_condition": { "role": "admin" } } }
+}
