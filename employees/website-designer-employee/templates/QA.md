@@ -13,7 +13,7 @@ No checks have passed merely because this template was copied. Use **pass**, **n
 | Desktop, phone, short viewport, relevant breakpoint | Untested | |
 | Keyboard focus, navigation, and touch controls | Untested | |
 | Forms/booking/payment, if present | Untested | |
-| Normal playback for 10–15 seconds, no hover | Untested | |
+| Normal playback for 10 to 15 seconds, no hover | Untested | |
 | Defining cinematic motion visible within two seconds | Untested | |
 | Scroll 0/25/50/75/100%, then reverse | Untested | |
 | Main objects visible; mobile visual payoff | Untested | |
