@@ -97,7 +97,12 @@ export function retime(edl, cues, srcKey) {
   return out;
 }
 
-function esc(text) { return String(text).replace(/\\/g, "\\\\").replace(/:/g, "\\:").replace(/'/g, "\u2019").replace(/%/g, "\\%"); }
+function esc(text) { return String(text).replace(/\\/g, "\\\\").replace(/:/g, "\\:").replace(/'/g, "\u2019"); }
+// Some ffmpeg builds (Windows especially) ship without fontconfig, so drawtext needs a real font file.
+function defaultFont() {
+  const list = ["C:/Windows/Fonts/arialbd.ttf", "/System/Library/Fonts/Supplemental/Arial Bold.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"];
+  return list.find((f) => fs.existsSync(f)) || "";
+}
 function filterPath(p) { return path.resolve(p).replace(/\\/g, "/").replace(/:/g, "\\:"); }
 
 export function buildCommand(edl, baseDir = ".") {
@@ -120,11 +125,13 @@ export function buildCommand(edl, baseDir = ".") {
   f.push(edl.clips.map((_, i) => "[v" + i + "][a" + i + "]").join("") + "concat=n=" + edl.clips.length + ":v=1:a=1[vc][ac]");
   let v = "vc";
   (edl.titles || []).forEach((t, i) => {
-    f.push("[" + v + "]drawtext=text='" + esc(t.text) + "':fontsize=" + (t.size || 84) + ":fontcolor=" + (t.color || "white") + ":borderw=6:bordercolor=black:x=(w-text_w)/2:y=" + (t.y || "h*0.15") + ":enable='between(t," + t.start + "," + t.end + ")'[t" + i + "]");
+    const font = t.font || edl.font || defaultFont();
+    f.push("[" + v + "]drawtext=" + (font ? "fontfile='" + filterPath(font) + "':" : "") + "expansion=none:text='" + esc(t.text) + "':fontsize=" + (t.size || 84) + ":fontcolor=" + (t.color || "white") + ":borderw=6:bordercolor=black:x=(w-text_w)/2:y=" + (t.y || "h*0.15") + ":enable='between(t," + t.start + "," + t.end + ")'[t" + i + "]");
     v = "t" + i;
   });
   if (edl.captions) {
-    f.push("[" + v + "]subtitles='" + filterPath(res(edl.captions)) + "':force_style='Fontsize=" + (edl.captionSize || 16) + ",Bold=1,Outline=3,Alignment=2,MarginV=" + (ah > aw ? 120 : 40) + "'[vs]");
+    const fontsDir = edl.fontsDir || (process.platform === "win32" ? "C:/Windows/Fonts" : "");
+    f.push("[" + v + "]subtitles='" + filterPath(res(edl.captions)) + "'" + (fontsDir ? ":fontsdir='" + filterPath(fontsDir) + "'" : "") + ":force_style='Fontsize=" + (edl.captionSize || 16) + ",Bold=1,Outline=3,Alignment=2,MarginV=" + (ah > aw ? 120 : 40) + "'[vs]");
     v = "vs";
   }
   let a = "ac";
@@ -153,7 +160,7 @@ function selftest() {
   ok(rt.length === 2 && rt[0].text === "world" && rt[0].start === 0.5 && rt[1].start === 3 && rt[1].end === 4.5, "retime");
   const args = buildCommand(edl, "/tmp");
   const fc = args[args.indexOf("-filter_complex") + 1];
-  ok(fc.includes("crop=1080:1920") && fc.includes("concat=n=2") && fc.includes("50\\%\\: go") && fc.includes("subtitles="), "buildCommand");
+  ok(fc.includes("crop=1080:1920") && fc.includes("concat=n=2") && fc.includes("expansion=none") && fc.includes("50%\\: go") && fc.includes("subtitles="), "buildCommand");
   let threw = false;
   try { buildCommand({ sources: { a: "x" }, clips: [{ src: "b", in: 0, out: 1 }] }); } catch { threw = true; }
   ok(threw, "unknown source rejected");
