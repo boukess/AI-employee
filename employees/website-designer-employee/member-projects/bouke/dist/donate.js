@@ -25,6 +25,33 @@
     })
     .catch(function () {});
 
+  // PayPal: a link to PayPal's hosted donate page. No keys live on this site.
+  // Set "paypalBusiness" in donate-config.json to the PayPal account email or
+  // merchant ID; the button stays hidden until it is set.
+  var paypal = document.getElementById("donate-paypal");
+  if (paypal) {
+    fetch("./donate-config.json", { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : {}; })
+      .catch(function () { return {}; })
+      .then(function (cfg) {
+        var business = cfg && typeof cfg.paypalBusiness === "string" ? cfg.paypalBusiness.trim() : "";
+        if (!business) return;
+        paypal.style.display = "";
+        paypal.addEventListener("click", function () {
+          var dollars = Number(input.value);
+          if (!isFinite(dollars) || dollars < 1 || dollars > 10000) { setStatus("Enter an amount from $1 to $10,000."); return; }
+          var q = new URLSearchParams({
+            business: business,
+            amount: dollars.toFixed(2),
+            currency_code: "USD",
+            item_name: "Donation to BOUKE (not tax deductible)",
+            no_recurring: monthly.checked ? "0" : "1"
+          });
+          window.location.href = "https://www.paypal.com/donate?" + q.toString();
+        });
+      });
+  }
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     var dollars = Number(input.value);
