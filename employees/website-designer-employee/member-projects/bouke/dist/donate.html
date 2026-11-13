@@ -62,11 +62,14 @@
             <label style="display:flex;gap:8px;align-items:center;margin-bottom:16px">
               <input id="donate-monthly" type="checkbox" /> Make it monthly (cancel any time)
             </label>
-            <button type="submit" class="btn" id="donate-submit">Donate with Stripe</button>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <button type="submit" class="btn" id="donate-submit">Donate with Stripe</button>
+              <button type="button" class="btn" id="donate-paypal" style="display:none">Donate with PayPal</button>
+            </div>
             <p class="muted" id="donate-status" role="status" aria-live="polite"></p>
           </fieldset>
         </form>
-        <p class="fineprint">BOUKE LLC is a business, not a registered charity, so donations are not tax deductible. Card details are entered on Stripe's secure page, never on this site. Questions or refunds: <a href="mailto:boukeorg@gmail.com">boukeorg@gmail.com</a>.</p>
+        <p class="fineprint">BOUKE LLC is a business, not a registered charity, so donations are not tax deductible. Card and PayPal details are entered on Stripe's or PayPal's own secure page, never on this site. Monthly giving is set up on Stripe, or with the monthly option on PayPal's page. Questions or refunds: <a href="mailto:boukeorg@gmail.com">boukeorg@gmail.com</a>.</p>
       </div>
     </section>
   </main>

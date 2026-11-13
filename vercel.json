@@ -90,6 +90,10 @@
       "destination": "/employees/website-designer-employee/member-projects/bouke/dist/donate.js"
     },
     {
+      "source": "/donate-config.json",
+      "destination": "/employees/website-designer-employee/member-projects/bouke/dist/donate-config.json"
+    },
+    {
       "source": "/images/:file",
       "destination": "/employees/website-designer-employee/member-projects/bouke/dist/images/:file"
     },
