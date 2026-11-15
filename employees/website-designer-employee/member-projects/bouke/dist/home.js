@@ -23,6 +23,9 @@
     document.getElementById("shop-h").scrollIntoView({ behavior: reduce ? "auto" : "smooth" });
   });
 
+  var q0 = new URLSearchParams(location.search).get("q");
+  if (q0 && form) { document.getElementById("h-q").value = q0; form.dispatchEvent(new Event("submit", { cancelable: true })); }
+
   var row = document.getElementById("h-row");
   if (row) fetch("./portfolio.json", { cache: "no-store" })
     .then(function (r) { return r.ok ? r.json() : { items: [] }; })
@@ -39,16 +42,32 @@
   var cv = document.getElementById("h-sky");
   if (!cv || !cv.getContext) return;
   var ctx = cv.getContext("2d"), stars = [], lines = [], w = 0, h = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
-  // A "B" drawn as a constellation, in unit space.
-  var B = [[0,0],[0,1],[0,1],[0.55,1],[0.55,1],[0.75,0.88],[0.75,0.88],[0.75,0.64],[0.75,0.64],[0.55,0.52],[0.55,0.52],[0,0.52],[0.55,0.52],[0.8,0.4],[0.8,0.4],[0.8,0.13],[0.8,0.13],[0.58,0],[0.58,0],[0,0]];
+  // ブーケ (the logo's katakana) drawn as constellation strokes, in unit space per glyph (y up).
+  var GLYPHS = [
+    // ブ: top bar, then the long stroke sweeping down-left, plus the two dakuten ticks
+    [[[0.05,0.82],[0.78,0.82],[0.70,0.45],[0.45,0.15],[0.18,0.0]], [[0.84,1.0],[0.90,0.88]], [[0.96,1.0],[1.02,0.88]]],
+    // ー: the long vowel bar
+    [[[0.05,0.5],[0.9,0.5]]],
+    // ケ: short left slash, top bar, then the falling right stroke
+    [[[0.38,1.0],[0.05,0.58]], [[0.22,0.76],[0.95,0.76]], [[0.62,0.76],[0.58,0.42],[0.30,0.0]]]
+  ];
   function size() {
     var r = cv.getBoundingClientRect(); w = r.width; h = r.height;
     cv.width = w * dpr; cv.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     stars = []; var n = Math.round(w * h / 2600);
     for (var i = 0; i < n; i++) stars.push({ x: Math.random() * w, y: Math.random() * h, r: Math.random() * 1.2 + 0.2, t: Math.random() * 6.28 });
-    var s = Math.min(w, h) * 0.42, ox = w / 2 - s * 0.4, oy = h * 0.42 - s / 2;
+    var gap = 0.28, span = GLYPHS.length + gap * (GLYPHS.length - 1);
+    var s = Math.min(w * 0.5 / span, h * 0.26), ox = w / 2 - span * s / 2, oy = h * 0.34 - s / 2;
     lines = [];
-    for (var j = 0; j < B.length; j += 2) lines.push([ox + B[j][0] * s, oy + (1 - B[j][1]) * s, ox + B[j + 1][0] * s, oy + (1 - B[j + 1][1]) * s]);
+    GLYPHS.forEach(function (g, gi) {
+      var gx = ox + gi * (1 + gap) * s;
+      g.forEach(function (stroke) {
+        for (var k = 0; k + 1 < stroke.length; k++) {
+          var p = stroke[k], q = stroke[k + 1];
+          lines.push([gx + p[0] * s, oy + (1 - p[1]) * s, gx + q[0] * s, oy + (1 - q[1]) * s, k + 2 === stroke.length]);
+        }
+      });
+    });
   }
   var start = performance.now();
   function frame(now) {
@@ -65,6 +84,7 @@
       var L = lines[k], f = Math.min(1, total - k);
       ctx.beginPath(); ctx.moveTo(L[0], L[1]); ctx.lineTo(L[0] + (L[2] - L[0]) * f, L[1] + (L[3] - L[1]) * f); ctx.stroke();
       ctx.fillStyle = "#fff"; ctx.beginPath(); ctx.arc(L[0], L[1], 2.2, 0, 6.283); ctx.fill();
+      if (L[4] && f >= 1) { ctx.beginPath(); ctx.arc(L[2], L[3], 2.2, 0, 6.283); ctx.fill(); }
     }
     ctx.shadowBlur = 0;
     if (!reduce) requestAnimationFrame(frame);
