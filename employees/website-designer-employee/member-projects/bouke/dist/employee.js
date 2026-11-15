@@ -38,14 +38,14 @@
         income = (s.connected ? s.total : 0) + (p.connected ? p.total : 0);
         $("fin-asof").textContent = "Updated " + new Date(d.asOf).toLocaleString();
         $("f-total").textContent = money(income);
-        $("f-pack").textContent = s.connected ? money(s.packages) : "—";
-        $("f-don").textContent = s.connected ? money(s.donations) : "—";
-        $("f-pp").textContent = p.connected ? money(p.total) : "—";
+        $("f-pack").textContent = s.connected ? money(s.packages) : "n/a";
+        $("f-don").textContent = s.connected ? money(s.donations) : "n/a";
+        $("f-pp").textContent = p.connected ? money(p.total) : "n/a";
         var src = $("f-src"); src.replaceChildren();
         [["Stripe", s], ["PayPal", p], ["QuickBooks", q]].forEach(function (x) {
           var tr = document.createElement("tr");
           cell(tr, x[0]); cell(tr, pill(x[1].connected ? "Connected" : "Not connected", x[1].connected));
-          cell(tr, x[1].connected && typeof x[1].total === "number" ? money(x[1].total) : "—", "n");
+          cell(tr, x[1].connected && typeof x[1].total === "number" ? money(x[1].total) : "n/a", "n");
           cell(tr, x[1].connected ? (x[1].payments || 0) + " payments" : (x[1].note || ""));
           src.appendChild(tr);
         });
