@@ -22,7 +22,7 @@ export function normalizeRent(body) {
   return { ok: true, amountCents: cents, reference };
 }
 
-export function buildRentFields(rent, siteUrl) {
+export function buildRentFields(rent, siteUrl, payer = null) {
   let origin = "";
   try {
     const parsed = new URL(siteUrl);
@@ -32,13 +32,17 @@ export function buildRentFields(rent, siteUrl) {
     return { ok: false };
   }
   const tag = "rent:" + rent.amountCents;
+  const extra = {};
+  if (payer && payer.userId) { extra["metadata[clerk_user]"] = payer.userId; extra["payment_intent_data[metadata][clerk_user]"] = payer.userId; }
+  if (payer && payer.email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payer.email)) extra.customer_email = payer.email;
   return {
     ok: true,
     fields: {
+      ...extra,
       mode: "payment",
       submit_type: "pay",
-      success_url: origin + "/rent.html?paid=1&session_id={CHECKOUT_SESSION_ID}",
-      cancel_url: origin + "/rent.html?canceled=1",
+      success_url: origin + "/employee.html?paid=1&session_id={CHECKOUT_SESSION_ID}#pay-rent",
+      cancel_url: origin + "/employee.html?canceled=1#pay-rent",
       "metadata[source]": "bouke-rent",
       "metadata[bouke_cart]": tag,
       "metadata[rent_reference]": rent.reference,
@@ -55,11 +59,11 @@ export function buildRentFields(rent, siteUrl) {
   };
 }
 
-export async function createRentSession({ body, siteUrl, secretKey, stripeMode = "test", fetchImpl }) {
+export async function createRentSession({ body, payer = null, siteUrl, secretKey, stripeMode = "test", fetchImpl }) {
   if (!isAllowedSecret(secretKey, stripeMode) || !siteUrl) return { ok: false, status: 503, error: CHECKOUT_UNAVAILABLE, unavailable: true };
   const rent = normalizeRent(body);
   if (!rent.ok) return { ok: false, status: 400, error: rent.error };
-  const built = buildRentFields(rent, siteUrl);
+  const built = buildRentFields(rent, siteUrl, payer);
   if (!built.ok) return { ok: false, status: 503, error: CHECKOUT_UNAVAILABLE, unavailable: true };
   let response;
   try {

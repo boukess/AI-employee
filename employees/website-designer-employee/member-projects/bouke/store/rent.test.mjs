@@ -17,7 +17,10 @@ test("rent session is one time, labeled and tagged", () => {
   assert.equal(fields["metadata[source]"], "bouke-rent");
   assert.equal(fields["metadata[rent_reference]"], "Unit 4");
   assert.equal(fields["line_items[0][price_data][unit_amount]"], "95000");
-  assert.equal(fields.success_url, "https://frbouke.com/rent.html?paid=1&session_id={CHECKOUT_SESSION_ID}");
+  assert.equal(fields.success_url, "https://frbouke.com/employee.html?paid=1&session_id={CHECKOUT_SESSION_ID}#pay-rent");
+  const withPayer = buildRentFields({ amountCents: 95000, reference: "Unit 4" }, "https://frbouke.com", { userId: "user_abc", email: "renter@example.com" }).fields;
+  assert.equal(withPayer.customer_email, "renter@example.com");
+  assert.equal(withPayer["metadata[clerk_user]"], "user_abc");
 });
 
 test("refuses without an allowed key and returns the Stripe url with one", async () => {

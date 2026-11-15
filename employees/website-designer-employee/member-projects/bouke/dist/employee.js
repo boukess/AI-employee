@@ -1,4 +1,4 @@
-// Employee area. The login is checked by /api/employee-login on the server;
+// Personnel area. The login is checked by /api/employee-login on the server;
 // this page never sees or stores the password. Budget and test store items
 // are saved in this browser only.
 (function () {
@@ -10,11 +10,13 @@
   };
   var income = 0;
 
-  var TABS = { overview: "Overview", finances: "Finances", budget: "Rent and budget", "test-store": "Test store", "ai-os": "AI OS" };
+  var role = null;
+  var TABS = { "pay-rent": "Pay rent", overview: "Overview", finances: "Finances", budget: "Rent and budget", "test-store": "Test store", "ai-os": "AI OS" };
   var lastFinance = null;
   function showTab() {
     var id = (location.hash || "").slice(1);
-    if (!TABS[id]) id = "overview";
+    if (role === "renter") id = "pay-rent";
+    else if (!TABS[id] || id === "pay-rent") id = "overview";
     document.querySelectorAll(".e-tab").forEach(function (t) { t.hidden = t.id !== id; });
     $("e-title").textContent = TABS[id];
     document.querySelectorAll("#h-emp-links a[data-tab]").forEach(function (a) {
@@ -23,8 +25,48 @@
     window.scrollTo(0, 0);
   }
   window.addEventListener("hashchange", function () { if (!$("e-app").hidden) showTab(); });
-  function showLogin() { $("e-app").hidden = true; $("e-login").hidden = false; $("h-emp-links").hidden = true; $("e-user").focus(); }
-  function showApp() { $("e-login").hidden = true; $("e-app").hidden = false; $("h-emp-links").hidden = false; renderBudget(); renderTests(); showTab(); }
+  function showLogin() { role = null; $("e-app").hidden = true; $("e-login").hidden = false; $("h-emp-links").hidden = true; }
+  function showApp(r) {
+    role = r || "owner";
+    $("e-login").hidden = true; $("e-app").hidden = false; $("h-emp-links").hidden = false;
+    document.querySelectorAll("#h-emp-links [data-role]").forEach(function (a) { a.hidden = a.dataset.role !== role; });
+    if (role === "owner") { renderBudget(); renderTests(); }
+    showTab();
+  }
+
+  // Personnel accounts run on Clerk: sign up, password storage, emails and Google sign in.
+  var clerkReady = null, mounted = false;
+  function initClerk() {
+    if (clerkReady) return clerkReady;
+    clerkReady = fetch("/api/personnel-config", { cache: "no-store" })
+      .then(function (r) { return r.json(); })
+      .then(function (cfg) {
+        if (!cfg || !cfg.configured) return null;
+        return new Promise(function (resolve, reject) {
+          var sc = document.createElement("script");
+          sc.src = "https://" + cfg.frontendApi + "/npm/@clerk/clerk-js@5/dist/clerk.browser.js";
+          sc.async = true; sc.crossOrigin = "anonymous";
+          sc.setAttribute("data-clerk-publishable-key", cfg.publishableKey);
+          sc.onload = resolve; sc.onerror = reject;
+          document.head.appendChild(sc);
+        }).then(function () { return window.Clerk.load(); }).then(function () { return window.Clerk; });
+      })
+      .catch(function () { return null; });
+    return clerkReady;
+  }
+  function afterNoOwner() {
+    initClerk().then(function (C) {
+      if (C && C.user) { showApp("renter"); return; }
+      showLogin();
+      if (!C) { $("clerk-msg").textContent = "Account sign in is not available right now. Try again later."; return; }
+      if (!mounted) {
+        mounted = true;
+        var back = location.origin + "/employee.html#pay-rent";
+        C.mountSignIn($("clerk-box"), { fallbackRedirectUrl: back, signUpFallbackRedirectUrl: back });
+        C.addListener(function (ev) { if (ev && ev.user && role !== "renter") showApp("renter"); });
+      }
+    });
+  }
   function renderOverview() {
     var rent = Number(store.get("rent", 0)) || 0, buys = store.get("buy", []), tests = store.get("tests", []);
     var spend = rent + buys.reduce(function (s, b) { return s + (Number(b.cost) || 0); }, 0);
@@ -54,13 +96,13 @@
     $("fin-asof").textContent = "Loading";
     return fetch("/api/employee-finance", { credentials: "same-origin", cache: "no-store" })
       .then(function (r) {
-        if (r.status === 401) { showLogin(); return null; }
+        if (r.status === 401) { afterNoOwner(); return null; }
         return r.json();
       })
       .then(function (d) {
         if (!d) return;
         lastFinance = d;
-        showApp();
+        showApp("owner");
         var s = d.stripe || {}, p = d.paypal || {}, q = d.quickbooks || {};
         income = (s.connected ? s.total : 0) + (p.connected ? p.total : 0);
         $("fin-asof").textContent = "Updated " + new Date(d.asOf).toLocaleString();
@@ -86,7 +128,7 @@
       .catch(function () { $("fin-asof").textContent = "Could not load the numbers. Try Refresh."; });
   }
 
-  $("e-login").addEventListener("submit", function (e) {
+  $("e-owner").addEventListener("submit", function (e) {
     e.preventDefault();
     var go = $("e-go"); go.disabled = true; $("e-err").textContent = "";
     fetch("/api/employee-login", {
@@ -102,7 +144,8 @@
   });
   $("h-signout").addEventListener("click", function () {
     if (window.boukeMenu) window.boukeMenu.close();
-    fetch("/api/employee-login", { method: "DELETE", credentials: "same-origin" }).finally(function () { location.hash = ""; showLogin(); });
+    if (role === "renter" && window.Clerk) { window.Clerk.signOut().finally(function () { location.hash = ""; showLogin(); }); return; }
+    fetch("/api/employee-login", { method: "DELETE", credentials: "same-origin" }).finally(function () { location.hash = ""; afterNoOwner(); });
   });
   $("e-refresh").addEventListener("click", loadFinance);
 
