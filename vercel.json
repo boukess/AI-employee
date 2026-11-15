@@ -114,6 +114,10 @@
       "destination": "/employees/website-designer-employee/member-projects/bouke/dist/home.js"
     },
     {
+      "source": "/shell.js",
+      "destination": "/employees/website-designer-employee/member-projects/bouke/dist/shell.js"
+    },
+    {
       "source": "/images/:file",
       "destination": "/employees/website-designer-employee/member-projects/bouke/dist/images/:file"
     },
