@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>BOUKE employee area</title>
+  <title>BOUKE personnel login</title>
   <meta name="robots" content="noindex, nofollow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,12 +41,13 @@
       </div>
       <nav class="h-drawer" id="h-drawer" aria-label="Menu" hidden>
         <div class="h-dgroup" id="h-emp-links" hidden>
-          <p class="h-dlabel">Employee area</p>
-          <a href="./employee.html#overview" data-tab="overview"><svg><use href="#i-info"/></svg>Overview</a>
-          <a href="./employee.html#finances" data-tab="finances"><svg><use href="#i-bag"/></svg>Finances</a>
-          <a href="./employee.html#budget" data-tab="budget"><svg><use href="#i-frame"/></svg>Rent and budget</a>
-          <a href="./employee.html#test-store" data-tab="test-store"><svg><use href="#i-shirt"/></svg>Test store</a>
-          <a href="./employee.html#ai-os" data-tab="ai-os"><svg><use href="#i-film"/></svg>AI OS</a>
+          <p class="h-dlabel">Personnel area</p>
+          <a href="./employee.html#pay-rent" data-tab="pay-rent" data-role="renter"><svg><use href="#i-lock"/></svg>Pay rent</a>
+          <a href="./employee.html#overview" data-tab="overview" data-role="owner"><svg><use href="#i-info"/></svg>Overview</a>
+          <a href="./employee.html#finances" data-tab="finances" data-role="owner"><svg><use href="#i-bag"/></svg>Finances</a>
+          <a href="./employee.html#budget" data-tab="budget" data-role="owner"><svg><use href="#i-frame"/></svg>Rent and budget</a>
+          <a href="./employee.html#test-store" data-tab="test-store" data-role="owner"><svg><use href="#i-shirt"/></svg>Test store</a>
+          <a href="./employee.html#ai-os" data-tab="ai-os" data-role="owner"><svg><use href="#i-film"/></svg>AI OS</a>
           <button type="button" class="h-dbtn" id="h-signout"><svg><use href="#i-lock"/></svg>Sign out</button>
         </div>
         <div class="h-dgroup">
@@ -61,29 +62,50 @@
           <p class="h-dlabel">BOUKE</p>
           <a href="./index.html"><svg><use href="#i-frame"/></svg>Home</a>
           <a href="./donate.html"><svg><use href="#i-heart"/></svg>Donate</a>
-          <a href="./rent.html"><svg><use href="#i-lock"/></svg>Pay rent</a>
           <a href="./about.html"><svg><use href="#i-info"/></svg>About and help</a>
-          <a href="./employee.html" id="h-emp-entry"><svg><use href="#i-lock"/></svg>Employee login</a>
+          <a href="./employee.html" id="h-emp-entry"><svg><use href="#i-lock"/></svg>Personnel login</a>
         </div>
       </nav>
     </div>
   </header>
 
   <main id="main" class="h-wrap">
-    <form class="e-login" id="e-login" hidden novalidate>
-      <h1>Employee login</h1>
-      <p class="e-sub">For BOUKE staff. Sign in to see finances, the AI OS, the test store and the budget.</p>
-      <label for="e-user">Username<input class="e-input" id="e-user" autocomplete="username" required /></label>
-      <label for="e-pass">Password<input class="e-input" id="e-pass" type="password" autocomplete="current-password" required /></label>
-      <button class="e-btn" type="submit" id="e-go">Sign in</button>
-      <p class="e-err" id="e-err" role="alert"></p>
-    </form>
+    <section class="e-login" id="e-login" hidden>
+      <h1>Personnel login</h1>
+      <p class="e-sub">Sign in or create an account. Renters pay rent here after signing in.</p>
+      <div id="clerk-box"></div>
+      <p class="e-err" id="clerk-msg" role="status"></p>
+      <details class="e-owner">
+        <summary>Owner sign in</summary>
+        <form id="e-owner" novalidate>
+          <label for="e-user">Username<input class="e-input" id="e-user" autocomplete="username" required /></label>
+          <label for="e-pass">Password<input class="e-input" id="e-pass" type="password" autocomplete="current-password" required /></label>
+          <button class="e-btn" type="submit" id="e-go">Sign in</button>
+          <p class="e-err" id="e-err" role="alert"></p>
+        </form>
+      </details>
+    </section>
 
     <div class="e-app" id="e-app" hidden>
       <div class="e-head">
         <h1 id="e-title">Overview</h1>
         <p class="e-sub" style="margin:0">BOUKE back office. Use the menu at the top right to switch.</p>
       </div>
+      <section class="e-panel e-tab" id="pay-rent" aria-labelledby="pr-h" hidden>
+        <h2 id="pr-h">Pay rent</h2>
+        <p class="e-sub">Enter the amount on your bill and your unit, then pay on Stripe's secure page. Your receipt goes to the email on your account.</p>
+        <p class="e-sub" id="rent-paid" hidden>Payment received. Stripe emails your receipt. Thank you.</p>
+        <p class="e-sub" id="rent-canceled" hidden>Checkout was canceled. No payment was taken.</p>
+        <form id="rent-form" novalidate>
+          <label for="rent-amount">Amount due (USD)</label>
+          <input id="rent-amount" name="amount" type="number" inputmode="decimal" min="1" max="20000" step="0.01" placeholder="0.00" required class="e-input" style="max-width:260px;margin:6px 0 14px" />
+          <label for="rent-ref">Unit, address or your name</label>
+          <input id="rent-ref" name="reference" type="text" maxlength="60" placeholder="Unit 2B" required autocomplete="off" class="e-input" style="max-width:420px;margin:6px 0 16px" />
+          <button type="submit" class="e-btn" id="rent-submit">Pay with Stripe</button>
+          <p class="e-sub" id="rent-status" role="status" aria-live="polite"></p>
+        </form>
+        <p class="e-sub">Card and bank details are entered on Stripe, never on this site.</p>
+      </section>
       <section class="e-tab" id="overview" aria-labelledby="ov-h" hidden>
         <div class="e-grid">
           <a class="e-panel e-link" href="#finances"><div class="e-num" id="o-income">…</div><div class="e-lab">Income, last 30 days</div></a>
@@ -158,5 +180,6 @@
   </main>
   <script src="./shell.js"></script>
   <script src="./employee.js"></script>
+  <script src="./rent.js"></script>
 </body>
 </html>

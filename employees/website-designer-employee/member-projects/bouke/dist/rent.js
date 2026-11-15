@@ -27,10 +27,13 @@
     if (ref.value.trim().length < 2) { say("Enter your unit or name so the payment can be matched."); ref.focus(); return; }
     submit.disabled = true;
     say("Opening Stripe checkout...");
-    fetch("/api/create-rent-session", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ amountCents: Math.round(dollars * 100), reference: ref.value.trim() })
+    var tokenP = window.Clerk && window.Clerk.session ? window.Clerk.session.getToken() : Promise.resolve(null);
+    tokenP.then(function (tok) {
+      return fetch("/api/create-rent-session", {
+        method: "POST",
+        headers: { "content-type": "application/json", "authorization": tok ? "Bearer " + tok : "" },
+        body: JSON.stringify({ amountCents: Math.round(dollars * 100), reference: ref.value.trim() })
+      });
     })
       .then(function (r) { return r.json().then(function (b) { return { ok: r.ok, b: b }; }); })
       .then(function (res) {

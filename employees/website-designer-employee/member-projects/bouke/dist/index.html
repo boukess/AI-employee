@@ -46,12 +46,13 @@
       </div>
       <nav class="h-drawer" id="h-drawer" aria-label="Menu" hidden>
         <div class="h-dgroup" id="h-emp-links" hidden>
-          <p class="h-dlabel">Employee area</p>
-          <a href="./employee.html#overview" data-tab="overview"><svg><use href="#i-info"/></svg>Overview</a>
-          <a href="./employee.html#finances" data-tab="finances"><svg><use href="#i-bag"/></svg>Finances</a>
-          <a href="./employee.html#budget" data-tab="budget"><svg><use href="#i-frame"/></svg>Rent and budget</a>
-          <a href="./employee.html#test-store" data-tab="test-store"><svg><use href="#i-shirt"/></svg>Test store</a>
-          <a href="./employee.html#ai-os" data-tab="ai-os"><svg><use href="#i-film"/></svg>AI OS</a>
+          <p class="h-dlabel">Personnel area</p>
+          <a href="./employee.html#pay-rent" data-tab="pay-rent" data-role="renter"><svg><use href="#i-lock"/></svg>Pay rent</a>
+          <a href="./employee.html#overview" data-tab="overview" data-role="owner"><svg><use href="#i-info"/></svg>Overview</a>
+          <a href="./employee.html#finances" data-tab="finances" data-role="owner"><svg><use href="#i-bag"/></svg>Finances</a>
+          <a href="./employee.html#budget" data-tab="budget" data-role="owner"><svg><use href="#i-frame"/></svg>Rent and budget</a>
+          <a href="./employee.html#test-store" data-tab="test-store" data-role="owner"><svg><use href="#i-shirt"/></svg>Test store</a>
+          <a href="./employee.html#ai-os" data-tab="ai-os" data-role="owner"><svg><use href="#i-film"/></svg>AI OS</a>
           <button type="button" class="h-dbtn" id="h-signout"><svg><use href="#i-lock"/></svg>Sign out</button>
         </div>
         <div class="h-dgroup">
@@ -66,9 +67,8 @@
           <p class="h-dlabel">BOUKE</p>
           <a href="./index.html" aria-current="page"><svg><use href="#i-frame"/></svg>Home</a>
           <a href="./donate.html"><svg><use href="#i-heart"/></svg>Donate</a>
-          <a href="./rent.html"><svg><use href="#i-lock"/></svg>Pay rent</a>
           <a href="./about.html"><svg><use href="#i-info"/></svg>About and help</a>
-          <a href="./employee.html" id="h-emp-entry"><svg><use href="#i-lock"/></svg>Employee login</a>
+          <a href="./employee.html" id="h-emp-entry"><svg><use href="#i-lock"/></svg>Personnel login</a>
         </div>
       </nav>
     </div>
@@ -119,7 +119,7 @@
   <footer class="h-foot">
     <div class="h-wrap">
       <span>BOUKE LLC. Payments are handled by Stripe and PayPal, never on this site.</span>
-      <nav aria-label="Footer"><a href="./about.html">About and help</a><a href="./shop.html">Packages</a><a href="./work.html">Work</a><a href="./donate.html">Donate</a><a href="./employee.html">Employee login</a></nav>
+      <nav aria-label="Footer"><a href="./about.html">About and help</a><a href="./shop.html">Packages</a><a href="./work.html">Work</a><a href="./donate.html">Donate</a><a href="./employee.html">Personnel login</a></nav>
     </div>
   </footer>
   <script src="./shell.js"></script>
