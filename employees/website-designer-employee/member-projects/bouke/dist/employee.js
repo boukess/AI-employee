@@ -36,7 +36,7 @@
     var notes = [];
     if (lastFinance) {
       var s = lastFinance.stripe || {}, p = lastFinance.paypal || {}, q = lastFinance.quickbooks || {};
-      notes.push(s.connected ? "Stripe: " + (s.payments || 0) + " payments, " + money(s.total || 0) + " in 30 days." : "Stripe is not connected: " + (s.note || ""));
+      notes.push(s.connected ? "Stripe: " + (s.payments || 0) + " payments, " + money(s.total || 0) + " in 30 days, including " + money(s.rent || 0) + " rent from renters." : "Stripe is not connected: " + (s.note || ""));
       notes.push(p.connected ? "PayPal: " + (p.payments || 0) + " payments, " + money(p.total || 0) + " in 30 days." : "PayPal is not connected yet.");
       if (!q.connected) notes.push("QuickBooks is not connected yet.");
     }
@@ -67,6 +67,7 @@
         $("f-total").textContent = money(income);
         $("f-pack").textContent = s.connected ? money(s.packages) : "n/a";
         $("f-don").textContent = s.connected ? money(s.donations) : "n/a";
+        $("f-rent").textContent = s.connected ? money(s.rent || 0) : "n/a";
         $("f-pp").textContent = p.connected ? money(p.total) : "n/a";
         var src = $("f-src"); src.replaceChildren();
         [["Stripe", s], ["PayPal", p], ["QuickBooks", q]].forEach(function (x) {

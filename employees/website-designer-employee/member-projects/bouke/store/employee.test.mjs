@@ -24,12 +24,14 @@ test("stripe summary splits paid sessions by source", async () => {
   const fetchImpl = async () => new Response(JSON.stringify({ has_more: false, data: [
     { id: "a", created: 1794700000, payment_status: "paid", amount_total: 40000, metadata: { source: "bouke-store" }, mode: "subscription" },
     { id: "b", created: 1794700000, payment_status: "paid", amount_total: 2500, metadata: { source: "bouke-donation" }, mode: "payment" },
+    { id: "r", created: 1794700000, payment_status: "paid", amount_total: 100000, metadata: { source: "bouke-rent" }, mode: "payment" },
     { id: "c", created: 1794700000, payment_status: "unpaid", amount_total: 999, metadata: {} },
   ] }), { status: 200 });
   const s = await stripeSummary({ STRIPE_SECRET_KEY: "rk_test_x" }, fetchImpl, 1794757000000);
   assert.equal(s.connected, true);
   assert.equal(s.packages, 400);
   assert.equal(s.donations, 25);
-  assert.equal(s.total, 425);
-  assert.equal(s.payments, 2);
+  assert.equal(s.rent, 1000);
+  assert.equal(s.total, 1425);
+  assert.equal(s.payments, 3);
 });
