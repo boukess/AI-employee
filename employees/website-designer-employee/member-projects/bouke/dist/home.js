@@ -2,13 +2,6 @@
 (function () {
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  var btn = document.getElementById("h-menu");
-  var drawer = document.getElementById("h-drawer");
-  if (btn && drawer) btn.addEventListener("click", function () {
-    var open = drawer.classList.toggle("open");
-    btn.setAttribute("aria-expanded", open ? "true" : "false");
-  });
-
   var form = document.getElementById("h-search");
   if (form) form.addEventListener("submit", function (e) {
     e.preventDefault();

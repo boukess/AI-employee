@@ -27,38 +27,43 @@
   </svg>
 
   <header class="h-top">
-    <div class="h-wrap">
+    <div class="h-wrap h-hwrap">
       <div class="h-bar">
         <a class="h-logo" href="./index.html" aria-label="BOUKE home"><img src="./assets/bouke-mark-clear.png" alt="" width="105" height="28" />BOUKE</a>
         <form class="h-search" id="h-search" role="search">
           <input id="h-q" type="search" placeholder="Search BOUKE: prints, packages, shorts" aria-label="Search the site" />
           <button type="submit" aria-label="Search"><svg width="18" height="18" stroke="currentColor" fill="none" stroke-width="2"><use href="#i-search"/></svg></button>
         </form>
-        <nav class="h-icons" aria-label="Quick links">
-          <a class="h-icon hide-sm" href="./work.html"><svg><use href="#i-cam"/></svg><span>Work</span></a>
-          <a class="h-icon hide-sm" href="./shop.html"><svg><use href="#i-film"/></svg><span>Packages</span></a>
-          <a class="h-icon" href="./donate.html"><svg><use href="#i-heart"/></svg><span>Donate</span></a>
-          <a class="h-icon is-emp" href="./employee.html"><svg><use href="#i-lock"/></svg><span>Employee login</span></a>
-        </nav>
-        <button class="h-menu-btn" id="h-menu" aria-expanded="false" aria-controls="h-drawer" aria-label="Menu"><svg width="22" height="22" stroke="currentColor" fill="none" stroke-width="1.8"><use href="#i-menu"/></svg></button>
+        <div class="h-actions">
+          <a class="h-act" href="./shop.html#cart" aria-label="Cart"><svg><use href="#i-bag"/></svg><span class="h-badge" id="h-cart-n" hidden>0</span></a>
+          <button class="h-act" id="h-menu" type="button" aria-expanded="false" aria-controls="h-drawer" aria-label="Menu"><svg><use href="#i-menu"/></svg></button>
+        </div>
       </div>
-      <nav class="h-strip" aria-label="Sections">
-        <a href="./shop.html"><svg><use href="#i-film"/></svg>Editing packages</a>
-        <a href="./work.html"><svg><use href="#i-cam"/></svg>MKSWRLD Photography</a>
-        <a href="./work.html"><svg><use href="#i-frame"/></svg>Prints</a>
-        <a href="./shop.html"><svg><use href="#i-ball"/></svg>Game-day coverage</a>
-        <a href="./clothing.html"><svg><use href="#i-shirt"/></svg>Clothing</a>
-        <a href="./donate.html"><svg><use href="#i-heart"/></svg>Donate</a>
-        <a href="./about.html"><svg><use href="#i-info"/></svg>About and help</a>
-        <a href="./employee.html"><svg><use href="#i-lock"/></svg>Employee login</a>
-      </nav>
-      <nav class="h-drawer" id="h-drawer" aria-label="Menu">
-        <a href="./shop.html"><svg><use href="#i-film"/></svg>Editing packages</a>
-        <a href="./work.html"><svg><use href="#i-cam"/></svg>MKSWRLD Photography</a>
-        <a href="./clothing.html"><svg><use href="#i-shirt"/></svg>Clothing</a>
-        <a href="./donate.html"><svg><use href="#i-heart"/></svg>Donate</a>
-        <a href="./about.html"><svg><use href="#i-info"/></svg>About and help</a>
-        <a href="./employee.html"><svg><use href="#i-lock"/></svg>Employee login</a>
+      <nav class="h-drawer" id="h-drawer" aria-label="Menu" hidden>
+        <div class="h-dgroup" id="h-emp-links" hidden>
+          <p class="h-dlabel">Employee area</p>
+          <a href="./employee.html#overview" data-tab="overview"><svg><use href="#i-info"/></svg>Overview</a>
+          <a href="./employee.html#finances" data-tab="finances"><svg><use href="#i-bag"/></svg>Finances</a>
+          <a href="./employee.html#budget" data-tab="budget"><svg><use href="#i-frame"/></svg>Rent and budget</a>
+          <a href="./employee.html#test-store" data-tab="test-store"><svg><use href="#i-shirt"/></svg>Test store</a>
+          <a href="./employee.html#ai-os" data-tab="ai-os"><svg><use href="#i-film"/></svg>AI OS</a>
+          <button type="button" class="h-dbtn" id="h-signout"><svg><use href="#i-lock"/></svg>Sign out</button>
+        </div>
+        <div class="h-dgroup">
+          <p class="h-dlabel">Shop</p>
+          <a href="./shop.html"><svg><use href="#i-film"/></svg>Editing packages</a>
+          <a href="./work.html"><svg><use href="#i-cam"/></svg>MKSWRLD Photography and prints</a>
+          <a href="./shop.html"><svg><use href="#i-ball"/></svg>Game-day coverage</a>
+          <a href="./clothing.html"><svg><use href="#i-shirt"/></svg>Clothing</a>
+          <a href="./shop.html#cart"><svg><use href="#i-bag"/></svg>Cart and checkout</a>
+        </div>
+        <div class="h-dgroup">
+          <p class="h-dlabel">BOUKE</p>
+          <a href="./index.html"><svg><use href="#i-frame"/></svg>Home</a>
+          <a href="./donate.html"><svg><use href="#i-heart"/></svg>Donate</a>
+          <a href="./about.html"><svg><use href="#i-info"/></svg>About and help</a>
+          <a href="./employee.html" id="h-emp-entry"><svg><use href="#i-lock"/></svg>Employee login</a>
+        </div>
       </nav>
     </div>
   </header>
@@ -75,16 +80,25 @@
 
     <div class="e-app" id="e-app" hidden>
       <div class="e-head">
-        <h1>BOUKE back office</h1>
-        <div style="display:flex;gap:8px;flex-wrap:wrap">
-          <button class="e-btn ghost" id="e-refresh" type="button">Refresh numbers</button>
-          <button class="e-btn ghost" id="e-out" type="button">Sign out</button>
-        </div>
+        <h1 id="e-title">Overview</h1>
+        <p class="e-sub" style="margin:0">BOUKE back office. Use the menu at the top right to switch.</p>
       </div>
-
-      <section class="e-panel" id="finance" aria-labelledby="fin-h">
+      <section class="e-tab" id="overview" aria-labelledby="ov-h" hidden>
+        <div class="e-grid">
+          <a class="e-panel e-link" href="#finances"><div class="e-num" id="o-income">…</div><div class="e-lab">Income, last 30 days</div></a>
+          <a class="e-panel e-link" href="#budget"><div class="e-num" id="o-left">…</div><div class="e-lab">Left after rent and buys</div></a>
+          <a class="e-panel e-link" href="#test-store"><div class="e-num" id="o-ready">…</div><div class="e-lab">Test items ready to list</div></a>
+          <a class="e-panel e-link" href="#ai-os"><div class="e-num">6 of 17</div><div class="e-lab">AI employees running</div></a>
+        </div>
+        <div class="e-panel" style="margin-top:14px">
+          <h2 id="ov-h">What is going on</h2>
+          <ul class="e-list" id="o-notes"><li>Loading</li></ul>
+        </div>
+      </section>
+      <section class="e-panel e-tab" id="finances" aria-labelledby="fin-h" hidden>
         <h2 id="fin-h">Financial breakdown, last 30 days</h2>
         <p class="e-sub" id="fin-asof">Loading</p>
+        <p><button class="e-btn ghost" id="e-refresh" type="button">Refresh numbers</button></p>
         <div class="e-grid">
           <div><div class="e-num" id="f-total">…</div><div class="e-lab">All income</div></div>
           <div><div class="e-num" id="f-pack">…</div><div class="e-lab">Stripe packages</div></div>
@@ -99,8 +113,7 @@
         <div class="e-scroll"><table class="e-table"><thead><tr><th>Date</th><th>Kind</th><th class="n">Amount</th></tr></thead><tbody id="f-recent"></tbody></table></div>
       </section>
 
-      <div class="e-two">
-        <section class="e-panel" id="budget" aria-labelledby="bud-h">
+        <section class="e-panel e-tab" id="budget" hidden aria-labelledby="bud-h">
           <h2 id="bud-h">Rent and things to buy</h2>
           <p class="e-sub">Your budget. Change rent any month. Items here are plans, nothing is charged.</p>
           <label class="e-lab" for="b-rent">Rent this month (USD)</label>
@@ -115,7 +128,7 @@
           <div class="e-bar" aria-hidden="true"><i id="b-bar" style="width:0%"></i></div>
         </section>
 
-        <section class="e-panel" id="test-store" aria-labelledby="ts-h">
+        <section class="e-panel e-tab" id="test-store" hidden aria-labelledby="ts-h">
           <h2 id="ts-h">Test store</h2>
           <p class="e-sub">Try out items before they go in the real shop. Margin uses your cost and price.</p>
           <form class="e-form three" id="t-add">
@@ -127,9 +140,7 @@
           <div class="e-scroll"><table class="e-table"><thead><tr><th>Item</th><th class="n">Cost</th><th class="n">Price</th><th class="n">Margin</th><th>Status</th><th></th></tr></thead><tbody id="t-list"></tbody></table></div>
           <p class="e-sub" style="margin-top:8px">Aim for at least 35 percent margin. Saved on this device.</p>
         </section>
-      </div>
-
-      <section class="e-panel" id="ai-os" aria-labelledby="ai-h">
+      <section class="e-panel e-tab" id="ai-os" hidden aria-labelledby="ai-h">
         <h2 id="ai-h">AI OS</h2>
         <p class="e-sub">Your AI employees, checklist and payment channels.</p>
         <div class="e-grid">
@@ -143,6 +154,7 @@
       </section>
     </div>
   </main>
+  <script src="./shell.js"></script>
   <script src="./employee.js"></script>
 </body>
 </html>

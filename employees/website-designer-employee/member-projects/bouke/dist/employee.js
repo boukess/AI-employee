@@ -10,16 +10,42 @@
   };
   var income = 0;
 
-  var btn = $("h-menu"), drawer = $("h-drawer");
-  if (btn && drawer) btn.addEventListener("click", function () {
-    var open = drawer.classList.toggle("open");
-    btn.setAttribute("aria-expanded", open ? "true" : "false");
-  });
-  var search = $("h-search");
-  if (search) search.addEventListener("submit", function (e) { e.preventDefault(); location.href = "./index.html"; });
-
-  function showLogin() { $("e-app").hidden = true; $("e-login").hidden = false; $("e-user").focus(); }
-  function showApp() { $("e-login").hidden = true; $("e-app").hidden = false; renderBudget(); renderTests(); }
+  var TABS = { overview: "Overview", finances: "Finances", budget: "Rent and budget", "test-store": "Test store", "ai-os": "AI OS" };
+  var lastFinance = null;
+  function showTab() {
+    var id = (location.hash || "").slice(1);
+    if (!TABS[id]) id = "overview";
+    document.querySelectorAll(".e-tab").forEach(function (t) { t.hidden = t.id !== id; });
+    $("e-title").textContent = TABS[id];
+    document.querySelectorAll("#h-emp-links a[data-tab]").forEach(function (a) {
+      if (a.dataset.tab === id) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", function () { if (!$("e-app").hidden) showTab(); });
+  function showLogin() { $("e-app").hidden = true; $("e-login").hidden = false; $("h-emp-links").hidden = true; $("e-user").focus(); }
+  function showApp() { $("e-login").hidden = true; $("e-app").hidden = false; $("h-emp-links").hidden = false; renderBudget(); renderTests(); showTab(); }
+  function renderOverview() {
+    var rent = Number(store.get("rent", 0)) || 0, buys = store.get("buy", []), tests = store.get("tests", []);
+    var spend = rent + buys.reduce(function (s, b) { return s + (Number(b.cost) || 0); }, 0);
+    $("o-income").textContent = money(income);
+    $("o-left").textContent = money(income - spend);
+    $("o-left").style.color = income - spend < 0 ? "var(--h-bad)" : "var(--h-ok)";
+    var ready = tests.filter(function (t) { return t.price > 0 && (t.price - t.cost) / t.price >= 0.35; }).length;
+    $("o-ready").textContent = ready + " of " + tests.length;
+    var notes = [];
+    if (lastFinance) {
+      var s = lastFinance.stripe || {}, p = lastFinance.paypal || {}, q = lastFinance.quickbooks || {};
+      notes.push(s.connected ? "Stripe: " + (s.payments || 0) + " payments, " + money(s.total || 0) + " in 30 days." : "Stripe is not connected: " + (s.note || ""));
+      notes.push(p.connected ? "PayPal: " + (p.payments || 0) + " payments, " + money(p.total || 0) + " in 30 days." : "PayPal is not connected yet.");
+      if (!q.connected) notes.push("QuickBooks is not connected yet.");
+    }
+    notes.push(rent ? "Rent this month is set to " + money(rent) + "." : "Rent for this month is not set. Add it under Rent and budget.");
+    notes.push(buys.length ? buys.length + " planned buys totaling " + money(spend - rent) + "." : "No planned buys yet.");
+    notes.push(tests.length ? ready + " of " + tests.length + " test store items clear the 35 percent margin." : "No test store items yet.");
+    var ul = $("o-notes"); ul.replaceChildren();
+    notes.forEach(function (n) { var li = document.createElement("li"); li.textContent = n; ul.appendChild(li); });
+  }
 
   function cell(tr, text, cls) { var td = document.createElement("td"); if (cls) td.className = cls; if (text instanceof Node) td.appendChild(text); else td.textContent = text; tr.appendChild(td); return td; }
   function pill(text, ok) { var s = document.createElement("span"); s.className = "e-pill " + (ok ? "ok" : "warn"); s.textContent = text; return s; }
@@ -33,6 +59,7 @@
       })
       .then(function (d) {
         if (!d) return;
+        lastFinance = d;
         showApp();
         var s = d.stripe || {}, p = d.paypal || {}, q = d.quickbooks || {};
         income = (s.connected ? s.total : 0) + (p.connected ? p.total : 0);
@@ -72,8 +99,9 @@
       })
       .catch(function () { go.disabled = false; $("e-err").textContent = "Could not reach the server. Try again."; });
   });
-  $("e-out").addEventListener("click", function () {
-    fetch("/api/employee-login", { method: "DELETE", credentials: "same-origin" }).finally(showLogin);
+  $("h-signout").addEventListener("click", function () {
+    if (window.boukeMenu) window.boukeMenu.close();
+    fetch("/api/employee-login", { method: "DELETE", credentials: "same-origin" }).finally(function () { location.hash = ""; showLogin(); });
   });
   $("e-refresh").addEventListener("click", loadFinance);
 
@@ -97,6 +125,7 @@
     $("b-sum").textContent = "Rent " + money(rent) + " plus items " + money(spend - rent) + " = " + money(spend) + ". Income last 30 days " + money(income) + ".";
     $("f-left").textContent = money(left);
     $("f-left").style.color = left < 0 ? "var(--h-bad)" : "var(--h-ok)";
+    renderOverview();
     $("b-bar").style.width = (income > 0 ? Math.min(100, spend / income * 100) : (spend > 0 ? 100 : 0)) + "%";
   }
   $("b-rent").addEventListener("input", function () { store.set("rent", Number($("b-rent").value) || 0); renderBudget(); });
@@ -124,6 +153,8 @@
       list.appendChild(tr);
     });
   }
+  var _rt = renderTests;
+  renderTests = function () { _rt(); renderOverview(); };
   $("t-add").addEventListener("submit", function (e) {
     e.preventDefault();
     var name = $("t-name").value.trim(), cost = Number($("t-cost").value), price = Number($("t-price").value);
