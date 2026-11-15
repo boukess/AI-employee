@@ -25,6 +25,7 @@
 
   function writeCart(items) {
     localStorage.setItem(CART_KEY, JSON.stringify(items));
+    if (window.boukeCartRefresh) window.boukeCartRefresh();
     render();
   }
 

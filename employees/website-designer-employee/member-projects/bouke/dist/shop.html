@@ -34,39 +34,43 @@
   </svg>
 
   <header class="h-top">
-    <div class="h-wrap">
+    <div class="h-wrap h-hwrap">
       <div class="h-bar">
         <a class="h-logo" href="./index.html" aria-label="BOUKE home"><img src="./assets/bouke-mark-clear.png" alt="" width="105" height="28" />BOUKE</a>
         <form class="h-search" id="h-search" role="search">
           <input id="h-q" type="search" placeholder="Search BOUKE: prints, packages, shorts" aria-label="Search the site" />
           <button type="submit" aria-label="Search"><svg width="18" height="18" stroke="currentColor" fill="none" stroke-width="2"><use href="#i-search"/></svg></button>
         </form>
-        <nav class="h-icons" aria-label="Quick links">
-          <a class="h-icon hide-sm" href="./work.html"><svg><use href="#i-cam"/></svg><span>Work</span></a>
-          <a class="h-icon hide-sm" href="./shop.html"><svg><use href="#i-film"/></svg><span>Packages</span></a>
-          <a class="h-icon" href="#cart"><svg><use href="#i-bag"/></svg><span id="cart-count">Cart</span></a>
-          <a class="h-icon" href="./donate.html"><svg><use href="#i-heart"/></svg><span>Donate</span></a>
-          <a class="h-icon is-emp" href="./employee.html"><svg><use href="#i-lock"/></svg><span>Employee login</span></a>
-        </nav>
-        <button class="h-menu-btn" id="h-menu" aria-expanded="false" aria-controls="h-drawer" aria-label="Menu"><svg width="22" height="22" stroke="currentColor" fill="none" stroke-width="1.8"><use href="#i-menu"/></svg></button>
+        <div class="h-actions">
+          <a class="h-act" href="./shop.html#cart" aria-label="Cart"><svg><use href="#i-bag"/></svg><span class="h-badge" id="h-cart-n" hidden>0</span></a>
+          <button class="h-act" id="h-menu" type="button" aria-expanded="false" aria-controls="h-drawer" aria-label="Menu"><svg><use href="#i-menu"/></svg></button>
+        </div>
       </div>
-      <nav class="h-strip" aria-label="Sections">
-        <a href="./shop.html" aria-current="page"><svg><use href="#i-film"/></svg>Editing packages</a>
-        <a href="./work.html"><svg><use href="#i-cam"/></svg>MKSWRLD Photography</a>
-        <a href="./work.html"><svg><use href="#i-frame"/></svg>Prints</a>
-        <a href="./shop.html"><svg><use href="#i-ball"/></svg>Game-day coverage</a>
-        <a href="./clothing.html"><svg><use href="#i-shirt"/></svg>Clothing</a>
-        <a href="./donate.html"><svg><use href="#i-heart"/></svg>Donate</a>
-        <a href="./about.html"><svg><use href="#i-info"/></svg>About and help</a>
-        <a href="./employee.html"><svg><use href="#i-lock"/></svg>Employee login</a>
-      </nav>
-      <nav class="h-drawer" id="h-drawer" aria-label="Menu">
-        <a href="./shop.html"><svg><use href="#i-film"/></svg>Editing packages</a>
-        <a href="./work.html"><svg><use href="#i-cam"/></svg>MKSWRLD Photography</a>
-        <a href="./clothing.html"><svg><use href="#i-shirt"/></svg>Clothing</a>
-        <a href="./donate.html"><svg><use href="#i-heart"/></svg>Donate</a>
-        <a href="./about.html"><svg><use href="#i-info"/></svg>About and help</a>
-        <a href="./employee.html"><svg><use href="#i-lock"/></svg>Employee login</a>
+      <nav class="h-drawer" id="h-drawer" aria-label="Menu" hidden>
+        <div class="h-dgroup" id="h-emp-links" hidden>
+          <p class="h-dlabel">Employee area</p>
+          <a href="./employee.html#overview" data-tab="overview"><svg><use href="#i-info"/></svg>Overview</a>
+          <a href="./employee.html#finances" data-tab="finances"><svg><use href="#i-bag"/></svg>Finances</a>
+          <a href="./employee.html#budget" data-tab="budget"><svg><use href="#i-frame"/></svg>Rent and budget</a>
+          <a href="./employee.html#test-store" data-tab="test-store"><svg><use href="#i-shirt"/></svg>Test store</a>
+          <a href="./employee.html#ai-os" data-tab="ai-os"><svg><use href="#i-film"/></svg>AI OS</a>
+          <button type="button" class="h-dbtn" id="h-signout"><svg><use href="#i-lock"/></svg>Sign out</button>
+        </div>
+        <div class="h-dgroup">
+          <p class="h-dlabel">Shop</p>
+          <a href="./shop.html" aria-current="page"><svg><use href="#i-film"/></svg>Editing packages</a>
+          <a href="./work.html"><svg><use href="#i-cam"/></svg>MKSWRLD Photography and prints</a>
+          <a href="./shop.html"><svg><use href="#i-ball"/></svg>Game-day coverage</a>
+          <a href="./clothing.html"><svg><use href="#i-shirt"/></svg>Clothing</a>
+          <a href="./shop.html#cart"><svg><use href="#i-bag"/></svg>Cart and checkout</a>
+        </div>
+        <div class="h-dgroup">
+          <p class="h-dlabel">BOUKE</p>
+          <a href="./index.html"><svg><use href="#i-frame"/></svg>Home</a>
+          <a href="./donate.html"><svg><use href="#i-heart"/></svg>Donate</a>
+          <a href="./about.html"><svg><use href="#i-info"/></svg>About and help</a>
+          <a href="./employee.html" id="h-emp-entry"><svg><use href="#i-lock"/></svg>Employee login</a>
+        </div>
       </nav>
     </div>
   </header>
