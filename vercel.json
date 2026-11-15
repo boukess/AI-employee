@@ -118,6 +118,14 @@
       "destination": "/employees/website-designer-employee/member-projects/bouke/dist/shell.js"
     },
     {
+      "source": "/rent.html",
+      "destination": "/employees/website-designer-employee/member-projects/bouke/dist/rent.html"
+    },
+    {
+      "source": "/rent.js",
+      "destination": "/employees/website-designer-employee/member-projects/bouke/dist/rent.js"
+    },
+    {
       "source": "/images/:file",
       "destination": "/employees/website-designer-employee/member-projects/bouke/dist/images/:file"
     },

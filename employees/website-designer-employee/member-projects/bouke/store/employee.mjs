@@ -62,7 +62,7 @@ export async function stripeSummary(env = process.env, fetchImpl = globalThis.fe
   if (!key) return { connected: false, note: "No Stripe key on the server." };
   const since = Math.floor(now / 1000) - 30 * 86400;
   let url = "https://api.stripe.com/v1/checkout/sessions?limit=100&status=complete&created[gte]=" + since;
-  const totals = { packages: 0, donations: 0, other: 0 };
+  const totals = { packages: 0, donations: 0, rent: 0, other: 0 };
   let count = 0;
   const recent = [];
   for (let page = 0; page < 5 && url; page++) {
@@ -73,7 +73,7 @@ export async function stripeSummary(env = process.env, fetchImpl = globalThis.fe
       if (s.payment_status !== "paid") continue;
       const cents = Number(s.amount_total || 0);
       const src = s.metadata && s.metadata.source;
-      const bucket = src === "bouke-donation" ? "donations" : src === "bouke-store" ? "packages" : "other";
+      const bucket = src === "bouke-donation" ? "donations" : src === "bouke-store" ? "packages" : src === "bouke-rent" ? "rent" : "other";
       totals[bucket] += cents;
       count++;
       if (recent.length < 10) recent.push({ date: new Date(s.created * 1000).toISOString().slice(0, 10), amount: cents / 100, kind: bucket, mode: s.mode });
@@ -87,8 +87,9 @@ export async function stripeSummary(env = process.env, fetchImpl = globalThis.fe
     payments: count,
     packages: totals.packages / 100,
     donations: totals.donations / 100,
+    rent: totals.rent / 100,
     other: totals.other / 100,
-    total: (totals.packages + totals.donations + totals.other) / 100,
+    total: (totals.packages + totals.donations + totals.rent + totals.other) / 100,
     recent,
   };
 }
