@@ -47,6 +47,7 @@ Say "Edit my video" for a clip in `inbox`. That sentence means this path, not a 
 | A drawing, logo, or mascot that should feel alive | rossark-motion-skill | Instructions are usable anywhere. The Swift offline renderer is macOS only. |
 | Judge a mix, or make sound effects in code | earshot | Needs install. `measure`, `sfx`, and `kit` need no model download. |
 | A soundtrack from real licensed recordings | real-sound, which ships inside earshot | Needs install with earshot. Do not commit the audio into this kit. |
+| Clearer, tighter talking-head cuts on any edit | `motus-clarity` skill (Motus method) | Ready. Rules only; the Motus engine runs on macOS from the member's own copy. |
 | A scriptable editor for cuts Resolve cannot drive | Concat, separate process | Needs install. Windows x86_64 builds exist. Do not vendor the AGPL source. |
 
 Pick one primary tool. video-director and earshot are checks you add on top. Do not start take-one, huashu-motion, and explainroo for the same film.

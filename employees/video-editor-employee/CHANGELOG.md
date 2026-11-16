@@ -1,5 +1,10 @@
 # Video Editor Employee: release history
 
+## 1.1.0, 2026-11-16
+
+- New skill `motus-clarity` under `.agents/skills/`: the Motus method for clear, concise talking-head edits. Understand the take first, cut every pause of 0.30 s or more and every retake, plan scene by scene with 2 to 4 distinct options, keep on screen only what was said or captured, and review stills before handover.
+- The Motus engine stays out of this kit. It is MIT and macOS only, so on IBP_Desktop the desktop pack still renders and applies the method to its plan.
+
 ## 1.0.0, 2026-11-07
 
 - First in-repo kit for the IBP_Desktop editor. The desktop pack stays at `C:\Users\blood\AI Video Editor` and is not copied here.
